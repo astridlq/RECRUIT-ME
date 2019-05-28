@@ -44,3 +44,15 @@
     cursor: pointer;
   }
 }
+
+
+// SKILL with rounded shape (use <p>)
+.skill-selection {
+  color: $our-blue;
+  font-weight: bold;
+  width: fit-content;
+  font-size: 12px;
+  border: 1px solid $our-blue;
+  border-radius: 30px;
+  padding: 5px 15px;
+}
