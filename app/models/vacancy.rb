@@ -9,4 +9,5 @@ class Vacancy < ApplicationRecord
   validates :description, presence: true
   validates :department, presence: true
   validates :start_date, presence: true
+  validates :location, presence: true
 end
