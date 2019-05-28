@@ -19,194 +19,194 @@ puts "Creating shit"
 
 skill_hash = [
 {
-name: "Front-end Development"
-description: "The practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly."
-type: "hard"
+name: "Front-end Development",
+description: "The practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly.",
+type: "hard",
 photo:
 }, {
-name: "Back-end Web Development"
-description: "Backend development languages handle the ‘behind-the-scenes’ functionality of web applications. It’s code that connects the web to a database, manages user connections, and powers the web application itself."
-type: "hard"
+name: "Back-end Web Development",
+description: "Backend development languages handle the ‘behind-the-scenes’ functionality of web applications. It’s code that connects the web to a database, manages user connections, and powers the web application itself.",
+type: "hard",
 photo:
 }, {
-name: "Database Management"
-description: "Managing databases using management software and SQL"
-type: "hard"
+name: "Database Management",
+description: "Managing databases using management software and SQL",
+type: "hard",
 photo:
 }, {
-name: "UI & UX Design"
-description: "User experience (UX) design is the process of creating products that provide meaningful and relevant experiences to users. This involves the design of the entire process of acquiring and integrating the product, including aspects of branding, design, usability, and function."
-type: "hard"
+name: "UI & UX Design",
+description: "User experience (UX) design is the process of creating products that provide meaningful and relevant experiences to users. This involves the design of the entire process of acquiring and integrating the product, including aspects of branding, design, usability, and function.",
+type: "hard",
 photo:
 }, {
-name: "Cloud Computing"
-description: "using a network of remote servers hosted on the Internet to store, manage, and process data"
-type: "hard"
+name: "Cloud Computing",
+description: "using a network of remote servers hosted on the Internet to store, manage, and process data",
+type: "hard",
 photo:
 }, {
-name: "AI & Machine Learning"
-description: "The theory and development of computer systems able to perform tasks normally requiring human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages"
-type: "hard"
+name: "AI & Machine Learning",
+description: "The theory and development of computer systems able to perform tasks normally requiring human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages",
+type: "hard",
 photo:
 }, {
-name: "Data Analysis"
-description: "Inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making."
-type: "hard"
+name: "Data Analysis",
+description: "Inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.",
+type: "hard",
 photo:
 }, {
-name: "Product Knowledge"
-description: "Product knowledge is an essential sales skill. Understanding your products' features allows you to present their benefits accurately and persuasively. Customers respond to enthusiastic sales staff who are passionate about their products and eager to share the benefits with them"
-type: "hard"
+name: "Product Knowledge",
+description: "Product knowledge is an essential sales skill. Understanding your products' features allows you to present their benefits accurately and persuasively. Customers respond to enthusiastic sales staff who are passionate about their products and eager to share the benefits with them",
+type: "hard",
 photo:
 }, {
-name: "Rapport Building on the Cold Call"
-description: "A technique in which a salesperson contacts individuals who have not previously expressed interest in the offered products or services."
-type: "hard"
+name: "Rapport Building on the Cold Call",
+description: "A technique in which a salesperson contacts individuals who have not previously expressed interest in the offered products or services.",
+type: "hard",
 photo:
 }, {
-name: "Planning and organizational skills"
-description: "Creating and keeping deadlines, delegation, goal setting and meeting goals, decision making, managing appointments, team management, project management, making schedules."
-type: "hard"
+name: "Planning and organizational skills",
+description: "Creating and keeping deadlines, delegation, goal setting and meeting goals, decision making, managing appointments, team management, project management, making schedules.",
+type: "hard",
 photo:
 }, {
-name: "Closing Techniques"
-description: "One of the most important stages of selling is closing the deal, which is the actions taken by the sales person to gain agreement to the sale."
-type: "hard"
+name: "Closing Techniques",
+description: "One of the most important stages of selling is closing the deal, which is the actions taken by the sales person to gain agreement to the sale.",
+type: "hard",
 photo:
 }, {
-name: "Post-Sale Relationship Management"
-description: "Relationship management involves strategies to build client support for a business and its offerings, and increase brand loyalty. "
-type: "hard"
+name: "Post-Sale Relationship Management",
+description: "Relationship management involves strategies to build client support for a business and its offerings, and increase brand loyalty.",
+type: "hard",
 photo:
 }, {
-name: "Demo Skills"
-description: "Demonstrate or explain products, methods, or services to persuade customers to purchase products or use services."
-type: "hard"
+name: "Demo Skills",
+description: "Demonstrate or explain products, methods, or services to persuade customers to purchase products or use services.",
+type: "hard",
 photo:
 }, {
-name: "Consumer relevance and market knowledge"
-description: "Market knowledge is to know about the various aspects associated with the business one is offering to the market. It includes detail study about the primary and secondary activities that a company can include in its core activities so that value can be delivered to the market."
-type: "hard"
+name: "Consumer relevance and market knowledge",
+description: "Market knowledge is to know about the various aspects associated with the business one is offering to the market. It includes detail study about the primary and secondary activities that a company can include in its core activities so that value can be delivered to the market.",
+type: "hard",
 photo:
 }, {
-name: "Strategic planning and Global thinking"
-description: "Strategic planning is an organizational management activity that is used to set priorities, focus energy and resources, strengthen operations, ensure that employees and other stakeholders are working toward common goals, establish agreement around intended outcomes/results, and assess and adjust the organization's direction in response to a changing environment."
-type: "hard"
+name: "Strategic planning and Global thinking",
+description: "Strategic planning is an organizational management activity that is used to set priorities, focus energy and resources, strengthen operations, ensure that employees and other stakeholders are working toward common goals, establish agreement around intended outcomes/results, and assess and adjust the organization's direction in response to a changing environment.",
+type: "hard",
 photo:
 }, {
-name: "Results oriented"
-description: "An individual that focuses on outcome rather than process used to produce a product or deliver a service."
-type: "hard"
+name: "Results oriented",
+description: "An individual that focuses on outcome rather than process used to produce a product or deliver a service.",
+type: "hard",
 photo:
 }, {
-name: "Initiative and communication"
-description: "A great leader not only has initiative as an individual character trait, but also coaches his or her team or organization in a manner that creates and encourages initiative from all team members."
-type: "hard"
+name: "Initiative and communication",
+description: "A great leader not only has initiative as an individual character trait, but also coaches his or her team or organization in a manner that creates and encourages initiative from all team members.",
+type: "hard",
 photo:
 }, {
-name: "Financial planning"
-description: "The process of estimating the capital required and determining it’s competition. It is the process of framing financial policies in relation to procurement, investment and administration of funds of an enterprise."
-type: "hard"
+name: "Financial planning",
+description: "The process of estimating the capital required and determining it’s competition. It is the process of framing financial policies in relation to procurement, investment and administration of funds of an enterprise.",
+type: "hard",
 photo:
 }, {
-name: "Financial reporting"
-description: "Financial reporting is the disclosure of financial results and related information to management and external stakeholders (e.g., investors, customers, regulators) about how a company is performing over a specific period of time."
-type: "hard"
+name: "Financial reporting",
+description: "Financial reporting is the disclosure of financial results and related information to management and external stakeholders (e.g., investors, customers, regulators) about how a company is performing over a specific period of time.",
+type: "hard",
 photo:
 }, {
-name: "Auditing and compliance knowledge"
-description: "A compliance audit is a comprehensive review of an organization's adherence to regulatory guidelines. Audit reports evaluate the strength and thoroughness of compliance preparations, security policies, user access controls and risk management procedures over the course of a compliance audit."
-type: "hard"
+name: "Auditing and compliance knowledge",
+description: "A compliance audit is a comprehensive review of an organization's adherence to regulatory guidelines. Audit reports evaluate the strength and thoroughness of compliance preparations, security policies, user access controls and risk management procedures over the course of a compliance audit.",
+type: "hard",
 photo:
 }, {
-name: "Accounting qualified"
-description: "The AAT qualification is the minimal level of qualification required for most kinds of accountancy."
-type: "hard"
+name: "Accounting qualified",
+description: "The AAT qualification is the minimal level of qualification required for most kinds of accountancy.",
+type: "hard",
 photo:
 }, {
-name: "Commercial awareness"
-description: "Staying up-to-date on daily happenings and developments in the business and commercial world."
-type: "hard"
+name: "Commercial awareness",
+description: "Staying up-to-date on daily happenings and developments in the business and commercial world.",
+type: "hard",
 photo:
 }, {
-name: "communication"
-description: "Clarity, confidence, respect, empathy, listening, (non-)verbal communication, written communication, constructive feedback, friendliness"
-type: "soft"
+name: "communication",
+description: "Clarity, confidence, respect, empathy, listening, (non-)verbal communication, written communication, constructive feedback, friendliness",
+type: "soft",
 photo:
 }, {
-name: "Adaptability"
-description: "Curiosity, self-management, decision-making, calmness, optimism, open-mindedness, self-confidence, self-motivation"
-type: "soft"
+name: "Adaptability",
+description: "Curiosity, self-management, decision-making, calmness, optimism, open-mindedness, self-confidence, self-motivation",
+type: "soft",
 photo:
 }, {
-name: "Problem-Solving & decision making"
-description: "Lateral thinking, logical reasoning, initiative, persistence, observation, persuasion, brainstorming"
-type: "soft"
+name: "Problem-Solving & decision making",
+description: "Lateral thinking, logical reasoning, initiative, persistence, observation, persuasion, brainstorming",
+type: "soft",
 photo:
 }, {
-name: "Creativity"
-description: "Divergent thinking, inspiration, imagination, design, innovation, experimenting"
-type: "soft"
+name: "Creativity",
+description: "Divergent thinking, inspiration, imagination, design, innovation, experimenting",
+type: "soft",
 photo:
 }, {
-name: "Work Ethic"
-description:
-type: "Integrity, responsibility, discipline, commitment, self-motivated, professionalism"
+name: "Work Ethic",
+description:"Integrity, responsibility, discipline, commitment, self-motivated, professionalism",
+type: "soft",
 photo:
 }, {
-name: "Interpersonal Skills"
-description: "Empathy, humor, mentoring, networking, sensitivity, patience, tolerance, public speaking, positive reinforcement, diplomacy"
-type: "soft"
+name: "Interpersonal Skills",
+description: "Empathy, humor, mentoring, networking, sensitivity, patience, tolerance, public speaking, positive reinforcement, diplomacy",
+type: "soft",
 photo:
 }, {
-name: "Time Management"
-description: "Goal setting, prioritizing, self-starter, planning, delegation, stress management, organization"
-type: "soft"
+name: "Time Management",
+description: "Goal setting, prioritizing, self-starter, planning, delegation, stress management, organization",
+type: "soft",
 photo:
 }, {
-name: "Leadership"
-description: "Empathy, selflessness, agility, listening, humility, cultural intelligence, authenticity, versatility, generosity, trust"
-type: "soft"
+name: "Leadership",
+description: "Empathy, selflessness, agility, listening, humility, cultural intelligence, authenticity, versatility, generosity, trust",
+type: "soft",
 photo:
 }, {
-name: "Attention to Detail"
-description: "Critical observation, listening, introspection, memory, acuity, questioning"
-type: "soft"
+name: "Attention to Detail",
+description: "Critical observation, listening, introspection, memory, acuity, questioning",
+type: "soft",
 photo:
 }, {
-name: "Worked with agencies / external partners"
-description:
-type: "experience"
+name: "Worked with agencies / external partners",
+description:"",
+type: "experience",
 photo:
 }, {
-name: "Territory experience"
-description:
-type: "experience"
+name: "Territory experience",
+description:"",
+type: "experience",
 photo:
 }, {
-name: "3+ years experience"
-description:
-type: "experience"
+name: "3+ years experience",
+description:"",
+type: "experience",
 photo:
 }, {
-name: "5+ years experience"
-description:
-type: "experience"
+name: "5+ years experience",
+description:"",
+type: "experience",
 photo:
 }, {
-name: "Managed end-to-end projects"
-description:
-type: "experience"
+name: "Managed end-to-end projects",
+description:"",
+type: "experience",
 photo:
 }, {
-name: "Have shown visionary thinking"
-description:
-type: "experience"
+name: "Have shown visionary thinking",
+description:"",
+type: "experience",
 photo:
 }, {
-name: "Worked in a multicultural environment"
-description:
-type: "experience"
+name: "Worked in a multicultural environment",
+description: "" ,
+type: "experience",
 photo:
 }, {
 name: "Expanded technical capability significantly"
@@ -1992,4 +1992,208 @@ skill: skills[31]
 }
 ]
 
+vacacies_hash =
+[
+{
+title: "Brand Manager",
+description:"Develop and execute seasonal and category marketing programs,
+Engage with the consumer by category to ensure targeted programs are driving brand strategies with the consumer. Adopt, enrich and creatively execute and/or support global category strategy within local markets,
+Partner across internal teams (sports marketing, event marketing, retail brand marketing, etc.) to ensure programs are executed per category brand direction,
+Lead category marketing programs to achieve defined Go to Market goals
+Track and evaluate the Marketing impact,
+Manage timelines and budget.",
+department: "Marketing",
+start_date: Date.parse("01/07/2019"),
+location: "Tokyo",
+},
+{
+title: "Data Analyst",
+description:"Interpret data, analyze results using statistical techniques and provide ongoing reports
+Develop and implement databases, data collection systems, data analytics and other strategies that optimize statistical efficiency and quality
+Acquire data from primary or secondary data sources and maintain databases/data systems
+Identify, analyze, and interpret trends or patterns in complex data sets
+Filter and “clean” data by reviewing computer reports, printouts, and performance indicators to locate and correct code problems
+Work with management to prioritize business and information needs
+Locate and define new process improvement opportunities",
+department: "IT",
+start_date: Date.parse("29/07/2019"),
+location: "Brisbane",
+},
+{
+title: "Front-end Developer",
+description:"Use markup languages like HTML to create user-friendly web pages
+Maintain and improve website
+Optimize applications for maximum speed
+Design mobile-based features
+Collaborate with back-end developers and web designers to improve usability
+Get feedback from, and build solutions for, users and customers
+Write functional requirement documents and guides
+Create quality mockups and prototypes
+Help back-end developers with coding and troubleshooting
+Ensure high quality graphic standards and brand consistency
+Stay up-to-date on emerging technologies",
+department: "IT",
+start_date: Date.parse("17/06/2019"),
+location: "Amsterdam",
+},
+{
+title: "UX Designer",
+description:"Gather and evaluate user requirements in collaboration with product managers and engineers
+Illustrate design ideas using storyboards, process flows and sitemaps
+Design graphic user interface elements, like menus, tabs and widgets
+Build page navigation buttons and search fields
+Develop UI mockups and prototypes that clearly illustrate how sites function and look like
+Create original graphic designs (e.g. images, sketches and tables)
+Prepare and present rough drafts to internal teams and key stakeholders
+Identify and troubleshoot UX problems (e.g. responsiveness)
+Conduct layout adjustments based on user feedback
+Adhere to style standards on fonts, colors and images",
+department: "IT",
+start_date: Date.parse("19/08/2019"),
+location: "Barcelona",
+}
+]
+puts "Creating Jobs..."
+vacancies = Vacancy.create!(vacancies_hash)
+
+vacancy_skills_hash =
+[
+{
+user: vacancies[0],
+skill: skills[14]
+},
+{
+user: vacancies[0],
+skill: skills[15]
+},
+{
+user: vacancies[0],
+skill: skills[16]
+},
+{
+user: vacancies[0],
+skill: skills[17]
+},
+{
+user: vacancies[0],
+skill: skills[26]
+},
+{
+user: vacancies[0],
+skill: skills[31]
+},
+{
+user: vacancies[0],
+skill: skills[33]
+},
+{
+user: vacancies[0],
+skill: skills[37]
+},
+{
+user: vacancies[0],
+skill: skills[38]
+},
+{
+user: vacancies[0],
+skill: skills[39]
+},
+{
+user: vacancies[1],
+skill: skills[2]
+},
+{
+user: vacancies[1],
+skill: skills[6]
+},{
+user: vacancies[1],
+skill: skills[10]
+},{
+user: vacancies[1],
+skill: skills[15]
+},{
+user: vacancies[1],
+skill: skills[16]
+},{
+user: vacancies[1],
+skill: skills[25]
+},
+{
+user: vacancies[1],
+skill: skills[26]
+},{
+user: vacancies[1],
+skill: skills[30]
+},{
+user: vacancies[2],
+skill: skills[0]
+},{
+user: vacancies[2],
+skill: skills[3]
+},{
+user: vacancies[2],
+skill: skills[7]
+},{
+user: vacancies[2],
+skill: skills[17]
+},{
+user: vacancies[2],
+skill: skills[24]
+},{
+user: vacancies[2],
+skill: skills[25]
+},{
+user: vacancies[2],
+skill: skills[27]
+},{
+user: vacancies[2],
+skill: skills[31]
+},{
+user: vacancies[2],
+skill: skills[33]
+},{
+user: vacancies[2],
+skill: skills[35]
+},{
+user: vacancies[2],
+skill: skills[37]
+},{
+user: vacancies[3],
+skill: skills[3]
+},{
+user: vacancies[3],
+skill: skills[6]
+},{
+user: vacancies[3],
+skill: skills[7]
+},{
+user: vacancies[3],
+skill: skills[14]
+},{
+user: vacancies[3],
+skill: skills[17]
+},{
+user: vacancies[3],
+skill: skills[26]
+},{
+user: vacancies[3],
+skill: skills[27]
+},{
+user: vacancies[3],
+skill: skills[31]
+},{
+user: vacancies[3],
+skill: skills[33]
+},{
+user: vacancies[3],
+skill: skills[34]
+},
+{
+user: vacancies[3],
+skill: skills[35]
+},{
+user: vacancies[3],
+skill: skills[37]
+},
+]
 
