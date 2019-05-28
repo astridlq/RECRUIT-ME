@@ -1,1 +1,13 @@
-_button.scss
+.button {
+  background: $our-blue;
+  color: white;
+  border-radius: 2px;
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 13px;
+  border: none;
+  padding: 10px 30px;
+  &:hover {
+    background: $blue-hover;
+  }
+}
