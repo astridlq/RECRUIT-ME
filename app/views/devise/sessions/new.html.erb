@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-      <div class="col-sm-4 offset-sm-4">
-    <div class="log-in-form">
+    <div class="col-sm-4 offset-sm-4">
+      <div class="log-in-form">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs" >
           <%= f.input :email,
