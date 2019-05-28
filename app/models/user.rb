@@ -19,4 +19,5 @@ class User < ApplicationRecord
   validates :job_title, presence: true
   validates :description, presence: true
   validates :department, presence: true
+  validates :location, presence: true
 end
