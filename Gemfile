@@ -4,6 +4,7 @@ ruby '2.5.3'
 # our gems
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'pundit'
 
 gem 'bootsnap', require: false
 gem 'devise'
