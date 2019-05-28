@@ -1,0 +1,157 @@
+// Upper bar
+
+.skill-cat-container {
+  color: $our-blue;
+  height: 140px;
+  width: 100%;
+  min-width: 930px;
+  padding: 0px 15px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  background-color: $our-light-grey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 36px;
+
+  #skill-cat-header {
+    width: 172px;
+  }
+  h2 {
+    font-weight: bolder;
+    margin-bottom: 0px;
+  }
+}
+
+.cat-btn {
+  display: flex;
+  height: 40px;
+  padding: 0px 32px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $our-blue;
+  color: $our-blue;
+  border-radius: 3px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.cat-btn:focus {
+  outline: none;
+}
+
+.cat-btn-active {
+  background-color: $our-blue;
+  color: $our-light-grey;
+}
+
+// Lower body
+
+.lower-search-container {
+  display: flex;
+  color: $our-blue;
+}
+
+.skill-container {
+  width: 68%;
+}
+
+.skill-card {
+  background-color: $our-light-grey;
+  border-radius: 3px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-right: 90px;
+  min-width: 430px;
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.hide-skills {
+  display: none;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-grid-item {
+  height: 120px;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100%
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: $our-blue;
+  color: $our-grey;
+}
+
+.show {
+  color: $our-light-grey;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section:hover .overlay {
+  opacity: 0.75;
+  transform: scale(1.02);
+}
+
+.job-select-container {
+  width: 32%;
+  color: $our-grey;
+  h4, p {
+    font-size: 15px;
+  }
+}
+
+.vacancies-container {
+  margin-top: 20px;
+  background-color: $our-light-grey;
+}
