@@ -16,8 +16,11 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :job_title, presence: true
-  validates :description, presence: true
-  validates :department, presence: true
-  validates :location, presence: true
+
+
+  #TODO: add these validations to user at update
+  # validates :job_title, presence: true
+  # validates :description, presence: true
+  # validates :department, presence: true
+  # validates :location, presence: true
 end
