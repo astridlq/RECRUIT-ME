@@ -1,0 +1,55 @@
+.container-custom {
+  max-width: 1200px;
+  margin: 10px auto;
+  background-color: white;
+  // padding: 20px 40px;
+  box-shadow: 0px 0px 5px rgba(1,1,1,0.1);
+}
+
+.employee-detail {
+  display: flex;
+  padding: 20px 20px 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #dbe8ff3d;
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 14px;
+    color: $our-blue;
+    font-weight: bold;
+    font-family: $body-font;
+  }
+  p {
+    margin: 0;
+    font-size: 13px;
+    color: $our-blue;
+  }
+  .avatar-big {
+    margin-right: 20px;
+  }
+}
+
+.employee-have-skills {
+  padding: 30px 20px;
+  border-right: 1px solid $our-light-grey;
+  h3 {
+    font-size: 16px;
+  }
+}
+
+.employee-wish-skills {
+  padding: 30px 20px;
+  h3 {
+    font-size: 16px;
+  }
+}
+
+.employee-skills {
+  display: flex;
+  flex: wrap;
+  align-items: center;
+}
