@@ -17,7 +17,6 @@ Conversation.destroy_all
 User.destroy_all
 
 puts "Creating shit"
-
 skill_hash = [
 {
 name: "Front-end Development",
