@@ -33,7 +33,7 @@
            url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
                 <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
                 <div class="section">
-                  <p class="show"><%= skill.name %></p>
+                  <p class="show-profile"><%= skill.name %></p>
                   <div class="overlay">
                   </div>
                 </div>
@@ -48,12 +48,13 @@
       <div class="skill-card" id="soft">
         <h3>SOFT SKILLS</h3>
         <div class="skills-grid">
+
           <% @soft_skills.each do |skill| %>
               <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox js-item-skill" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
                 <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
                 <div class="section">
-                  <p class="show"><%= skill.name %></p>
+                  <p class="show-profile"><%= skill.name %></p>
                   <div class="overlay">
                   </div>
                 </div>
@@ -69,12 +70,13 @@
       <div class="skill-card" id="key">
         <h3>KEY EXPERIENCE</h3>
         <div class="skills-grid">
+
           <% @key_experience.each do |skill| %>
               <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox js-item-skill" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
                 <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
                 <div class="section">
-                  <p class="show"><%= skill.name %></p>
+                  <p class="show-profile"><%= skill.name %></p>
                   <div class="overlay">
                   </div>
                 </div>
