@@ -7,13 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
-Skill.destroy_all
 DevelopSkill.destroy_all
-User.destroy_all
-Vacancy.destroy_all
 VacancySkill.destroy_all
+UserSkill.destroy_all
+Skill.destroy_all
+Vacancy.destroy_all
 Message.destroy_all
 Conversation.destroy_all
+User.destroy_all
 
 puts "Creating shit"
 
@@ -21,213 +22,213 @@ skill_hash = [
 {
 name: "Front-end Development",
 description: "The practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Back-end Web Development",
 description: "Backend development languages handle the ‘behind-the-scenes’ functionality of web applications. It’s code that connects the web to a database, manages user connections, and powers the web application itself.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Database Management",
 description: "Managing databases using management software and SQL",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "UI & UX Design",
 description: "User experience (UX) design is the process of creating products that provide meaningful and relevant experiences to users. This involves the design of the entire process of acquiring and integrating the product, including aspects of branding, design, usability, and function.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Cloud Computing",
 description: "using a network of remote servers hosted on the Internet to store, manage, and process data",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "AI & Machine Learning",
 description: "The theory and development of computer systems able to perform tasks normally requiring human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Data Analysis",
 description: "Inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Product Knowledge",
 description: "Product knowledge is an essential sales skill. Understanding your products' features allows you to present their benefits accurately and persuasively. Customers respond to enthusiastic sales staff who are passionate about their products and eager to share the benefits with them",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Rapport Building on the Cold Call",
 description: "A technique in which a salesperson contacts individuals who have not previously expressed interest in the offered products or services.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Planning and organizational skills",
 description: "Creating and keeping deadlines, delegation, goal setting and meeting goals, decision making, managing appointments, team management, project management, making schedules.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Closing Techniques",
 description: "One of the most important stages of selling is closing the deal, which is the actions taken by the sales person to gain agreement to the sale.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Post-Sale Relationship Management",
 description: "Relationship management involves strategies to build client support for a business and its offerings, and increase brand loyalty.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Demo Skills",
 description: "Demonstrate or explain products, methods, or services to persuade customers to purchase products or use services.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Consumer relevance and market knowledge",
 description: "Market knowledge is to know about the various aspects associated with the business one is offering to the market. It includes detail study about the primary and secondary activities that a company can include in its core activities so that value can be delivered to the market.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Strategic planning and Global thinking",
 description: "Strategic planning is an organizational management activity that is used to set priorities, focus energy and resources, strengthen operations, ensure that employees and other stakeholders are working toward common goals, establish agreement around intended outcomes/results, and assess and adjust the organization's direction in response to a changing environment.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Results oriented",
 description: "An individual that focuses on outcome rather than process used to produce a product or deliver a service.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Initiative and communication",
 description: "A great leader not only has initiative as an individual character trait, but also coaches his or her team or organization in a manner that creates and encourages initiative from all team members.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Financial planning",
 description: "The process of estimating the capital required and determining it’s competition. It is the process of framing financial policies in relation to procurement, investment and administration of funds of an enterprise.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Financial reporting",
 description: "Financial reporting is the disclosure of financial results and related information to management and external stakeholders (e.g., investors, customers, regulators) about how a company is performing over a specific period of time.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Auditing and compliance knowledge",
 description: "A compliance audit is a comprehensive review of an organization's adherence to regulatory guidelines. Audit reports evaluate the strength and thoroughness of compliance preparations, security policies, user access controls and risk management procedures over the course of a compliance audit.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Accounting qualified",
 description: "The AAT qualification is the minimal level of qualification required for most kinds of accountancy.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Commercial awareness",
 description: "Staying up-to-date on daily happenings and developments in the business and commercial world.",
-type: "hard",
+skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "communication",
 description: "Clarity, confidence, respect, empathy, listening, (non-)verbal communication, written communication, constructive feedback, friendliness",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Adaptability",
 description: "Curiosity, self-management, decision-making, calmness, optimism, open-mindedness, self-confidence, self-motivation",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Problem-Solving & decision making",
 description: "Lateral thinking, logical reasoning, initiative, persistence, observation, persuasion, brainstorming",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Creativity",
 description: "Divergent thinking, inspiration, imagination, design, innovation, experimenting",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Work Ethic",
 description:"Integrity, responsibility, discipline, commitment, self-motivated, professionalism",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Interpersonal Skills",
 description: "Empathy, humor, mentoring, networking, sensitivity, patience, tolerance, public speaking, positive reinforcement, diplomacy",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Time Management",
 description: "Goal setting, prioritizing, self-starter, planning, delegation, stress management, organization",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Leadership",
 description: "Empathy, selflessness, agility, listening, humility, cultural intelligence, authenticity, versatility, generosity, trust",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Attention to Detail",
 description: "Critical observation, listening, introspection, memory, acuity, questioning",
-type: "soft",
+skill_type: "soft",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Worked with agencies / external partners",
-description:"",
-type: "experience",
+description:"y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Territory experience",
-description:"",
-type: "experience",
+description:"y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "3+ years experience",
-description:"",
-type: "experience",
+description:"y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "5+ years experience",
-description:"",
-type: "experience",
+description:"y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Managed end-to-end projects",
-description:"",
-type: "experience",
+description:"y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Have shown visionary thinking",
-description:"",
-type: "experience",
+description:"y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
 name: "Worked in a multicultural environment",
-description: "" ,
-type: "experience",
+description: "y" ,
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
-name: "Expanded technical capability significantly"
-description:
-type: "experience"
+name: "Expanded technical capability significantly",
+description: "y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
-name: "Worked on out-of-expertise projects"
-description:
-type: "experience"
+name: "Worked on out-of-expertise projects",
+description: "y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }, {
-name: "Managed a team"
-description:
-type: "experience"
+name: "Managed a team",
+description: "y",
+skill_type: "experience",
 photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 }
 ]
 
-puts "Creating Skills..."
-users = Skill.create!(skill_hash)
+puts "creating kills.."
+skills = Skill.create!(skill_hash)
 
 
 user_hash =
@@ -408,7 +409,7 @@ photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
 {
 first_name:"Edvar",
 last_name:"ter Haar",
-email: "@big.com",
+email: "edvar@big.com",
 password: "password",
 password_confirmation: "password",
 job_title:"Data Analyst",
@@ -608,9 +609,11 @@ skill: skills[33]
 user: users[1],
 skill: skills[35]
 },
+{
 user: users[1],
 skill: skills[39]
 },
+{
 user: users[1],
 skill: skills[40]
 },
@@ -2022,7 +2025,7 @@ skill: skills[31]
 puts "Creating Develop Skills..."
 develop_skills = DevelopSkill.create(develop_skills_hash)
 
-vacacies_hash =
+vacancies_hash =
 [
 {
 title: "Brand Manager",
@@ -2035,6 +2038,7 @@ Manage timelines and budget.",
 department: "Marketing",
 start_date: Date.parse("01/07/2019"),
 location: "Tokyo",
+user: users[1]
 },
 {
 title: "Data Analyst",
@@ -2048,6 +2052,7 @@ Locate and define new process improvement opportunities",
 department: "IT",
 start_date: Date.parse("29/07/2019"),
 location: "Brisbane",
+user: users[2]
 },
 {
 title: "Front-end Developer",
@@ -2065,6 +2070,7 @@ Stay up-to-date on emerging technologies",
 department: "IT",
 start_date: Date.parse("17/06/2019"),
 location: "Amsterdam",
+user: users[3]
 },
 {
 title: "UX Designer",
@@ -2081,6 +2087,7 @@ Adhere to style standards on fonts, colors and images",
 department: "IT",
 start_date: Date.parse("19/08/2019"),
 location: "Barcelona",
+user: users[5]
 }
 ]
 puts "Creating Jobs..."
@@ -2089,140 +2096,140 @@ vacancies = Vacancy.create!(vacancies_hash)
 vacancy_skills_hash =
 [
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[14]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[15]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[16]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[17]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[26]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[31]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[33]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[37]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[38]
 },
 {
-user: vacancies[0],
+vacancy: vacancies[0],
 skill: skills[39]
 },
 {
-user: vacancies[1],
+vacancy: vacancies[1],
 skill: skills[2]
 },
 {
-user: vacancies[1],
+vacancy: vacancies[1],
 skill: skills[6]
 },{
-user: vacancies[1],
+vacancy: vacancies[1],
 skill: skills[10]
 },{
-user: vacancies[1],
+vacancy: vacancies[1],
 skill: skills[15]
 },{
-user: vacancies[1],
+vacancy: vacancies[1],
 skill: skills[16]
 },{
-user: vacancies[1],
+vacancy: vacancies[1],
 skill: skills[25]
 },
 {
-user: vacancies[1],
+vacancy: vacancies[1],
 skill: skills[26]
 },{
-user: vacancies[1],
+vacancy: vacancies[1],
 skill: skills[30]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[0]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[3]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[7]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[17]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[24]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[25]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[27]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[31]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[33]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[35]
 },{
-user: vacancies[2],
+vacancy: vacancies[2],
 skill: skills[37]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[3]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[6]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[7]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[14]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[17]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[26]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[27]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[31]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[33]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[34]
 },
 {
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[35]
 },{
-user: vacancies[3],
+vacancy: vacancies[3],
 skill: skills[37]
 },
 ]
