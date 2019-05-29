@@ -10,3 +10,31 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: $our-blue;
+  font-family: $headers-font;
+  font-weight: bold;
+}
+
+.nav-item.dropdown{
+  margin-left: 21px;
+}
+@media (min-width: 576px){
+  .navbar-expand-sm .navbar-nav .nav-link {
+    font-size: 14px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.company-detail {
+  display: flex;
+  align-items: center;
+  p {
+    margin-bottom: 0;
+    margin-left: 30px;
+    font-family: $headers-font;
+    color: $our-blue;
+    font-weight: 500;
+  }
+}
