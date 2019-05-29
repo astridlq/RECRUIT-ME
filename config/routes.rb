@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+
   get 'presearch', to: 'profiles#presearch', as: :presearch
   get 'profiles/search', to: 'profiles#search', as: :profile_search
   get 'myprofile', to: 'profiles#myprofile', as: :myprofile
@@ -14,4 +15,5 @@ Rails.application.routes.draw do
   resources :vacancies, only: [:index, :show]
 
   resources :conversations, only: [:index]
+
 end

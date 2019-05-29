@@ -1,0 +1,57 @@
+.card-skills {
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 2px;
+  width: 700px;
+  color: $our-blue;
+  font-weight: bold;
+  font-family: $body-font;
+}
+.skill-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.skill-choice {
+  // TO BE CHANGED FOR THE SKILLS IMAGE
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523324761162-d261f3f30ab1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  padding: 20px;
+  color: white;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 1;
+  flex: 0 0 20%;
+  font-size: 13px;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  &.active {
+    // TO BE CHANGED FOR THE SKILLS IMAGE
+    background-image: -webkit-linear-gradient(rgba(66,162,214,0.8), rgba(66,162,214,0.8)), url('https://images.unsplash.com/photo-1523324761162-d261f3f30ab1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+// SKILL with rounded shape (use <p>)
+.skill-selection {
+  color: $our-blue;
+  font-weight: bold;
+  width: fit-content;
+  font-size: 12px;
+  border: 1px solid $our-blue;
+  border-radius: 30px;
+  padding: 5px 15px;
+}
