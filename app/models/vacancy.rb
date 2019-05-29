@@ -5,6 +5,8 @@ class Vacancy < ApplicationRecord
   has_many :skills, through: :vacancy_skills
   has_many :conversations
 
+  mount_uploader :photo, PhotoUploader
+
   validates :title, presence: true
   validates :description, presence: true
   validates :department, presence: true

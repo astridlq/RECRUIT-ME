@@ -98,18 +98,24 @@
 
 .skill-grid-item {
   height: 120px;
+  display: flex;
+  align-items: center;
   position: relative;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+  align-items: center;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+  font-weight: normal;
 }
-
 
 .section {
   position: relative;
   width: 100%;
-  height: 100%
+  height: 100%;
+  color: white;
 }
 
 .image {
@@ -128,12 +134,11 @@
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: $our-blue;
-  color: $our-grey;
+  background-color: $our-light-grey;
 }
 
 .show {
-  color: $our-light-grey;
+  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -141,8 +146,12 @@
 }
 
 .section:hover .overlay {
-  opacity: 0.75;
+  opacity: 0.35;
   transform: scale(1.02);
+}
+
+.active-skill {
+    opacity: 0.50;
 }
 
 .job-select-container {
@@ -156,4 +165,8 @@
 .vacancies-container {
   margin-top: 20px;
   background-color: $our-light-grey;
+}
+
+.hidden {
+  display: none;
 }

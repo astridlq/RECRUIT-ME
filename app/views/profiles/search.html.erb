@@ -6,9 +6,9 @@
       <h2>Skill Categories</h2>
     </div>
     <button class="cat-btn cat-btn-active" data-value="all">All</button>
-    <button class="cat-btn" data-value="business">BUSINESS</button>
-    <button class="cat-btn" data-value="people">PEOPLE</button>
-    <button class="cat-btn" data-value="key">KEY EXPERIENCES</button>
+    <button class="cat-btn" data-value="hard">HARD SKILLS</button>
+    <button class="cat-btn" data-value="soft">SOFT SKILLSKILLS</button>
+    <button class="cat-btn" data-value="key">KEY EXPERIENCE</button>
   </div>
 
   <!-- Main body -->
@@ -19,195 +19,75 @@
 
     <div class="skill-container">
 
-      <!-- business skills -->
+      <!-- main form start-->
 
-      <div class="skill-card" id="business">
-        <h3>BUSINESS</h3>
+      <%= form_tag("/profiles", method: "get") do  %>
+
+      <!-- hard skills -->
+
+      <div class="skill-card" id="hard">
+        <h3>HARD SKILLS</h3>
         <div class="skills-grid">
+          <% @hard_skills.each do |skill| %>
+              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
+                <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
+                <div class="section">
+                  <p class="show"><%= skill.name %></p>
+                  <div class="overlay">
+                  </div>
+                </div>
+              </label>
+          <% end %>
+        </div>
+      </div>
 
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
 
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
+      <!-- soft skills -->
 
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-
+      <div class="skill-card" id="soft">
+        <h3>SOFT SKILLS</h3>
+        <div class="skills-grid">
+          <% @soft_skills.each do |skill| %>
+              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox js-item-skill" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
+                <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
+                <div class="section">
+                  <p class="show"><%= skill.name %></p>
+                  <div class="overlay">
+                  </div>
+                </div>
+              </label>
+          <% end %>
         </div>
       </div>
 
 
 
-
-      <!-- people skills -->
-      <div class="skill-card" id="people">
-        <h3>PEOPLE</h3>
-        <div class="skills-grid">
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- key experiences -->
+
       <div class="skill-card" id="key">
-        <h3>KEY EXPERIENCES</h3>
+        <h3>KEY EXPERIENCE</h3>
         <div class="skills-grid">
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
+          <% @key_experience.each do |skill| %>
+              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox js-item-skill" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
+                <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
+                <div class="section">
+                  <p class="show"><%= skill.name %></p>
+                  <div class="overlay">
+                  </div>
+                </div>
+              </label>
+          <% end %>
         </div>
       </div>
-    </div>
+
+    <%= submit_tag("Search") %>
+
+    <!-- main form end -->
+
+    <% end %>
 
     <!-- right side -->
 
