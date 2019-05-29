@@ -9,7 +9,7 @@
   margin-top: 60px;
   margin-bottom: 20px;
   border-radius: 3px;
-  background-color: $our-light-grey;
+  background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -36,6 +36,8 @@
   border-radius: 3px;
   align-items: center;
   font-size: 18px;
+  font-weight: bold;
+  background-color: #FFFBFF;
 }
 
 .cat-btn:focus {
@@ -59,7 +61,7 @@
 }
 
 .skill-card {
-  background-color: $our-light-grey;
+  background-color: white;
   border-radius: 3px;
   padding: 20px;
   margin-top: 20px;

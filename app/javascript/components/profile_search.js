@@ -31,5 +31,3 @@ const toggleGroup = () => {
 
 export { toggleGroup };
 
-
-document.querySelectorAll('[data-genre="horror"]');
