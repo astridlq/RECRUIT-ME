@@ -9,6 +9,6 @@ class Skill < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :type, presence: true
+  validates :skill_type, presence: true
   validates :photo, presence: true
 end
