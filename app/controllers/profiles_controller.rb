@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :set_users, only: [:show]
   after_action :authenticate_user!
 
   def search
@@ -14,6 +15,9 @@ class ProfilesController < ApplicationController
     user = current_user
     @skills_to_match = params[:skill_ids].map(&:to_i)
     set_matches
+  end
+
+  def show
   end
 
   private
@@ -34,5 +38,15 @@ class ProfilesController < ApplicationController
       is_match = (@skills_to_match & skills).any?
       @matches << user if is_match
     end
+
+    @matches = @matches.uniq
+    @matches.sort_by! do |match|
+      match.user_skills.select {|user_skill| @skills_to_match.include?(user_skill.skill_id) }.length
+    end
+  end
+
+  def set_users
+    @user = User.find(params[:id])
+    authorize @user
   end
 end

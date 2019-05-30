@@ -1,0 +1,37 @@
+.search-result-h1 {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: $our-blue;
+  text-align: center;
+  font-size: 32px;
+  font-family: $headers-font;
+}
+
+.search-result-title-h2 {
+  color: $our-blue;
+  text-align: center;
+  margin: 20px;
+}
+
+.search-result-title-h3 {
+  color: $our-blue;
+  text-align: center;
+  margin: 20px;
+  font-size: 18px;
+}
+
+
+.selected-skills-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+p#others{
+    font-size: 13px;
+    font-style: italic;
+    margin: none;
+  }
+
