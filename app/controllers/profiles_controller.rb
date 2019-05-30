@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     @all_skills = Skill.all
     @hard_skills = Skill.where(skill_type: 'hard')
     @soft_skills = Skill.where(skill_type: 'soft')
-    @key_experience = Skill.where(skill_type: 'experience')
+    @experience = Skill.where(skill_type: 'experience')
   end
 
   def index
@@ -19,5 +19,8 @@ class ProfilesController < ApplicationController
   def myprofile
     @user = current_user
     authorize @user
+    @hard_skills = @user.skills.where(skill_type: 'hard')
+    @soft_skills = @user.skills.where(skill_type: 'soft')
+    @experience = @user.skills.where(skill_type: 'experience')
   end
 end
