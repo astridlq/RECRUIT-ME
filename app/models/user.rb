@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   has_many :vacancies
   has_many :user_skills
-  has_many :skills, through: :user_skills
+  # has_many :skills, through: :user_skills
   has_many :develop_skills
-  has_many :skills, through: :develop_skills
+  # has_many :skills, through: :develop_skills
   has_many :conversations
   has_many :messages
 

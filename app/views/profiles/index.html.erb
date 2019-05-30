@@ -1,5 +1,61 @@
+<p>Exist</p>
 <ul>
-  <% @results.each do |result| %>
-  <li><%= result %></li>
+  <% @have_skills.each do |user| %>
+  <li><%= user.first_name %></li>
   <% end %>
 </ul>
+
+<p>Develop</p>
+<ul>
+  <% @dev_skills.each do |user| %>
+  <li><%= user.first_name %></li>
+  <% end %>
+</ul>
+
+
+
+<% @matches.each do |user| %>
+<div class="container-custom">
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <div class="employee-detail-all">
+        <div class="employee-detail">
+          <img src="<%= image_path user.photo %>" class="avatar-big" alt="">
+          <div class="employee-contact">
+            <h2><%= user.first_name.upcase %></h2>
+            <h3><%= user.job_title %></h3>
+            <p><%= user.location %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-4">
+      <div class="employee-have-skills-all">
+        <div class="employee-have-skills">
+          <h3>Existing skills</h3>
+          <div class="employee-skills">
+          <% @have_skills.each do |user| %>
+            <p class="skill-selection"><%= user.user_skills.name %></p>
+            <%# raise %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-4">
+      <div class="employee-wish-skills-all">
+        <div class="employee-wish-skills">
+          <h3>Wish to develop</h3>
+          <div class="employee-skills">
+            <% @have_skills.each do |user| %>
+              <p class="skill-selection"><%= user.develop_skills.name %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
