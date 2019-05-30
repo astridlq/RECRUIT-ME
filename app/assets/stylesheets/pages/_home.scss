@@ -15,7 +15,7 @@ font-weight: 800;
 font-size: 48px;
 line-height: 65px;
 color: white;
-padding: 30px;
+padding: 100px;
 }
 
 .home-btns {
@@ -68,6 +68,6 @@ text-align: center;
 }
 
 .home-btn-candidate:hover {
-  color: $blue-hover;
+  background-color: $blue-hover;
   border: 1px solid $blue-hover;
 }
