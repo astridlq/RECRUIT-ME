@@ -11,34 +11,28 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @users = policy_scope(User).order(created_at: :desc)
+    user = current_user
+    @skills_to_match = params[:skill_ids].map(&:to_i)
+    set_matches
+  end
 
-    skills_to_match = params[:skill_ids].map(&:to_i)
+  private
 
+  def set_matches
+    @matches = []
     # Have
-    @have_skills = []
-    @users.each do |user|
+    users = policy_scope(User).order(created_at: :desc)
+    users.each do |user|
       skills = user.user_skills.pluck(:skill_id)
-      is_match = (skills_to_match & skills).any?
-      if is_match
-        @have_skills << user
-      end
+      is_match = (@skills_to_match & skills).any?
+      @matches << user if is_match
     end
 
     # Develop
-    @dev_skills = []
-    @users.each do |user|
+    users.each do |user|
       skills = user.develop_skills.pluck(:skill_id)
-      is_match = (skills_to_match & skills).any?
-      if is_match
-        @dev_skills << user
-      end
+      is_match = (@skills_to_match & skills).any?
+      @matches << user if is_match
     end
-
-    matches = []
-    matches << @have_skills
-    matches << @dev_skills
-    @matches = matches.flatten
   end
 end
