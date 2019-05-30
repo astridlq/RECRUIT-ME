@@ -1,6 +1,9 @@
 const selectedBtns = document.querySelectorAll('.cat-btn');
 const selectedSkillCards = document.querySelectorAll('.skill-card');
 const skills = document.querySelectorAll('.skill-grid-item');
+const clear_hard = document.getElementById('clear-hard')
+const clear_soft = document.getElementById('clear-soft')
+const clear_key = document.getElementById('clear-key')
 
 const hideGrids = (data_value, old_value) => {
   if (data_value !== old_value) {
@@ -47,5 +50,26 @@ const skillActive = () => {
   })
 };
 
-export { toggleGroup, skillActive };
+const clearSkills = () => {
+  clear_hard.addEventListener("click", () => {
+    document.querySelectorAll('.hard').forEach((element) => {
+      element.classList.remove("active-skill");
+      element.firstElementChild.checked = false;
+    })
+  });
+  clear_soft.addEventListener("click", () => {
+    document.querySelectorAll('.soft').forEach((element) => {
+      element.classList.remove("active-skill");
+      element.firstElementChild.checked = false;
+    })
+  });
+  clear_key.addEventListener("click", () => {
+    document.querySelectorAll('.key').forEach((element) => {
+      element.classList.remove("active-skill");
+      element.firstElementChild.checked = false;
+    })
+  });
+}
+
+export { toggleGroup, skillActive,clearSkills };
 
