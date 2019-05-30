@@ -15,5 +15,6 @@ class ProfilesController < ApplicationController
     @user = current_user
     @users = policy_scope(User).order(created_at: :desc)
     @results = params[:skill_ids]
+
   end
 end

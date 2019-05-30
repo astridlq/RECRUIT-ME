@@ -4,6 +4,7 @@ const skills = document.querySelectorAll('.skill-grid-item');
 const clear_hard = document.getElementById('clear-hard')
 const clear_soft = document.getElementById('clear-soft')
 const clear_key = document.getElementById('clear-key')
+const clear_all = document.getElementById('clear-all')
 const jobs = document.querySelectorAll('.check-box');
 const selectionCollection = document.getElementById('selection-collection')
 const skillLabels = document.querySelectorAll('.hidden')
@@ -97,7 +98,7 @@ const clearSkills = () => {
         objArr[element.previousElementSibling.value] = 0;
       }
       element.classList.remove("active-skill");
-      element.firstElementChild.checked = false;
+      element.previousElementSibling.checked = false;
     })
     inject();
   });
@@ -107,7 +108,7 @@ const clearSkills = () => {
         objArr[element.previousElementSibling.value] = 0;
       }
       element.classList.remove("active-skill");
-      element.firstElementChild.checked = false;
+      element.previousElementSibling.checked = false;
     })
     inject();
   });
@@ -117,8 +118,22 @@ const clearSkills = () => {
         objArr[element.previousElementSibling.value] = 0;
       }
       element.classList.remove("active-skill");
-      element.firstElementChild.checked = false;
+      element.previousElementSibling.checked = false;
     })
+    inject();
+  });
+  clear_all.addEventListener("click", () => {
+    skills.forEach((element) => {
+      if (element.classList.contains("active-skill")) {
+        objArr[element.previousElementSibling.value] = 0;
+      }
+      element.classList.remove("active-skill");
+      element.previousElementSibling.checked = false;
+    })
+
+    jobs.forEach((job) => {
+      job.checked = false;
+    });
     inject();
   });
 }
