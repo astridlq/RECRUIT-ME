@@ -1,7 +1,6 @@
  .job-info {
+  margin: 15px 0px;
   background: white;
-  // padding: 20px;
-  margin: 10px;
   border-radius: 2px;
   text-align: center;
   width: 323px;
@@ -10,21 +9,21 @@
 
   h1 {
     padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 0px;
     color: $our-blue;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     font-family: $headers-font;
   }
   p {
-    margin: 0 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
     color: $our-grey;
     font-family: $body-font;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 25px;
     color: #5E5D5D;
   }
@@ -60,7 +59,7 @@
   display: flex;
   align-items: flex-end;
   img {
-    width: 100%;
+    width: 323px;
     height: 100%;
   }
 }
@@ -68,6 +67,9 @@
 .job-text {
 height: 78px;
 overflow: hidden;
+font-size: 13px;
+padding: 0px 28px;
+text-align: left;
 }
 
 .fad {
@@ -81,7 +83,7 @@ overflow: hidden;
   bottom: 0;
   right: 0;
   width: 70%;
-  height: 26px;
+  height: 22px;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 85%);
 }
 
