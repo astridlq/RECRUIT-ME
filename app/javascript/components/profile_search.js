@@ -132,6 +132,7 @@ const clearSkills = () => {
     })
 
     jobs.forEach((job) => {
+      job.parentElement.parentElement.classList.remove("job-active")
       job.checked = false;
     });
     inject();

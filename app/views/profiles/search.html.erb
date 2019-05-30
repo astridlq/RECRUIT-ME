@@ -94,12 +94,6 @@
         </div>
       </div>
 
-    <%= submit_tag("Search") %>
-
-    <!-- main form end -->
-
-    <% end %>
-
     <!-- right side -->
   </div>
 
@@ -131,6 +125,11 @@
         <div class="d-flex flex-wrap job-name-container">
           <div id="selection-collection"></div>
         </div>
+        <!-- <div class="d-flex justify-content-center"> -->
+          <%= submit_tag("Search", class: 'search-btn') %>
+          <% end %>
+        <!-- </div> -->
+        <!-- main form end -->
       </div>
     </div>
 
