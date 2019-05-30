@@ -1,7 +1,7 @@
 import "bootstrap";
 
-import { skillActive } from '../components/skill_choice';
-import { toggleGroup } from '../components/profile_search';
+import { toggleGroup, skillActive, clearSkills } from '../components/profile_search';
 
-// skillActive();
-toggleGroup()
+clearSkills();
+skillActive();
+toggleGroup();

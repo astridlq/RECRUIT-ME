@@ -1,13 +1,20 @@
 <div class="container">
-    <h3><%= @user.job_title %> </h3>
-    <h5><%= @user.department %> </h5>
-    <h5><%= @user.location %> </h5>
-    <p><%= @user.description %></p>
 
   <div class="myprofile-container">
-    <div id="myprofile-header">
+    <div class="myprofile-image">
+      <%= cl_image_tag @user.photo %>
+    </div>
+    <div class="myprofile-name">
       <h1><%= @user.first_name %></h1>
-    <%= cl_image_tag @user.photo %>
+    </div>
+  </div>
+
+  <div class="myprofile-info-container">
+    <div class="myprofile-info-card">
+      <h3><%= @user.job_title %> </h3>
+      <h5><%= @user.department %> </h5>
+      <h5><%= @user.location %> </h5>
+      <p><%= @user.description %></p>
     </div>
   </div>
 
@@ -212,5 +219,5 @@
   </div>
 </div>
 
-  </div>
+</div>
 

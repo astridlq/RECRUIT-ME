@@ -1,1 +1,68 @@
 // Specific CSS for your home-page
+.home-container {
+  height: 700px;
+  background-image: url("https://images.unsplash.com/photo-1506606401543-2e73709cebb4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
+  background-size: cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+h1 {
+font-family: Open Sans;
+font-style: normal;
+font-weight: 800;
+font-size: 48px;
+line-height: 65px;
+color: white;
+padding: 100px;
+}
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-btn-job {
+background-color: white;
+color: $our-blue;
+border-radius: 2px;
+height: 183px;
+width: 183px;
+display: flex;
+justify-content: center;
+margin: 10px;
+font-family: Raleway;
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+align-items: center;
+}
+
+.home-btn-job:hover {
+  color: $blue-hover;
+  border: 1px solid $blue-hover;
+}
+
+.home-btn-candidate {
+background-color: $our-blue;
+color: white;
+border-radius: 2px;
+height: 183px;
+width: 183px;
+display: flex;
+justify-content: center;
+margin: 10px;
+font-family: Raleway;
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+align-items: center;
+
+}
+
+.home-btn-candidate:hover {
+  background-color: $blue-hover;
+  border: 1px solid $blue-hover;
+}
