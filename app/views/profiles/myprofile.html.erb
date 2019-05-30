@@ -9,74 +9,80 @@
     </div>
   </div>
 
-  <div class="myprofile-info-container">
-    <div class="myprofile-info-card">
-      <h3><%= @user.job_title %> </h3>
-      <h5><%= @user.department %> </h5>
-      <h5><%= @user.location %> </h5>
-      <p><%= @user.description %></p>
-    </div>
-  </div>
-
-  <!-- Main body -->
-
-  <div class="lower-search-container">
+  <div class="d-flex">
 
     <!-- left side -->
 
-    <div class="skill-container">
+    <!-- description box -->
+    <div class="left-side">
 
-      <!-- business skills -->
-
-      <div class="skill-card" id="business">
-        <h3>BUSINESS</h3>
-        <div class="skills-grid">
-
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show-profile">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
+      <div class="myprofile-info-container">
+        <div class="myprofile-info-card">
+          <div class="d-flex justify-content-between">
+            <h2><%= @user.job_title %></h2>
+            <i class="fas fa-edit" id="clear-hard"></i>
+          </div>
+          <div>
+            <h5 ><%= @user.department %></h5>
+            <h5 align="right"><%= @user.location %></h5>
           </div>
 
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show-profile">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show-profile">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-grid-item">
-            <div class="section">
-              <img src="https://source.unsplash.com/random/150x150" class="image" style="">
-              <p class="show-profile">Skill Name</p>
-              <div class="overlay">
-              </div>
-            </div>
-          </div>
-
+          <p><%= @user.description %></p>
         </div>
       </div>
+      <div class="skill-container">
 
+        <!-- key experiences  -->
 
+        <div class="skill-card" id="business">
+          <h3>Key experiences</h3>
+          <div class="skills-grid">
 
+            <div class="skill-grid-item">
+              <div class="section">
+                <img src="https://source.unsplash.com/random/150x150" class="image" style="">
+                <p class="show-profile">Skill Name</p>
+                <div class="overlay">
+                </div>
+              </div>
+            </div>
 
+            <div class="skill-grid-item">
+              <div class="section">
+                <img src="https://source.unsplash.com/random/150x150" class="image" style="">
+                <p class="show-profile">Skill Name</p>
+                <div class="overlay">
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-grid-item">
+              <div class="section">
+                <img src="https://source.unsplash.com/random/150x150" class="image" style="">
+                <p class="show-profile">Skill Name</p>
+                <div class="overlay">
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-grid-item">
+              <div class="section">
+                <img src="https://source.unsplash.com/random/150x150" class="image" style="">
+                <p class="show-profile">Skill Name</p>
+                <div class="overlay">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--right side  -->
+    <div class="right">
       <!-- people skills -->
       <div class="skill-card" id="people">
-        <h3>PEOPLE</h3>
+        <h3>soft skills</h3>
         <div class="skills-grid">
           <div class="skill-grid-item">
             <div class="section">
@@ -146,7 +152,7 @@
       </div>
       <!-- key experiences -->
       <div class="skill-card" id="key">
-        <h3>KEY EXPERIENCES</h3>
+        <h3>hard skills</h3>
         <div class="skills-grid">
           <div class="skill-grid-item">
             <div class="section">
@@ -215,9 +221,6 @@
         </div>
       </div>
     </div>
-
   </div>
-</div>
-
 </div>
 

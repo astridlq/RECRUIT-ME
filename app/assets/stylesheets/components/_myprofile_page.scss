@@ -16,7 +16,7 @@
 
   h1 {
     font-weight: bolder;
-    margin-bottom: 0px;
+    color: $our-blue;
   }
 
   img {
@@ -37,9 +37,29 @@
   }
 }
 
+h1, h2 {
+    font-weight: bolder;
+    color: $our-blue;
+  }
+
 .myprofile-info-container {
-  width: 50%;
+  width: 100%;
 }
 .myprofile-info-card {
   background-color: white;
+  padding: 20px;
+}
+
+.skills-container {
+width: 50%;
+
+}
+.skill-card {
+  margin: none;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
 }
