@@ -19,6 +19,15 @@ class ProfilesController < ApplicationController
   end
 
   def show
+
+  end
+
+  def myprofile
+    @user = current_user
+    authorize @user
+    @hard_skills = @user.skills.where(skill_type: 'hard')
+    @soft_skills = @user.skills.where(skill_type: 'soft')
+    @experience = @user.skills.where(skill_type: 'experience')
   end
 
   private
@@ -51,11 +60,5 @@ class ProfilesController < ApplicationController
     authorize @user
   end
 
-  def myprofile
-    @user = current_user
-    authorize @user
-    @hard_skills = @user.skills.where(skill_type: 'hard')
-    @soft_skills = @user.skills.where(skill_type: 'soft')
-    @experience = @user.skills.where(skill_type: 'experience')
-  end
+
 end
