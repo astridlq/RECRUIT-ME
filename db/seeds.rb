@@ -37,7 +37,7 @@ photo: File.open(Rails.root.join("db/fixtures/skills/database_management.jpg"))
 name: "UI & UX Design",
 description: "User experience (UX) design is the process of creating products that provide meaningful and relevant experiences to users. This involves the design of the entire process of acquiring and integrating the product, including aspects of branding, design, usability, and function.",
 skill_type: "hard",
-photo: File.open(Rails.root.join("db/fixtures/skills/UX_design.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/skills/ux_design.jpg"))
 }, {
 name: "Cloud Computing",
 description: "using a network of remote servers hosted on the Internet to store, manage, and process data",
@@ -47,7 +47,7 @@ photo: File.open(Rails.root.join("db/fixtures/skills/cloud_computing.jpg"))
 name: "AI & Machine Learning",
 description: "The theory and development of computer systems able to perform tasks normally requiring human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages",
 skill_type: "hard",
-photo: File.open(Rails.root.join("db/fixtures/skills/AI_machine_learning.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/skills/ai_machine_learning.jpg"))
 }, {
 name: "Data Analysis",
 description: "Inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.",
