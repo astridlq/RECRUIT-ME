@@ -136,7 +136,7 @@
 
 <!-- hidden array for adding skills -->
 <% if @pre_selected %>
-  <ul>
+  <ul class="hidden">
   <% @pre_selected.each do |skill| %>
     <li value="<%= skill %>" class="hidden-skill"></li>\
   <% end %>
