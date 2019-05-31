@@ -19,7 +19,10 @@ class ProfilesController < ApplicationController
   end
 
   def show
-
+    @user = User.find(params[:id])
+    @existing_skills = @user.user_skills
+    @develop_skills = @user.develop_skills
+    @experience = @user.skills.where(skill_type: 'experience')
   end
 
   def myprofile

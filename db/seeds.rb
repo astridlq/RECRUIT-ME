@@ -64,6 +64,11 @@ description: "A technique in which a salesperson contacts individuals who have n
 skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/cold_call.jpg"))
 }, {
+name: "Qualification Questioning",
+description: "ISEs need to start off every sales conversations by asking questions.",
+skill_type: "hard",
+photo: File.open(Rails.root.join("db/fixtures/skills/question.jpg"))
+}, {
 name: "Planning and organizational skills",
 description: "Creating and keeping deadlines, delegation, goal setting and meeting goals, decision making, managing appointments, team management, project management, making schedules.",
 skill_type: "hard",
@@ -132,7 +137,12 @@ photo: File.open(Rails.root.join("db/fixtures/skills/commercial_awareness.jpg"))
 name: "Communication",
 description: "Clarity, confidence, respect, empathy, listening, (non-)verbal communication, written communication, constructive feedback, friendliness",
 skill_type: "soft",
-photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/skills/communication.jpg"))
+}, {
+name: "Team Work",
+description: "Conflict management, delegation, listening, active listening, collaboration, cooperation, idea exchange, negotiating",
+skill_type: "soft",
+photo: File.open(Rails.root.join("db/fixtures/skills/teamwork.jpg"))
 }, {
 name: "Adaptability",
 description: "Curiosity, self-management, decision-making, calmness, optimism, open-mindedness, self-confidence, self-motivation",
@@ -226,7 +236,7 @@ photo: File.open(Rails.root.join("db/fixtures/skills/managed_a_team.jpg"))
 }
 ]
 
-puts "creating kills.."
+puts "Creating skills.."
 skills = Skill.create!(skill_hash)
 
 
@@ -1753,11 +1763,11 @@ skill: skills[1]
 },
 {
 user: users[8],
-skill: skills[23]
+skill: skills[26]
 },
 {
 user: users[8],
-skill: skills[29]
+skill: skills[31]
 },
 {
 user: users[9],
