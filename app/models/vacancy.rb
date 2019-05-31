@@ -2,6 +2,7 @@ class Vacancy < ApplicationRecord
   belongs_to :user
 
   has_many :vacancy_skills
+  has_many :preferred_skills
   has_many :skills, through: :vacancy_skills
   has_many :conversations
 
