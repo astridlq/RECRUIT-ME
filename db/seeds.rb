@@ -269,7 +269,7 @@ description:"I am a Key Account Executive but I don't really enjoy it. I decided
 department:"Sales",
 is_manager: false,
 location:"Amsterdam",
-photo: File.open(Rails.root.join("db/fixtures/users/dion_dion.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/alexander.jpg"))
 },
 {
 first_name:"Edward",
@@ -282,7 +282,7 @@ description:"Coding anything, anytime, anywhere. You know where to find me. Does
 department:"IT",
 is_manager: false,
 location:"London",
-photo: File.open(Rails.root.join("db/fixtures/users/dion_dion.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/edward.jpg"))
 },
 {
 first_name:"Astrid",
@@ -295,7 +295,7 @@ description:"I got a Master's degree in Digital Marketing in France, also spendi
 After a 8-month solo road-trip in Asia, I started working in Digital Sales.
 But my passion is in design. I thus decided to join Le Wagon to get better tech knowledge and eventually change career in Front-end / UX",
 department:"IT",
-is_manager: false,
+is_manager: true,
 location:"Amsterdam",
 photo: File.open(Rails.root.join("db/fixtures/users/astrid.jpg"))
 },
@@ -468,7 +468,7 @@ description:"I'm 30 years old and I'm living in Almere together with my boyfrien
 department:"Sales",
 is_manager: true,
 location:"Tokyo",
-photo: File.open(Rails.root.join("db/fixtures/users/dion_dion.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/omolola.jpg"))
 },
 {
 first_name:"Juriaan",
@@ -546,7 +546,7 @@ description:"I'm an Australian. And, yes the stereotype is true, I love drinking
 department:"Sales",
 is_manager: false,
 location:"Paris",
-photo: File.open(Rails.root.join("db/fixtures/users/dion_dion.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/elia.jpg"))
 },
 {
 first_name:"Jacob",
