@@ -1,0 +1,4 @@
+var conversation = conversations.querySelector('[data-conversation-id="<%= @conversation.id %>"]');
+conversation.querySelector('.messages-list').querySelector('ul').insertAdjacentHTML('beforeend', '<%= j render "messages/message", message: @message, user: current_user %>');
+
+conversation.querySelector('textarea').value = "";
