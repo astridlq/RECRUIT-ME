@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :develop_skills
   has_many :conversations
   has_many :messages
-
+  has_many :skills, through: :user_skills
   mount_uploader :photo, PhotoUploader
 
   validates :first_name, presence: true
