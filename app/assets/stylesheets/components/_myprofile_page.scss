@@ -15,8 +15,9 @@
   font-size: 36px;
 
   h1 {
-    font-weight: bolder;
+    font-weight: bold;
     color: $our-blue;
+    font-size: 34px;
   }
 
   img {
@@ -29,7 +30,8 @@
   }
 
   .myprofile-name {
-    margin-left: 40px;
+    text-align: left;
+
   }
 
   .myprofile-image {
@@ -38,7 +40,7 @@
 }
 
 h1, h2 {
-    font-weight: bolder;
+    font-weight: bold;
     color: $our-blue;
   }
 
@@ -49,12 +51,17 @@ h1, h2 {
   background-color: white;
   padding: 50px;
   margin-bottom: 15px;
+  font-size: 14px;
+  h2 {font-size: 25px;}
+  h5 {font-size: 12px;
+    font-weight: 400;}
 }
 
 .myprofile-skill-card {
+  color: $our-blue;
   background-color: white;
   border-radius: 3px;
-  padding: 50px;
+  padding: 30px;
   margin-bottom: 15px;
   min-width: 430px;
   h3 {
