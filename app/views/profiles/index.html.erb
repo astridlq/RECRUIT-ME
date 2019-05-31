@@ -1,5 +1,65 @@
-<ul>
-  <% @results.each do |result| %>
-  <li><%= result %></li>
+<div class="container">
+
+  <h1 class="search-result-h1">LOOKING FOR A CANDIDATE</h1>
+
+  <h3 class="search-result-title-h3">Your Selection</h3>
+  <div class="selected-skills-result">
+    <% @skills_to_match.each do |selected_skill| %>
+    <p class="skill-selection"><%= Skill.find(selected_skill).name %></p>
+    <% end %>
+    <%= link_to "+", profile_search_path, class: "edit-plus" %>
+  </div>
+
+  <h2 class="search-result-title-h2">Matching profiles</h2>
+
+
+  <% @matches.reverse.first(7).each do |user| %>
+  <%= link_to profile_path(user.id) do %>
+  <div class="container-custom">
+    <div class="row">
+      <div class="col-12 col-sm-4">
+        <div class="employee-detail-all">
+          <div class="employee-detail">
+            <img src="<%= image_path user.photo %>" class="avatar-big" alt="">
+            <div class="employee-contact">
+              <h2><%= user.first_name.capitalize %> <%= user.last_name.upcase %></h2>
+              <h3><%= user.job_title %></h3>
+              <p><%= user.location %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4">
+        <div class="employee-have-skills-all">
+          <div class="employee-have-skills">
+            <h3>Existing skills</h3>
+            <div class="employee-skills">
+              <% user.user_skills.select {|user_skill| @skills_to_match.include?(user_skill.skill_id) }.each do |user_skill| %>
+              <p class="skill-selection"><%= user_skill.skill.name %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="employee-wish-skills-all">
+          <div class="employee-wish-skills">
+            <h3>Wish to develop</h3>
+            <% if user.develop_skills.select {|user_skill| @skills_to_match.include?(user_skill.skill_id) }.empty? %>
+              <p id="others">Other skills than selected...</p>
+            <% else %>
+              <div class="employee-skills">
+                <% user.develop_skills.select {|user_skill| @skills_to_match.include?(user_skill.skill_id) }.each do |user_skill| %>
+                  <p class="skill-selection"><%= user_skill.skill.name %></p>
+                <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
-</ul>
+  <% end %>
+</div>
