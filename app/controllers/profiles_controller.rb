@@ -50,4 +50,12 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
   end
+
+  def myprofile
+    @user = current_user
+    authorize @user
+    @hard_skills = @user.skills.where(skill_type: 'hard')
+    @soft_skills = @user.skills.where(skill_type: 'soft')
+    @experience = @user.skills.where(skill_type: 'experience')
+  end
 end

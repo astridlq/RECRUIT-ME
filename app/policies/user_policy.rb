@@ -13,6 +13,9 @@ class UserPolicy < ApplicationPolicy
     @user.is_manager
   end
 
+  def myprofile?
+  end
+
   def show?
     true
   end
