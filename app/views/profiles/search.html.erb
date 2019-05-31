@@ -34,7 +34,7 @@
           <% @hard_skills.each do |skill| %>
               <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
               <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
+           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>');">
                 <div class="section">
                   <p class="show-profile"><%= skill.name %></p>
                   <div class="overlay">

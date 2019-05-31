@@ -22,17 +22,18 @@
   h2 {
     font-size: 18px;
     font-weight: bold;
+    color: $our-blue;
   }
   h3 {
     font-size: 14px;
-    color: $our-blue;
+    color: $our-grey;
     font-weight: bold;
     font-family: $body-font;
   }
   p {
     margin: 0;
     font-size: 13px;
-    color: $our-blue;
+    color: $our-grey;
   }
   .avatar-big {
     margin-right: 20px;
@@ -49,6 +50,7 @@
   border-right: 1px solid $our-light-grey;
   h3 {
     font-size: 16px;
+    color: $our-grey;
   }
   .employee-have-skills {
     padding: 10px 10px;
@@ -60,6 +62,7 @@
   align-items: center;
   height: 100%;
   h3 {
+    color: $our-grey;
     font-size: 16px;
   }
   .employee-wish-skills {
