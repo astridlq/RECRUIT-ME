@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_31_104819) do
+
+ActiveRecord::Schema.define(version: 2019_05_31_120532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +44,15 @@ ActiveRecord::Schema.define(version: 2019_05_31_104819) do
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "preferred_skills", force: :cascade do |t|
+    t.bigint "vacancy_id"
+    t.bigint "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_preferred_skills_on_skill_id"
+    t.index ["vacancy_id"], name: "index_preferred_skills_on_vacancy_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -110,6 +120,8 @@ ActiveRecord::Schema.define(version: 2019_05_31_104819) do
   add_foreign_key "develop_skills", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "preferred_skills", "skills"
+  add_foreign_key "preferred_skills", "vacancies"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
   add_foreign_key "vacancies", "users"

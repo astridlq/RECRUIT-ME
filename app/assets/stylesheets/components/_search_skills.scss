@@ -129,12 +129,30 @@
   }
 }
 
+.skills-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .skills-grid-1 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .skills-grid-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .skill-grid-item {
   height: 120px;
   display: flex;
   align-items: center;
   position: relative;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -172,6 +190,7 @@
 
 .show-profile {
   color: white;
+  z-index: 2;
   position: absolute;
   top: 50%;
   left: 50%;

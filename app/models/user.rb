@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :vacancies
   has_many :user_skills
   has_many :develop_skills
+
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
 

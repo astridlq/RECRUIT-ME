@@ -64,6 +64,11 @@ description: "A technique in which a salesperson contacts individuals who have n
 skill_type: "hard",
 photo: File.open(Rails.root.join("db/fixtures/skills/cold_call.jpg"))
 }, {
+name: "Qualification Questioning",
+description: "ISEs need to start off every sales conversations by asking questions.",
+skill_type: "hard",
+photo: File.open(Rails.root.join("db/fixtures/skills/question.jpg"))
+}, {
 name: "Planning and organizational skills",
 description: "Creating and keeping deadlines, delegation, goal setting and meeting goals, decision making, managing appointments, team management, project management, making schedules.",
 skill_type: "hard",
@@ -132,7 +137,12 @@ photo: File.open(Rails.root.join("db/fixtures/skills/commercial_awareness.jpg"))
 name: "Communication",
 description: "Clarity, confidence, respect, empathy, listening, (non-)verbal communication, written communication, constructive feedback, friendliness",
 skill_type: "soft",
-photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/skills/communication.jpg"))
+}, {
+name: "Team Work",
+description: "Conflict management, delegation, listening, active listening, collaboration, cooperation, idea exchange, negotiating",
+skill_type: "soft",
+photo: File.open(Rails.root.join("db/fixtures/skills/teamwork.jpg"))
 }, {
 name: "Adaptability",
 description: "Curiosity, self-management, decision-making, calmness, optimism, open-mindedness, self-confidence, self-motivation",
@@ -226,7 +236,7 @@ photo: File.open(Rails.root.join("db/fixtures/skills/managed_a_team.jpg"))
 }
 ]
 
-puts "creating kills.."
+puts "Creating skills.."
 skills = Skill.create!(skill_hash)
 
 
@@ -269,7 +279,7 @@ description:"I am a Key Account Executive but I don't really enjoy it. I decided
 department:"Sales",
 is_manager: false,
 location:"Amsterdam",
-photo: File.open(Rails.root.join("db/fixtures/users/dion_dion.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/alexander.jpg"))
 },
 {
 first_name:"Edward",
@@ -282,7 +292,7 @@ description:"Coding anything, anytime, anywhere. You know where to find me. Does
 department:"IT",
 is_manager: false,
 location:"London",
-photo: File.open(Rails.root.join("db/fixtures/users/dion_dion.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/edward.jpg"))
 },
 {
 first_name:"Astrid",
@@ -290,12 +300,12 @@ last_name:"Le Quéré",
 email: "astrid@big.com",
 password: "password",
 password_confirmation: "password",
-job_title:"UX Design Specialist",
+job_title:"UX Designer",
 description:"I got a Master's degree in Digital Marketing in France, also spending some time in Canada, in the Netherlands and Hong-Kong.
 After a 8-month solo road-trip in Asia, I started working in Digital Sales.
 But my passion is in design. I thus decided to join Le Wagon to get better tech knowledge and eventually change career in Front-end / UX",
 department:"IT",
-is_manager: false,
+is_manager: true,
 location:"Amsterdam",
 photo: File.open(Rails.root.join("db/fixtures/users/astrid.jpg"))
 },
@@ -468,7 +478,7 @@ description:"I'm 30 years old and I'm living in Almere together with my boyfrien
 department:"Sales",
 is_manager: true,
 location:"Tokyo",
-photo: File.open(Rails.root.join("db/fixtures/users/dion_dion.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/omolola.jpg"))
 },
 {
 first_name:"Juriaan",
@@ -546,7 +556,7 @@ description:"I'm an Australian. And, yes the stereotype is true, I love drinking
 department:"Sales",
 is_manager: false,
 location:"Paris",
-photo: File.open(Rails.root.join("db/fixtures/users/dion_dion.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/elia.jpg"))
 },
 {
 first_name:"Jacob",
@@ -1753,11 +1763,11 @@ skill: skills[1]
 },
 {
 user: users[8],
-skill: skills[23]
+skill: skills[26]
 },
 {
 user: users[8],
-skill: skills[29]
+skill: skills[31]
 },
 {
 user: users[9],

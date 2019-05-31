@@ -1,4 +1,4 @@
-class UserPolicy < ApplicationPolicy
+class VacancyPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -11,13 +11,5 @@ class UserPolicy < ApplicationPolicy
 
   def index?
     @user.is_manager
-  end
-
-  def myprofile?
-    true
-  end
-
-  def show?
-    true
   end
 end
