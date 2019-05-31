@@ -290,7 +290,7 @@ last_name:"Le Quéré",
 email: "astrid@big.com",
 password: "password",
 password_confirmation: "password",
-job_title:"UX Design Specialist",
+job_title:"UX Designer",
 description:"I got a Master's degree in Digital Marketing in France, also spending some time in Canada, in the Netherlands and Hong-Kong.
 After a 8-month solo road-trip in Asia, I started working in Digital Sales.
 But my passion is in design. I thus decided to join Le Wagon to get better tech knowledge and eventually change career in Front-end / UX",
