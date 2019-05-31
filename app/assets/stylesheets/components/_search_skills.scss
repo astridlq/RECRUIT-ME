@@ -1,0 +1,196 @@
+// Upper bar
+
+.skill-cat-container {
+  color: $our-blue;
+  height: 140px;
+  width: 100%;
+  min-width: 930px;
+  padding: 0px 15px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 36px;
+
+  #skill-cat-header {
+    width: 172px;
+  }
+  h2 {
+    font-weight: bolder;
+    margin-bottom: 0px;
+  }
+}
+
+.cat-btn {
+  display: flex;
+  height: 40px;
+  padding: 0px 32px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $our-blue;
+  color: $our-blue;
+  border-radius: 3px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #FFFBFF;
+  transition: .3s ease;
+}
+
+.cat-btn:focus {
+  outline: none;
+}
+
+.cat-btn-active {
+  background-color: $our-blue;
+  color: $our-light-grey;
+}
+
+// Lower body
+
+.lower-search-container {
+  display: flex;
+  align-items: flex-start;
+  color: $our-blue;
+  min-width: 690px;
+}
+
+.skill-container {
+  width: 68%;
+}
+
+.skill-card {
+  background-color: white;
+  border-radius: 3px;
+  padding: 20px 12px;
+  margin-top: 20px;
+  margin-right: 90px;
+  min-width: 430px;
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.hide-skills {
+  display: none;
+}
+
+.fa-eraser {
+  color: $our-grey;
+}
+
+.fa-eraser:hover {
+  animation: shake 0.45s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-0.5px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(1px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-grid-item {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  align-items: center;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: $our-light-grey;
+}
+
+.show-profile {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section:hover .overlay {
+  opacity: 0.35;
+  transform: scale(1.02);
+}
+
+.active-skill .overlay {
+    opacity: 0.70;
+    background-color: $our-blue;
+}
+
+// to hide the checkboxes
+
+.hidden {
+  display: none;
+}
+

@@ -1,204 +1,163 @@
-// Upper bar
-
-.skill-cat-container {
-  color: $our-blue;
-  height: 140px;
-  width: 100%;
-  min-width: 930px;
-  padding: 0px 15px;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  border-radius: 3px;
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-weight: bolder;
-  font-size: 36px;
-
-  #skill-cat-header {
-    width: 172px;
-  }
-  h2 {
-    font-weight: bolder;
-    margin-bottom: 0px;
-  }
-}
-
-.cat-btn {
-  display: flex;
-  height: 40px;
-  padding: 0px 32px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: $our-blue;
-  color: $our-blue;
-  border-radius: 3px;
-  align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #FFFBFF;
-}
-
-.cat-btn:focus {
-  outline: none;
-}
-
-.cat-btn-active {
-  background-color: $our-blue;
-  color: $our-light-grey;
-}
-
-// Lower body
-
-.lower-search-container {
-  display: flex;
-  color: $our-blue;
-}
-
-.skill-container {
-  width: 68%;
-}
-
-.skill-card {
-  background-color: white;
-  border-radius: 3px;
-  padding: 12px;
-
-  margin-right: 90px;
-  min-width: 430px;
-  h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-}
-
-.hide-skills {
-  display: none;
-}
-
-.fa-eraser {
-  color: $our-grey;
-}
-
-.fa-eraser:hover {
-  animation: shake 0.45s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-0.5px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(1px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-2px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(2px, 0, 0);
-  }
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-}
-
-@media screen and (max-width: 1200px) {
-  .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.skill-grid-item {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-  align-items: center;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.section {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  color: white;
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: $our-light-grey;
-}
-
-
-.show-profile {
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.section:hover .overlay {
-  opacity: 0.35;
-  transform: scale(1.02);
-}
-
-.active-skill .overlay {
-    opacity: 0.70;
-    background-color: $our-blue;
-}
-
 .job-select-container {
   width: 32%;
   color: $our-grey;
+  position: sticky;
+  top: 20px;
   h4, p {
     font-size: 15px;
   }
 }
 
-.vacancies-container {
-  margin-top: 20px;
+
+.job-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px 0px;
+  padding: 14px 8px;
+  transition: .4s ease;
+  border-radius: 3px;
+  p {
+    margin: 0px;
+  }
+  &:hover {
+    background-color: $our-light-grey;
+  }
+}
+
+.job-active {
   background-color: $our-light-grey;
 }
 
-.hidden {
+.vacancies-container {
+  margin: 20px 0px;
+  background-color: white;
+  color: $our-blue;
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 3px;
+  h4 {
+    color: $our-grey;
+    font-weight: bolder;
+    font-size: 15px;
+    padding-bottom: 18px;
+    border-bottom: solid 1px rgba(0,0,0,0.1)
+
+  }
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  transition: .3s ease;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+  background-color: $our-blue;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
   display: none;
 }
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+// SKILL with rounded shape (use <p>)
+.skill-selection {
+  color: $our-blue;
+  font-weight: bold;
+  width: fit-content;
+  border: 1px solid $our-blue;
+  border-radius: 30px;
+  padding: 5px 15px;
+  margin: 0 5px 5px 0;
+  font-size: 11px !important;
+}
+
+.selection-container {
+  margin: 20px 0px;
+  background-color: white;
+  color: $our-blue;
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 3px;
+  h4 {
+    color: $our-grey;
+    font-weight: bolder;
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 100%;
+  padding: 0px auto;
+  margin: 16px 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $our-blue;
+  border-radius: 3px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: .3s ease;
+  background-color: $our-blue;
+  color: $our-light-grey;
+  &:hover {
+    background-color: $our-light-grey;
+    color: $our-blue;
+    transform: scale(1.02);
+  }
+}
+
