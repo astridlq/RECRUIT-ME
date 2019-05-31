@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   def search
     @user = current_user
     authorize @user
+    @pre_selected = params[:skills_ids].map if params[:skills_ids]
     @all_skills = Skill.all
     @hard_skills = Skill.where(skill_type: 'hard')
     @soft_skills = Skill.where(skill_type: 'soft')
