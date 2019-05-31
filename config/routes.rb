@@ -15,5 +15,4 @@ Rails.application.routes.draw do
   resources :vacancies, only: [:index, :show]
 
   resources :conversations, only: [:index]
-
 end
