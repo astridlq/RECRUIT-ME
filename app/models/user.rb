@@ -7,9 +7,10 @@ class User < ApplicationRecord
   has_many :vacancies
   has_many :user_skills
   has_many :develop_skills
-  has_many :conversations
+
   has_many :messages
-  has_many :skills, through: :user_skills
+  has_many :conversations, foreign_key: :sender_id
+
   mount_uploader :photo, PhotoUploader
 
   validates :first_name, presence: true

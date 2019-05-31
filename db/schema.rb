@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 2019_05_31_120532) do
   create_table "conversations", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
-    t.boolean "accepted"
+    t.boolean "accepted", default: false
     t.bigint "vacancy_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
     t.index ["vacancy_id"], name: "index_conversations_on_vacancy_id"
   end
 

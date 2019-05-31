@@ -1,0 +1,2 @@
+var conversation = document.getElementById('conversations-list').querySelector('[data-conversation-id="<%= @conversation.id %>"]').parentElement
+conversation.parentNode.removeChild(conversation)
