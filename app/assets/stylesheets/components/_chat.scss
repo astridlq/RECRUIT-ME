@@ -183,6 +183,7 @@ textarea.typing-area {
     border-radius: 20px;
     box-sizing: padding-box;
     flex-grow: 1;
+    overflow: hidden;
     height: 30px;
     padding: 0.375rem 0.75rem;
     font-size: 14px;

@@ -6,8 +6,9 @@
 import "bootstrap";
 
 import { toggleGroup, skillActive, clearSkills, selectJob, preSelect } from '../components/profile_search';
-import { conversation, activateConversation } from '../components/conversation';
+import { conversation, activateConversation, autoExpand } from '../components/conversation';
 
+autoExpand();
 activateConversation();
 conversation();
 preSelect();

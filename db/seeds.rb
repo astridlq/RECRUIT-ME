@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
+
+Message.destroy_all
+Conversation.destroy_all
 DevelopSkill.destroy_all
 VacancySkill.destroy_all
 UserSkill.destroy_all
@@ -2267,17 +2270,7 @@ conversation_hash = [
   recipient: users[10],
   accepted: true,
   vacancy: vacancies[3]
-},{
-  sender: users[10],
-  recipient: users[9],
-  accepted: true,
-  vacancy: vacancies[3]
-},{
-  sender: users[10],
-  recipient: users[8],
-  accepted: true,
-  vacancy: vacancies[3]
-},
+}
 ]
 
 conversations = Conversation.create!(conversation_hash)

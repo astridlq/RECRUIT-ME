@@ -3,7 +3,7 @@
   <div><%= conversation.opposed_user(current_user).first_name %></div>
 </div>
 
-<% conversation.messages.each do |message| %>
+<% @messages.each do |message| %>
   <% if current_user == message.user %>
     <div class="comment bubble-right">
   <% else %>
