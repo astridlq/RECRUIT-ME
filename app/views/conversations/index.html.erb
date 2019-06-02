@@ -1,24 +1,30 @@
-<div class="row">
-  <div class="col-md-9">
-    <ul id="conversations-list">
-      <% @conversations.each do |conversation| %>
-        <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+<div class="container">
+  <div class="container-conversation">
+   <div class="conversation-bar">
+    <% @conversations.each do |conversation| %>
+      <%= link_to conversation_path(conversation), remote: true do %>
+        <div class="conversation-box">
+            <%= cl_image_tag conversation.opposed_user(current_user).photo, height: 70, width: 70, crop: :fill, class: "avatar" %>
+          <div class="conv-box">
+            <div class="conv-box-top">
+              <p class="conv-user-name"><%=  conversation.opposed_user(current_user).first_name %> <%= conversation.opposed_user(current_user).last_name %></p>
+              <p class="conv-time"> <%= conversation.messages.last.created_at.to_time.strftime("%k:%M") %></p>
+            </div>
+            <p class="conv-preview">
+              <% if conversation.messages.last.body.length < 25 %>
+                <%= conversation.messages.last.body %>
+              <% else %>
+                <%= conversation.messages.last.body[0..25] %>...
+              <% end %>
+              </p>
+          </div>
+        </div>
       <% end %>
-    </ul>
-  </div>
-
-  <div class="col-md-3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">User list</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-          <% @users.each do |user| %>
-            <li><%= link_to user.first_name, conversations_path(user_id: user), remote: true, method: :post %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+    <% end %>
+   </div>
+   <div class="conv-display-container">
+     <div class="conversation-display">
+     </div>
+   </div>
   </div>
 </div>

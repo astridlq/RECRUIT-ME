@@ -83,6 +83,10 @@
 
 .fa-eraser {
   color: $our-grey;
+  transition: .2s;
+  &:active {
+    color: $our-blue;
+  }
 }
 
 .fa-eraser:hover {
@@ -95,19 +99,19 @@
 
 @keyframes shake {
   10%, 90% {
-    transform: translate3d(-0.5px, 0, 0);
+    transform: translate3d(-0.25px, 0, 0);
   }
 
   20%, 80% {
-    transform: translate3d(1px, 0, 0);
+    transform: translate3d(0.5px, 0, 0);
   }
 
   30%, 50%, 70% {
-    transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-1px, 0, 0);
   }
 
   40%, 60% {
-    transform: translate3d(2px, 0, 0);
+    transform: translate3d(1px, 0, 0);
   }
 }
 
@@ -211,36 +215,6 @@
 
 .hidden {
   display: none;
-}
-
-ul {
-  padding-left: 0px;
-  list-style: none;
-}
-
-.messages-list {
-  max-height: 200px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-
-.message-sent {
-  position: relative;
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
-  margin: 5px 20px;
-  padding: 10px;
-  float: right;
-}
-
-
-.message-received {
-  background-color: #F1F0F0;
-  border-color: #EEEEEE;
-  margin: 5px 20px;
-  padding: 10px;
-  float: left;
 }
 
 .hidden-skill {

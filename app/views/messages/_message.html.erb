@@ -1,7 +1,8 @@
-<li>
-  <div class="row">
-    <div class="<%= user.id == message.user_id ? 'message-sent' : 'message-received' %>">
-      <%= message.body %>
-    </div>
+
+<% if user == message.user %>
+  <div class="comment bubble-right">
+<% else %>
+  <div class="comment bubble-left">
+<% end %>
+    <p><%= message.body %></p>
   </div>
-</li>
