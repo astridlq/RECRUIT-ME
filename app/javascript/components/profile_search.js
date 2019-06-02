@@ -63,7 +63,6 @@ const preSelect = () => {
   hiddenSkills.forEach((skill) => {
     objArr[skill.value] = 1
   })
-  console.log(objArr)
   Object.entries(objArr).forEach((entry) => {
     if (entry[1] > 0) {
       const skill = document.getElementById(`skill-item-${entry[0]}`);
