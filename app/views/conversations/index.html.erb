@@ -10,7 +10,7 @@
               <p class="conv-user-name"><%=  conversation.opposed_user(current_user).first_name %> <%= conversation.opposed_user(current_user).last_name %></p>
               <p class="conv-time"> <%= conversation.messages.last.created_at.to_time.strftime("%k:%M") %></p>
             </div>
-            <p class="conv-preview">
+            <p class="conv-preview <%="conv-preview-#{conversation.id}"%>">
               <% if conversation.messages.last.body.length < 25 %>
                 <%= conversation.messages.last.body %>
               <% else %>

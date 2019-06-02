@@ -19,9 +19,9 @@ const conversation = () => {
     e.preventDefault();
     var values = $(this).serializeArray();
     if (values[2].value.length < 30) {
-      $('.conv-preview')[0].innerText = values[2].value
+      document.querySelector('.conversation-box-active').querySelector('.conv-preview').innerText = values[2].value
     } else {
-      $('.conv-preview')[0].innerText = `${values[2].value.substr(0, 28)} ...`;
+      document.querySelector('.conversation-box-active').querySelector('.conv-preview').innerText = `${values[2].value.substr(0, 28)} ...`;
     }
     App.conversation.speak(values);
     $(this).trigger('reset');
@@ -41,21 +41,21 @@ const activateConversation = () => {
   })
 }
 
-// const autoExpand = () => {
-//   console.log('dsfdssf')
-//   $(document)
-//       .one('focus.autoExpand', 'textarea.autoExpand', function(){
-//           var savedValue = this.value;
-//           this.value = '';
-//           this.baseScrollHeight = this.scrollHeight;
-//           this.value = savedValue;
-//       })
-//       .on('input.autoExpand', 'textarea.autoExpand', function(){
-//           var minRows = this.getAttribute('data-min-rows')|0, rows;
-//           this.rows = minRows;
-//           rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
-//           this.rows = minRows + rows;
-//       });
-// }
+const autoExpand = () => {
+  console.log('dsfdsdfgdfgddfdfgdf')
+  $(document)
+      .one('focus.autoExpand', 'textarea.autoExpand', function(){
+          var savedValue = this.value;
+          this.value = '';
+          this.baseScrollHeight = this.scrollHeight;
+          this.value = savedValue;
+      })
+      .on('input.autoExpand', 'textarea.autoExpand', function(){
+          var minRows = this.getAttribute('data-min-rows')|0, rows;
+          this.rows = minRows;
+          rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
+          this.rows = minRows + rows;
+      });
+}
 
-export { conversation, activateConversation }
+export { conversation, activateConversation, autoExpand }
