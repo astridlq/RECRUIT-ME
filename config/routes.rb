@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'profile/develop_hard', to: 'profiles#develop_hard', as: :develop_hard
   get 'profile/develop_soft', to: 'profiles#develop_soft', as: :develop_soft
   get 'profile/develop_key', to: 'profiles#develop_key', as: :develop_key
+  get 'vacancies/search', to: 'vacancies#search', as: :vacancy_search
 
   resources :profiles, only: [:index, :show, :edit, :update]
 
