@@ -73,11 +73,9 @@ h1, h2 {
   margin-left: 15px;
 }
 
-.description {
-  display: none;
-}
+
 #description-form {
-  background-color: red;
-  height: 40px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
+  display: none;
 }
