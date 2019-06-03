@@ -32,13 +32,6 @@ class ProfilesController < ApplicationController
     @experience = @user.skills.where(skill_type: 'experience')
   end
 
-  def update
-    @user = current_user
-    authorize @user
-    @user.update(user_params)
-    redirect_to myprofile_path
-  end
-
   private
 
   def set_matches
@@ -67,10 +60,6 @@ class ProfilesController < ApplicationController
   def set_users
     @user = User.find(params[:id])
     authorize @user
-  end
-
-  def user_params
-    params.require(:user).permit(:description)
   end
 
 
