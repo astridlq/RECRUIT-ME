@@ -13,6 +13,10 @@ class UserPolicy < ApplicationPolicy
     @user.is_manager
   end
 
+  def update?
+    true
+  end
+
   def myprofile?
     true
   end
