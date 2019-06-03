@@ -12,4 +12,8 @@ class VacancyPolicy < ApplicationPolicy
   def index?
     @user.is_manager
   end
+
+  def show?
+    true
+  end
 end

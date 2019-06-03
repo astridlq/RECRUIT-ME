@@ -7,6 +7,7 @@ class VacanciesController < ApplicationController
   end
 
   def show
+    @users = User.where(job_title: @vacancy.title)
     @vacancy_skills = @vacancy.vacancy_skills
     @preferred_skills = @vacancy.preferred_skills
   end
