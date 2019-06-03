@@ -6,6 +6,7 @@ class VacanciesController < ApplicationController
   end
 
   def show
+    @vacancy = Vacancy.find(params[:id])
   end
 
   def search
