@@ -1,9 +1,13 @@
 <!-- top skills categories bar -->
 
 <div class="container">
+  <div class="search-result-title-h22">
+    <h3>LOOKING FOR A JOB</h3>
+    <p>search by skills you have or want to develop</p>
+  </div>
   <div class="skill-cat-container">
     <div id="skill-cat-header">
-      <h2>Skill Categories</h2>
+      <h4>Skill Categories</h4>
     </div>
     <button class="cat-btn cat-btn-active" data-value="all">All</button>
     <button class="cat-btn" data-value="hard">HARD SKILLS</button>
@@ -100,7 +104,7 @@
       <div class="vacancies-container">
         <h4>Your Skills</h4>
           <div class="job-container">
-            <p><%= 'Existing skills' %></p>
+            <p><%= 'Your existing skills' %></p>
             <label class="radio-container">
               <input type="checkbox" name="radio" class="check-box" data-id="<%= current_user.id %>">
               <% current_user.user_skills.each do |skill| %>
@@ -110,7 +114,7 @@
             </label>
           </div>
           <div class="job-container">
-            <p><%= 'Skills you wish to develop' %></p>
+            <p><%= 'Skills you want to develop' %></p>
             <label class="radio-container">
               <input type="checkbox" name="radio" class="check-box" data-id="<%= current_user.id %>">
               <% current_user.develop_skills.each do |skill| %>

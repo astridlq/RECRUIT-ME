@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
+
+Message.destroy_all
+Conversation.destroy_all
 DevelopSkill.destroy_all
 VacancySkill.destroy_all
 UserSkill.destroy_all
@@ -37,7 +40,7 @@ photo: File.open(Rails.root.join("db/fixtures/skills/database_management.jpg"))
 name: "UI & UX Design",
 description: "User experience (UX) design is the process of creating products that provide meaningful and relevant experiences to users. This involves the design of the entire process of acquiring and integrating the product, including aspects of branding, design, usability, and function.",
 skill_type: "hard",
-photo: File.open(Rails.root.join("db/fixtures/skills/UX_design.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/skills/ux_design_1.jpg"))
 }, {
 name: "Cloud Computing",
 description: "using a network of remote servers hosted on the Internet to store, manage, and process data",
@@ -47,7 +50,7 @@ photo: File.open(Rails.root.join("db/fixtures/skills/cloud_computing.jpg"))
 name: "AI & Machine Learning",
 description: "The theory and development of computer systems able to perform tasks normally requiring human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages",
 skill_type: "hard",
-photo: File.open(Rails.root.join("db/fixtures/skills/AI_machine_learning.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/skills/ai_machine_learning_1.jpg"))
 }, {
 name: "Data Analysis",
 description: "Inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.",
@@ -2100,7 +2103,7 @@ department: "IT",
 start_date: Date.parse("19/08/2019"),
 location: "Barcelona",
 user: users[5],
-photo: File.open(Rails.root.join("db/fixtures/jobs/UX_designer.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/jobs/ux_designer_1.jpg"))
 }
 ]
 puts "Creating Jobs..."
@@ -2249,3 +2252,81 @@ skill: skills[37]
 
 vacancy_skills = VacancySkill.create(vacancy_skills_hash)
 
+puts "creating conversations..."
+
+conversation_hash = [
+{
+  sender: users[1],
+  recipient: users[10],
+  accepted: true,
+  vacancy: vacancies[1]
+},{
+  sender: users[2],
+  recipient: users[10],
+  accepted: true,
+  vacancy: vacancies[2]
+},{
+  sender: users[3],
+  recipient: users[10],
+  accepted: true,
+  vacancy: vacancies[3]
+}
+]
+
+conversations = Conversation.create!(conversation_hash)
+
+puts "creating messages..."
+
+message_hash = [
+{
+  body: "Hi Tecia, are you interested in having a chat regarding the position?",
+  user: users[1],
+  conversation: conversations[0]
+},{
+  body: "Hi Axel, thanks for getting in touch. I'd be interested to find out more about the position.",
+  user: users[10],
+  conversation: conversations[0]
+},{
+  body: "Great, I'll send you through a detailed description. Have a read of that and then perhaps we could grab a coffee and discuss?",
+  user: users[1],
+  conversation: conversations[0]
+},{
+  body: "Sounds perfect!",
+  user: users[10],
+  conversation: conversations[0]
+},{
+  body: "Hey Tecia, how are you? It's been a long time! I have you in mind for this position that's just come up, take a look :)",
+  user: users[2],
+  conversation: conversations[1]
+},{
+  body: "Alex! Yes has been way to long, good to here from you! I'm good thanks. Ok that sounds interesting...",
+  user: users[10],
+  conversation: conversations[1]
+},{
+  body: "It's a maternity cover so would only be for 6 months but I think it would be the perfect stepping stone for you.",
+  user: users[2],
+  conversation: conversations[1]
+},{
+  body: "I'm gonna have to think it over for a while as I'm not 100% sure if I want to move departments at this time.",
+  user: users[10],
+  conversation: conversations[1]
+},{
+  body: "Ok no problem at all, please just give me a shout in the next couple of days when you've had a chance to think it over.",
+  user: users[2],
+  conversation: conversations[1]
+},{
+  body: "Will do, Alex. All the best.",
+  user: users[10],
+  conversation: conversations[1]
+},{
+  body: "Hi Edward, are you interested in having a chat regarding this role?",
+  user: users[10],
+  conversation: conversations[2]
+},{
+  body: "Hi Tecia, nah not really.",
+  user: users[3],
+  conversation: conversations[2]
+},
+]
+
+Message.create!(message_hash)

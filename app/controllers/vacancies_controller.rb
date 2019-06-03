@@ -1,4 +1,6 @@
 class VacanciesController < ApplicationController
+  before_action :set_vacancies, only: [:show]
+
   def index
     @vacancies = Vacancy.all
     @skills_to_match = params[:skill_ids].map(&:to_i)
@@ -6,7 +8,9 @@ class VacanciesController < ApplicationController
   end
 
   def show
-    @vacancy = Vacancy.find(params[:id])
+    @users = User.where(job_title: @vacancy.title)
+    @vacancy_skills = @vacancy.vacancy_skills
+    @preferred_skills = @vacancy.preferred_skills
   end
 
   def search
@@ -28,5 +32,12 @@ class VacanciesController < ApplicationController
       is_match = (@skills_to_match & skills).any?
       @matches << vacancy if is_match
     end
+  end
+
+  private
+
+  def set_vacancies
+    @vacancy = Vacancy.find(params[:id])
+    authorize @vacancy
   end
 end

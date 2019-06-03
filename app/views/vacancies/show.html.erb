@@ -1,2 +1,138 @@
-<h1>Vacancies#show</h1>
-<p>Find me in app/views/vacancies/show.html.erb</p>
+<div class="container">
+  <!-- title box -->
+  <div class="vacancy-container">
+    <%= link_to :back, class: 'link_absolute' do %>
+    <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <div class="d-flex align-items-center">
+      <div class="vacancy-image">
+        <%= cl_image_tag @vacancy.photo, height: 140 %>
+      </div>
+      <div class="vacancy-title">
+        <h1><%= @vacancy.title %></h1>
+        <h3 >Department: <%= @vacancy.department %></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex">
+    <div class="left">
+
+      <!-- left side -->
+
+      <!-- description box -->
+
+      <div class="vacancy-info-container">
+        <div class="vacancy-info-card">
+          <div class="d-flex justify-content-between">
+            <h2>Responabilities</h2>
+          </div>
+          <div>
+            <p><%= @vacancy.description %></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- key experiences -->
+      <div class="vacancy-skill-card" id="key">
+        <div class="d-flex justify-content-between">
+          <h3>Preferred Key Experiences</h3>
+        </div>
+        <div class="skills-grid-1">
+
+          <% @vacancy_skills.each do |vskill| %>
+          <% if vskill.skill.skill_type == "experience" %>
+          <label for="<%= "skill-item-#{vskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+          url('<%= cl_image_path vskill.skill.photo, height: 120, width: 120 %>')">
+
+          <div class="section">
+            <p class="show-profile"><%= vskill.skill.name %></p>
+            <div class="overlay">
+            </div>
+          </div>
+        </label>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Open positions -->
+
+    <div class="job-additional-info">
+    <h2>Open Positions</h2>
+      <div class="openings-info" >
+        <p>No current openings for this job</p>
+        <div class="padding-btn">
+          <%= link_to "CREATE ALERT", "#", class: "button"  %>
+        </div>
+      </div>
+  </div>
+
+  </div>
+
+  <!-- right side  -->
+  <div class="right">
+
+    <!-- Required Skills -->
+    <div class="vacancy-skill-card" id="hard">
+      <div class="d-flex justify-content-between">
+        <h3>Required skills</h3>
+      </div>
+      <div class="skills-grid-1">
+        <% @vacancy_skills.each do |rskill| %>
+        <% unless rskill.skill.skill_type == "experience" %>
+        <label for="<%= "skill-item-#{rskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('<%= cl_image_path rskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
+        <div class="section">
+          <p class="show-profile"><%= rskill.skill.name %></p>
+          <div class="overlay">
+          </div>
+        </div>
+      </label>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Preferred Skills -->
+  <div class="vacancy-skill-card" id="hard">
+    <div class="d-flex justify-content-between">
+      <h3>Preferred skills</h3>
+    </div>
+    <div class="skills-grid-1">
+      <% @preferred_skills.each do |pskill| %>
+        <label for="<%= "skill-item-#{pskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('<%= cl_image_path pskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
+        <div class="section">
+          <p class="show-profile"><%= pskill.skill.name %></p>
+        <div class="overlay"></div>
+        </div>
+        </label>
+      <% end %>
+    </div>
+  </div>
+
+
+<!-- Employee contact -->
+  <div class="job-additional-info">
+    <h2><%= @vacancy.title %>(s)</h2>
+      <% @users.each do |user| %>
+      <div class="employee-contact-chat">
+        <div class="employee-contact-info" >
+        <%= cl_image_tag user.photo, class: 'avatar' %>
+        <div>
+          <h3><%= user.first_name %> <%= user.last_name %></h3>
+          <h4><%= user.location %></h4>
+        </div>
+        </div>
+        <%= link_to "CHAT", conversations_path, class: "button"  %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+</div>
+
+
+</div>
