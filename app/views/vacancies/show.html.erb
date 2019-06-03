@@ -51,6 +51,7 @@
   <div class="job-additional-info">
     <h2><%= @vacancy.title %>(s)</h2>
       <% @users.each do |user| %>
+      <% unless user == current_user %>
       <div class="employee-contact-chat">
         <div class="employee-contact-info" >
         <%= cl_image_tag user.photo, class: 'avatar' %>
@@ -61,6 +62,7 @@
         </div>
         <%= link_to "CHAT", conversations_path, class: "button"  %>
       </div>
+    <% end %>
     <% end %>
 
   </div>
