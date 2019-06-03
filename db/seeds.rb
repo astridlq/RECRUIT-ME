@@ -2090,9 +2090,16 @@ photo: File.open(Rails.root.join("db/fixtures/jobs/front_end_developer.jpg"))
 {
 title: "UX Designer",
 description:"Gather and evaluate user requirements in collaboration with product managers and engineers
-Illustrate design ideas using storyboards, process flows and sitemaps
+<strong>Illustrate design ideas using storyboards,</strong> process flows and sitemaps
 Design graphic user interface elements, like menus, tabs and widgets
 Build page navigation buttons and search fields
+<ul>
+<li>1 thing</li>
+<li>2 things</li>
+<li>etcetera</li>
+<li>enzovoort</li>
+<li>en daarbij</li>
+</ul>
 Develop UI mockups and prototypes that clearly illustrate how sites function and look like
 Create original graphic designs (e.g. images, sketches and tables)
 Prepare and present rough drafts to internal teams and key stakeholders

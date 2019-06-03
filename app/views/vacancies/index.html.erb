@@ -26,7 +26,8 @@
      </div>
    </div>
    <div class="btn-con">
-    <a class="btn btn-primary btn-sm" href="#">Read More</a>
+        <%= link_to "Read more", vacancy_path(vacancy), class: "btn btn-primary btn-sm"  %>
+
   </div>
   <div class="job-img">
     <img src="<%= cl_image_path vacancy.photo  %>" alt="">
@@ -53,6 +54,7 @@
      </div>
    </div>
    <div class="btn-con">
+
     <a class="btn btn-primary btn-sm" href="#">Read More</a>
   </div>
   <div class="job-img">

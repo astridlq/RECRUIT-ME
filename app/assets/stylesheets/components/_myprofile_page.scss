@@ -16,7 +16,8 @@
   position: relative;
 
   h1 {
-    font-weight: bold;
+    padding: 0;
+    margin: 0 0 0 30px;
     color: $our-blue;
     font-size: 34px;
   }
@@ -26,8 +27,6 @@
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
   }
 
   .link_absolute {
@@ -46,6 +45,7 @@
   }
 }
 
+
 h1, h2 {
     font-weight: bold;
     color: $our-blue;
@@ -54,22 +54,43 @@ h1, h2 {
 .myprofile-info-container {
   width: 100%;
 }
+
 .myprofile-info-card {
   background-color: white;
-  padding: 50px;
-  margin-bottom: 15px;
+  padding: 40px;
   font-size: 14px;
   h2 {font-size: 25px;}
   h5 {font-size: 12px;
     font-weight: 400;}
+
+  .info-employee {
+    margin-bottom: 20px;
+  }
+  p {
+    line-height: 1.8;
+    text-align: justify;
+  }
 }
+
+.info-employee-label {
+  padding: 0;
+  li {
+      margin-top: 10px;
+      display: inline-block;
+      background-color: #42a2d6;
+      padding: 5px 15px;
+      color: white;
+      border-radius: 13px;
+      font-size: 10px;
+      opacity: 0.8;
+    }
+  }
 
 .myprofile-skill-card {
   color: $our-blue;
   background-color: white;
   border-radius: 3px;
   padding: 40px;
-  margin-bottom: 15px;
   min-width: 430px;
   h3 {
     font-size: 20px;

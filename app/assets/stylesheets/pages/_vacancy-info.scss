@@ -47,10 +47,12 @@
 }
 .vacancy-info-card {
   background-color: white;
-  padding: 50px;
+  padding: 40px;
   font-size: 14px;
   h2 {
     font-size: 25px;
+    margin-bottom: 13px;
+    font-weight: bold;
   }
   h5 {
     font-size: 12px;
@@ -82,30 +84,32 @@
 
 .job-additional-info {
   border-radius: 3px;
-  margin-bottom: 15px;
-  margin-top: 15px;
-
   h2 {
     font-weight: 500;
     color: white;
-    font-size: 20px;
-    text-align: center;
-    background-color: $our-green;
-    padding: 20px 40px;
+    font-size: 18px;
+    text-align: left;
+    background-color: $our-mid-grey;
+    padding: 10px 40px;
     margin: 0;
   }
 }
 
 .openings-info {
     background-color: white;
-    padding: 20px 40px;
+    padding: 30px 40px;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
     .button {
-      padding: 10px auto;
-      padding: 10px 15px;
+      padding: 7px 15px;
       &:hover {
         color: white;
       }
+    }
+    p{
+      font-size: 14px;
+      margin: 0;
     }
     .padding-btn {
       padding: 20px
@@ -117,7 +121,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 30px 40px;
   border-bottom: 1px solid $our-light-grey;
   h3 {
     font-size: 20px;
@@ -129,6 +133,7 @@
     margin: 0;
   }
   .button {
+    padding: 7px 19px;
     &:hover {
       color: white;
     }
