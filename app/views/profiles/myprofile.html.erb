@@ -31,7 +31,7 @@
             <p><%= @user.description %></p>
           </div>
           <div id="description-form">
-           <%= simple_form_for(current_user, url: myprofile_path(@user), html: { method: :patch }) do |f| %>
+            <%= simple_form_for current_user, url: myprofile_path(@user), html: { method: :patch } do |f| %>
            <%= f.input :description, as: :text, label: false, placeholder: 'Tell us what others need to know' %>
            <%= f.button :submit %>
            <% end %>

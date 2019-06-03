@@ -32,8 +32,8 @@ class ProfilesController < ApplicationController
 
   def update
     @user = current_user
-    @user.update(user_params)
     authorize @user
+    @user.update(user_params)
     redirect_to myprofile_path
   end
 
