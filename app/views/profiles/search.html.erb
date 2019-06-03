@@ -34,7 +34,7 @@
           <% @hard_skills.each do |skill| %>
               <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
               <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
+           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>');">
                 <div class="section">
                   <p class="show-profile"><%= skill.name %></p>
                   <div class="overlay">
@@ -126,15 +126,19 @@
           <div id="selection-collection"></div>
         </div>
         <!-- <div class="d-flex justify-content-center"> -->
-          <%= submit_tag("Search", class: 'search-btn') %>
+          <%= submit_tag "Search", disabled: true, class: 'search-btn' %>
           <% end %>
         <!-- </div> -->
         <!-- main form end -->
       </div>
     </div>
-
-
-
-
 </div>
 
+<!-- hidden array for adding skills -->
+<% if @pre_selected %>
+  <ul class="hidden">
+  <% @pre_selected.each do |skill| %>
+    <li value="<%= skill %>" class="hidden-skill"></li>\
+  <% end %>
+  </ul>
+<% end %>

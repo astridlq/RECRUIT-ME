@@ -9,6 +9,8 @@ const jobs = document.querySelectorAll('.check-box');
 const selectionCollection = document.getElementById('selection-collection')
 const skillLabels = document.querySelectorAll('.hidden')
 const jobNameContainer = document.querySelector('.job-name-container')
+const hiddenSkills = document.querySelectorAll('.hidden-skill')
+const searchButton = document.querySelector('.search-btn')
 
 const hideGrids = (data_value, old_value) => {
   if (data_value !== old_value) {
@@ -42,6 +44,36 @@ let jobNumArray = [];
 let jobNameArray = [];
 const objArr = {};
 
+const toggleButton = () => {
+  let toggle = false;
+  Object.entries(objArr).forEach((entry) => {
+    if (entry[1] > 0) {
+      toggle = true;
+    }
+  })
+  if (toggle) {
+    searchButton.removeAttribute("disabled");
+  } else {
+    searchButton.setAttribute("disabled", "true");
+  }
+}
+
+
+const preSelect = () => {
+  hiddenSkills.forEach((skill) => {
+    objArr[skill.value] = 1
+  })
+  Object.entries(objArr).forEach((entry) => {
+    if (entry[1] > 0) {
+      const skill = document.getElementById(`skill-item-${entry[0]}`);
+      skill.checked = true;
+      skill.nextSibling.nextSibling.classList.add("active-skill")
+    }
+  })
+  toggleButton();
+  inject();
+}
+
 const addToJobNumArray = () => {
   jobNumArray = [];
   Object.entries(objArr).forEach((element) => {
@@ -62,7 +94,6 @@ const convertToNameArray = () => {
 }
 
 const addToSelection = () => {
-  console.log(jobNameArray)
   jobNameContainer.innerHTML = `<div id="selection-collection"></div>`
   jobNameArray.forEach((name) => {
     document.getElementById('selection-collection').insertAdjacentHTML('afterend', `<p class='skill-selection'>${name}<p>`)
@@ -87,6 +118,7 @@ const skillActive = () => {
         objArr[event.currentTarget.value] = 0
         inject();
       }
+      toggleButton();
     });
   })
 };
@@ -101,6 +133,7 @@ const clearSkills = () => {
       element.previousElementSibling.checked = false;
     })
     inject();
+    toggleButton();
   });
   clear_soft.addEventListener("click", () => {
     document.querySelectorAll('.soft').forEach((element) => {
@@ -111,6 +144,7 @@ const clearSkills = () => {
       element.previousElementSibling.checked = false;
     })
     inject();
+    toggleButton();
   });
   clear_key.addEventListener("click", () => {
     document.querySelectorAll('.key').forEach((element) => {
@@ -121,6 +155,7 @@ const clearSkills = () => {
       element.previousElementSibling.checked = false;
     })
     inject();
+    toggleButton();
   });
   clear_all.addEventListener("click", () => {
     skills.forEach((element) => {
@@ -136,6 +171,7 @@ const clearSkills = () => {
       job.checked = false;
     });
     inject();
+    toggleButton();
   });
 }
 
@@ -171,12 +207,14 @@ const selectJob = () => {
         if (entry[1] === 0) {
           const skill = document.getElementById(`skill-item-${entry[0]}`);
           skill.checked = false;
-          console.log("here")
           skill.nextSibling.nextSibling.classList.remove("active-skill")
         }
       })
+      toggleButton();
     })
   })
 }
 
-export { toggleGroup, skillActive, clearSkills, selectJob };
+
+
+export { toggleGroup, skillActive, clearSkills, selectJob, preSelect };

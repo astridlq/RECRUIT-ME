@@ -1,0 +1,47 @@
+.vac-grid {
+  display: grid;
+  justify-content: space-between;
+  position: relative;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-gap: 16px;
+}
+
+.vac-container {
+  padding: 50px;
+}
+
+
+.vac-matches-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: $our-blue;
+  color: white;
+  border-radius: 2px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  border: none;
+  padding: 7px 25px;
+  margin: 15px 0px;
+}
+
+.vac-selection {
+  display: flex;
+  justify-content: center;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: $our-blue;
+  margin: 10px;
+}
+
+.vac-skills-container {
+  display: flex;
+  justify-content: center;
+}

@@ -10,6 +10,7 @@
   padding: 7px 25px;
   &:hover {
     background: $blue-hover;
+    cursor: pointer;
   }
 }
 
@@ -29,4 +30,6 @@
   }
 }
 
-
+.btn-message {
+  margin-right:45px;
+}

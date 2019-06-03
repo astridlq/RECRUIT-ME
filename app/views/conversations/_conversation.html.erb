@@ -1,0 +1,14 @@
+<div class="conversation-topper">
+  <%= cl_image_tag conversation.opposed_user(current_user).photo, height: 70, width: 70, crop: :fill, class: "avatar" %>
+  <div><%= conversation.opposed_user(current_user).first_name %></div>
+</div>
+
+<% @messages.each do |message| %>
+  <% if current_user == message.user %>
+    <div class="comment bubble-right">
+  <% else %>
+    <div class="comment bubble-left">
+  <% end %>
+    <p><%= message.body %></p>
+  </div>
+<% end %>

@@ -2,21 +2,23 @@
   color: $our-blue;
   height: 140px;
   width: 100%;
-  min-width: 930px;
+  // min-width: 930px;
   padding: 0px 15px;
   margin-top: 60px;
   margin-bottom: 20px;
   border-radius: 3px;
   background-color: white;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   font-weight: bolder;
   font-size: 36px;
+  position: relative;
 
   h1 {
-    font-weight: bolder;
+    font-weight: bold;
     color: $our-blue;
+    font-size: 34px;
   }
 
   img {
@@ -28,8 +30,15 @@
   border: white 1px solid;
   }
 
+  .link_absolute {
+    position: absolute;
+    top: -50px;
+    left: -40px;
+  }
+
   .myprofile-name {
-    margin-left: 40px;
+    text-align: left;
+
   }
 
   .myprofile-image {
@@ -38,7 +47,7 @@
 }
 
 h1, h2 {
-    font-weight: bolder;
+    font-weight: bold;
     color: $our-blue;
   }
 
@@ -49,17 +58,22 @@ h1, h2 {
   background-color: white;
   padding: 50px;
   margin-bottom: 15px;
+  font-size: 14px;
+  h2 {font-size: 25px;}
+  h5 {font-size: 12px;
+    font-weight: 400;}
 }
 
 .myprofile-skill-card {
+  color: $our-blue;
   background-color: white;
   border-radius: 3px;
-  padding: 50px;
+  padding: 40px;
   margin-bottom: 15px;
   min-width: 430px;
   h3 {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 500em;
     margin-bottom: 20px;
   }
 }

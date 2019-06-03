@@ -8,7 +8,6 @@
   }
 }
 
-
 .job-container {
   display: flex;
   justify-content: space-between;
@@ -158,6 +157,14 @@
     background-color: $our-light-grey;
     color: $our-blue;
     transform: scale(1.02);
+  }
+  &:disabled {
+    opacity: 0.3;
+    &:hover {
+      background-color: $our-blue;
+      color: white;
+      transform: scale(1);
+    }
   }
 }
 

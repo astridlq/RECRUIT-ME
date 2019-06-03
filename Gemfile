@@ -5,6 +5,7 @@ ruby '2.5.3'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pundit'
+gem 'jquery-rails'
 
 gem 'bootsnap', require: false
 gem 'devise'

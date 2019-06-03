@@ -7,13 +7,14 @@
     <% @skills_to_match.each do |selected_skill| %>
     <p class="skill-selection"><%= Skill.find(selected_skill).name %></p>
     <% end %>
-    <%= link_to "+", profile_search_path, class: "edit-plus" %>
+    <%= link_to "+", profile_search_path(skills_ids: @skills_to_match), class: "edit-plus" %>
   </div>
 
   <h2 class="search-result-title-h2">Matching profiles</h2>
 
 
   <% @matches.reverse.first(7).each do |user| %>
+  <% unless user == current_user %>
   <%= link_to profile_path(user.id) do %>
   <div class="container-custom">
     <div class="row">
@@ -60,6 +61,7 @@
       </div>
     </div>
   </div>
+  <% end %>
   <% end %>
   <% end %>
 </div>

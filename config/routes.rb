@@ -16,5 +16,10 @@ Rails.application.routes.draw do
 
   resources :vacancies, only: [:index, :show]
 
-  resources :conversations, only: [:index]
+  resources :conversations, only: [:index, :create, :show] do
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end
 end
