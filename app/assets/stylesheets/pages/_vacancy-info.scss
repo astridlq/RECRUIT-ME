@@ -1,0 +1,144 @@
+.vacancy-container {
+  color: $our-blue;
+  height: 140px;
+  width: 100%;
+  // min-width: 930px;
+  padding: 0 15px 0 0;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 36px;
+  position: relative;
+
+  .vacancy-image {
+    border-radius: 30px;
+  }
+
+  .vacancy-title {
+    h1 {
+      padding: 0;
+      margin: 0 0 0 30px;
+      color: $our-blue;
+      font-size: 34px;
+    }
+    h3 {
+      color: $our-grey;
+      font-weight: 500em;
+      font-size: 15px;
+      margin: 0 30px;
+    }
+  }
+
+  .link_absolute {
+    position: absolute;
+    top: -50px;
+    left: -40px;
+  }
+}
+
+
+.vacancy-info-container {
+  width: 100%;
+}
+.vacancy-info-card {
+  background-color: white;
+  padding: 50px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  h2 {
+    font-size: 25px;
+  }
+  h5 {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.vacancy-skill-card {
+  color: $our-blue;
+  background-color: white;
+  border-radius: 3px;
+  padding: 40px;
+  margin-bottom: 15px;
+  min-width: 430px;
+  h3 {
+    font-size: 20px;
+    font-weight: 500em;
+    margin-bottom: 20px;
+  }
+}
+
+.left {
+  width:50%;
+}
+
+.right {
+  width:50%;
+  margin-left: 15px;
+}
+
+.job-additional-info {
+  border-radius: 3px;
+  h2 {
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    background-color: $our-green;
+    padding: 20px 40px;
+    margin: 0;
+  }
+}
+
+.openings-info {
+    background-color: white;
+    padding: 20px 40px;
+    text-align: center;
+    .button {
+      padding: 10px auto;
+      padding: 10px 15px;
+      &:hover {
+        color: white;
+      }
+    }
+    .padding-btn {
+      padding: 20px
+    }
+}
+
+.employee-contact-chat {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid $our-light-grey;
+  h3 {
+    font-size: 20px;
+    color: $our-blue;
+    margin: 0;
+  }
+  h4 {
+    font-size: 13px;
+    margin: 0;
+  }
+  .button {
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.employee-contact-info{
+  display: flex;
+  align-items: flex-start;
+  img {
+    margin-right: 20px;
+  }
+}
+

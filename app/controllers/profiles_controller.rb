@@ -20,7 +20,6 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @existing_skills = @user.user_skills
     @develop_skills = @user.develop_skills
   end
