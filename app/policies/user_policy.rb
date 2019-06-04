@@ -17,6 +17,14 @@ class UserPolicy < ApplicationPolicy
     @user.is_manager
   end
 
+  def edit_user_skills?
+    true
+  end
+
+  def update_user_skills?
+    true
+  end
+
   def myprofile?
     true
   end
