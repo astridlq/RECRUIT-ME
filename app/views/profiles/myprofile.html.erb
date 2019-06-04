@@ -38,7 +38,7 @@
           <div id="description-form" class="toggle-div">
             <%= simple_form_for(current_user, url: myprofile_path(@user), html: { method: :patch }) do |f| %>
            <%= f.input :description, as: :text, label: false, placeholder: 'Tell us what others need to know' %>
-           <%= f.button :submit, class: "button" %>
+           <%= f.button :submit, class: "button", value: "Update"%>
            <% end %>
          </div>
         </div>
