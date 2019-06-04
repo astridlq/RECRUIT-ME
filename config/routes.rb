@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'profile/develop_soft', to: 'profiles#develop_soft', as: :develop_soft
   get 'profile/develop_key', to: 'profiles#develop_key', as: :develop_key
   get 'vacancies/search', to: 'vacancies#search', as: :vacancy_search
+  get 'myprofile/edit_user_skills', to: 'profiles#edit_user_skills', as: :edit_user_skills
+  patch 'myprofile/update_user_skills', to: 'profiles#update_user_skills', as: :update_user_skills
 
   resources :profiles, only: [:index, :show, :edit, :update]
 

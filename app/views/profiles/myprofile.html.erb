@@ -50,7 +50,9 @@
         <div class="myprofile-skill-card" id="key">
           <div class="d-flex justify-content-between">
             <h3>KEY EXPERIENCES</h3>
+            <%= link_to edit_user_skills_path do %>
               <i class="fas fa-pen-nib"></i>
+              <% end %>
           </div>
           <div class="skills-grid-1">
 
@@ -78,7 +80,9 @@
         <div class="myprofile-skill-card" id="hard">
           <div class="d-flex justify-content-between">
             <h3>EXISTING SKILLS</h3>
+            <%= link_to edit_user_skills_path do %>
               <i class="fas fa-pen-nib"></i>
+              <% end %>
           </div>
           <div class="skills-grid-1">
             <% @existing_skills.each do |uskill| %>
