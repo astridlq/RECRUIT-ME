@@ -1,11 +1,14 @@
 .footer {
-  background: $our-blue;
+  background: #b2b6bc;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
   color: white;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -13,7 +16,7 @@
   display: flex;
 }
 .button-TAC {
-background: $our-blue;
+background: #b2b6bc;
   color: white;
   border: 1px solid white;
   border-radius: 2px;
@@ -29,7 +32,7 @@ background: $our-blue;
 
 .button-FAQ {
 background: white;
-  color: $our-blue;
+  color: #b2b6bc;
   border-radius: 2px;
   font-family: Raleway;
   font-weight: bold;
