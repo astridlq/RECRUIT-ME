@@ -1,0 +1,45 @@
+.footer {
+  background: #b2b6bc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: white;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+.footer-buttons {
+  display: flex;
+}
+.button-TAC {
+background: #b2b6bc;
+  color: white;
+  border: 1px solid white;
+  border-radius: 2px;
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 7px 25px;
+  margin-right: 4px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button-FAQ {
+background: white;
+  color: #b2b6bc;
+  border-radius: 2px;
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 12px;
+  border: none;
+  padding: 7px 25px;
+  &:hover {
+    cursor: pointer;
+  }
+}
