@@ -15,12 +15,12 @@ class VacanciesController < ApplicationController
 
   def search
     @user = current_user
-    authorize @user
     @all_skills = Skill.all
     @hard_skills = Skill.where(skill_type: 'hard')
     @soft_skills = Skill.where(skill_type: 'soft')
     @key_experience = Skill.where(skill_type: 'experience')
     @vacancies = Vacancy.where(department: @user.department)
+    authorize @vacancies
   end
 
   def set_matches
