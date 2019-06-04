@@ -2302,51 +2302,62 @@ message_hash = [
 {
   body: "Hi Tecia, are you interested in having a chat regarding the position?",
   user: users[1],
-  conversation: conversations[0]
+  conversation: conversations[0],
+  read: true
 },{
   body: "Hi Axel, thanks for getting in touch. I'd be interested to find out more about the position.",
   user: users[10],
-  conversation: conversations[0]
+  conversation: conversations[0],
+  read: true
 },{
   body: "Great, I'll send you through a detailed description. Have a read of that and then perhaps we could grab a coffee and discuss?",
   user: users[1],
-  conversation: conversations[0]
+  conversation: conversations[0],
+  read: true
 },{
   body: "Sounds perfect!",
   user: users[10],
-  conversation: conversations[0]
+  conversation: conversations[0],
+  read: true
 },{
   body: "Hey Tecia, how are you? It's been a long time! I have you in mind for this position that's just come up, take a look :)",
   user: users[2],
-  conversation: conversations[1]
+  conversation: conversations[1],
+  read: true
 },{
   body: "Alex! Yes has been way to long, good to here from you! I'm good thanks. Ok that sounds interesting...",
   user: users[10],
-  conversation: conversations[1]
+  conversation: conversations[1],
+  read: true
 },{
   body: "It's a maternity cover so would only be for 6 months but I think it would be the perfect stepping stone for you.",
   user: users[2],
-  conversation: conversations[1]
+  conversation: conversations[1],
+  read: true
 },{
   body: "I'm gonna have to think it over for a while as I'm not 100% sure if I want to move departments at this time.",
   user: users[10],
-  conversation: conversations[1]
+  conversation: conversations[1],
+  read: true
 },{
   body: "Ok no problem at all, please just give me a shout in the next couple of days when you've had a chance to think it over.",
   user: users[2],
-  conversation: conversations[1]
+  conversation: conversations[1],
+  read: true
 },{
   body: "Will do, Alex. All the best.",
   user: users[10],
-  conversation: conversations[1]
+  conversation: conversations[1],
+  read: true
 },{
   body: "Hi Edward, are you interested in having a chat regarding this role?",
   user: users[10],
-  conversation: conversations[2]
+  conversation: conversations[2],
+  read: true
 },{
   body: "Hi Tecia, nah not really.",
   user: users[3],
-  conversation: conversations[2]
+  read: true
 },
 ]
 

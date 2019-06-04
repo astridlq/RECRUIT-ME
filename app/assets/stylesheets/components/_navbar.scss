@@ -54,15 +54,39 @@
   opacity: 0.5;
   line-height: 36px;
   margin: 0 10px;
+  transition: 0.3s ease;
   &:hover {
     opacity: 0.8;
   }
 }
 
 .mail-active {
-  color: rgb(255, 104, 104);
+  color: rgb(234, 9, 9);
   opacity: 0.8;
+  animation: shake 0.45s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
   &:hover {
     opacity: 1;
   }
 }
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-0.25px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(0.5px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(1px, 0, 0);
+  }
+}
+

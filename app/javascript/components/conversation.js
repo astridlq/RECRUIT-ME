@@ -18,9 +18,10 @@ const conversation = () => {
       rawText = `${rawText.substring(0, 27)}...`;
     }
 
-    var conId = data['conversation_id'].toString()
 
     // add new convo box if new convo
+    var conId = data['conversation_id'].toString()
+
     if (data.is_new && location.pathname === '/conversations') {
       document.querySelector('.conversation-bar').insertAdjacentHTML('afterbegin', `
         <a data-remote="true" href="/conversations/${conId}">
@@ -37,21 +38,20 @@ const conversation = () => {
             </div>
           </div>
         </a>`)
+      // run this func again to pick up newly entered convo box
       activateConversation();
     } else if (location.pathname === '/conversations') {
-        // code for adding to message preveiw
+        // code for adding to message preview
         document.querySelector(`.conv-preview-${conId}`).innerText = rawText
 
       // add content to conversation if it's open
       if (document.querySelector('.new-message-container') && document.querySelector('.conversation-box-active').querySelector(`.conv-preview-${conId}`)) {
-        console.log('submitting')
         var submit = document.querySelector('.new-message-container');
         submit.insertAdjacentHTML('beforebegin', data['message'])
         displayArea.scrollTop = displayArea.scrollHeight;
       } else {
-         // convo is not open
+         // if convo is not already open make envelope red
          document.querySelector(`.conv-preview-${conId}`).parentElement.parentElement.classList.add('conversation-box-new')
-          console.log(document.querySelector(`.conv-preview-${conId}`).parentElement.parentElement)
            if (userId != data.user_id) {
               document.querySelector('.fa-envelope').classList.add('mail-active')
             }
@@ -65,6 +65,8 @@ const conversation = () => {
     }
   });
 
+  // add to preveiw text in convo box as it's being populated
+  // and reset text in textfield
   $(document).on('submit', '.new_message', function(e) {
     e.preventDefault();
     var values = $(this).serializeArray();
@@ -80,10 +82,13 @@ const conversation = () => {
 
 const activateConversation = () => {
   const convos = document.querySelectorAll('.conversation-box')
-  console.log(convos);
+  if (document.querySelector('.conversation-box-new') == null) {
+        document.querySelector('.fa-envelope').classList.remove('mail-active')
+      } else {
+        document.querySelector('.fa-envelope').classList.add('mail-active')
+      }
   convos.forEach((convo) => {
     convo.addEventListener('click', () => {
-      console.log('clicked');
       convos.forEach((c) => {
         c.classList.remove('conversation-box-active')
       })
@@ -91,6 +96,8 @@ const activateConversation = () => {
       convo.classList.remove('conversation-box-new')
       if (document.querySelector('.conversation-box-new') == null) {
         document.querySelector('.fa-envelope').classList.remove('mail-active')
+      } else {
+        document.querySelector('.fa-envelope').classList.add('mail-active')
       }
     })
   })
