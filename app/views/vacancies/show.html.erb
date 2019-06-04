@@ -25,49 +25,47 @@
       <div class="vacancy-info-container">
         <div class="vacancy-info-card">
           <div class="d-flex justify-content-between">
-            <h2>Responabilities</h2>
+            <h2>Responsibilities</h2>
           </div>
-          <div>
-            <p><%= @vacancy.description %></p>
+          <div class="job-description">
+            <p><%= @vacancy.description.html_safe %></p>
           </div>
         </div>
       </div>
 
-      <!-- key experiences -->
-      <div class="vacancy-skill-card" id="key">
-        <div class="d-flex justify-content-between">
-          <h3>Preferred Key Experiences</h3>
-        </div>
-        <div class="skills-grid-1">
-
-          <% @vacancy_skills.each do |vskill| %>
-          <% if vskill.skill.skill_type == "experience" %>
-          <label for="<%= "skill-item-#{vskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-          url('<%= cl_image_path vskill.skill.photo, height: 120, width: 120 %>')">
-
-          <div class="section">
-            <p class="show-profile"><%= vskill.skill.name %></p>
-            <div class="overlay">
-            </div>
-          </div>
-        </label>
-        <% end %>
-        <% end %>
-      </div>
-    </div>
 
     <!-- Open positions -->
 
     <div class="job-additional-info">
       <h2>Open Positions</h2>
       <div class="openings-info" >
-        <p>No current openings for this job</p>
-        <div class="padding-btn">
+        <p>No current opening for this job</p>
+        <div>
           <%= render 'shared/modal-job-alerts' %>
         </div>
       </div>
     </div>
 
+
+  <!-- Employee contact -->
+  <div class="job-additional-info">
+    <h2><%= @vacancy.title %>(s)</h2>
+      <% @users.each do |user| %>
+      <% unless user == current_user %>
+      <div class="employee-contact-chat">
+        <div class="employee-contact-info" >
+        <%= cl_image_tag user.photo, class: 'avatar' %>
+        <div>
+          <h3><%= user.first_name %> <%= user.last_name %></h3>
+          <h4><%= user.location %></h4>
+        </div>
+        </div>
+        <%= link_to "CHAT", conversations_path, class: "button"  %>
+      </div>
+    <% end %>
+    <% end %>
+
+  </div>
   </div>
 
   <!-- right side  -->
@@ -112,27 +110,35 @@
     </div>
   </div>
 
+<!-- key experiences -->
+      <div class="vacancy-skill-card" id="key">
+        <div class="d-flex justify-content-between">
+          <h3>Preferred Key Experiences</h3>
+        </div>
+        <div class="skills-grid-1">
 
-<!-- Employee contact -->
-  <div class="job-additional-info">
-    <h2><%= @vacancy.title %>(s)</h2>
-      <% @users.each do |user| %>
-      <div class="employee-contact-chat">
-        <div class="employee-contact-info" >
-        <%= cl_image_tag user.photo, class: 'avatar' %>
-        <div>
-          <h3><%= user.first_name %> <%= user.last_name %></h3>
-          <h4><%= user.location %></h4>
-        </div>
-        </div>
-        <%= link_to "CHAT", conversations_path, class: "button"  %>
+          <% @vacancy_skills.each do |vskill| %>
+          <% if vskill.skill.skill_type == "experience" %>
+          <label for="<%= "skill-item-#{vskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+          url('<%= cl_image_path vskill.skill.photo, height: 120, width: 120 %>')">
+
+          <div class="section">
+            <p class="show-profile"><%= vskill.skill.name %></p>
+            <div class="overlay">
+            </div>
+          </div>
+        </label>
+        <% end %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
 
-  </div>
-</div>
-
-</div>
 
 
 </div>
+
+</div>
+
+
+</div>
+

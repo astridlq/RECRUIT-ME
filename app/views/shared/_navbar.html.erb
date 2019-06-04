@@ -5,7 +5,6 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.jpg", class: "company-logo"%>
     <% end %>
-    <%= link_to "RECRUIT.me", root_path %>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,7 +14,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-           <%= link_to "JOBS", vacancies_path, class: "nav-link #{'active' if params[:controller] == "vacancies"}" %>
+           <%= link_to "JOBS", vacancy_search_path, class: "nav-link #{'active' if params[:controller] == "vacancies"}" %>
         </li>
         <li class="nav-item">
           <%= link_to "CANDIDATES", profile_search_path, class: "nav-link  #{'active' if params[:controller] == "profiles"}" %>
