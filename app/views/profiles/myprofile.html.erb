@@ -117,7 +117,9 @@
         <div class="myprofile-skill-card" id="hard">
           <div class="d-flex justify-content-between">
             <h3>SKILLS TO DEVELOP</h3>
+            <%= link_to edit_develop_skills_path do  %>
               <i class="fas fa-pen-nib"></i>
+              <% end %>
           </div>
           <div class="skills-grid-1">
             <% @develop_skills.each do |dskill| %>
