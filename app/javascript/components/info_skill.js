@@ -6,21 +6,18 @@ const skillInfoToggle = () => {
 };
 
 
-// const infoModal = () => {
-//   $(document).ready(function(){
-//       $('[data-toggle="popover-hover"]').popover({
-//           html: true,
-//           trigger: 'hover',
-//           placement: 'bottom'
+// $(function () {
+//   $('[data-toggle="popover"]').popover({ trigger: "hover" })
+// })
 
-//       });
-//   });
-// };
 
-$(function () {
-  $('[data-toggle="popover"]').popover({ trigger: "hover" })
-})
+$('.popover-skill').popover({
+         html : true,
+         content: function() {
+          const elementId = $(this).attr("data-popover-content");
+          return $(elementId).html();
+         }
+         });
 
 
 export { skillInfoToggle };
-// export { infoModal };
