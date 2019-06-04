@@ -55,7 +55,7 @@
 
             <% @existing_skills.each do |eskill| %>
             <% if eskill.skill.skill_type == "experience" %>
-                <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
              url('<%= cl_image_path eskill.skill.photo, height: 120, width: 120 %>')">
 
                   <div class="section">
@@ -82,10 +82,23 @@
           <div class="skills-grid-1">
             <% @existing_skills.each do |uskill| %>
             <% unless uskill.skill.skill_type == "experience" %>
-                <label for="<%= "skill-item-#{uskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                <label for="<%= "skill-item-#{uskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
              url('<%= cl_image_path uskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
                   <div class="section">
                     <p class="show-profile"><%= uskill.skill.name %></p>
+
+                      <!-- Popover -->
+                        <a class="popover-skill" data-toggle="popover" data-placement="right" title="" data-trigger="hover" data-html="true"
+                        data-popover-content="#myPopoverContent<%=uskill.id%>"><i class="fas fa-info-circle"></i></a>
+
+                        <!-- Content for Popover: -->
+                        <div id="myPopoverContent<%=uskill.id%>" style="display:none">
+                          <div class="skill-info">
+                            <h2><%= uskill.skill.name %></h2>
+                            <p><%= uskill.skill.description %></p>
+                          </div>
+                        </div>
+
                     <div class="overlay">
                     </div>
                   </div>
@@ -102,10 +115,23 @@
           </div>
           <div class="skills-grid-1">
             <% @develop_skills.each do |dskill| %>
-                <label for="<%= "skill-item-#{dskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                <label for="<%= "skill-item-#{dskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
              url('<%= cl_image_path dskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
                   <div class="section">
                     <p class="show-profile"><%= dskill.skill.name %></p>
+
+                    <!-- Popover -->
+                      <a class="popover-skill" data-toggle="popover" data-placement="right" title="" data-trigger="hover" data-html="true"
+                      data-popover-content="#myPopoverContent<%=dskill.id%>"><i class="fas fa-info-circle"></i></a>
+
+                      <!-- Content for Popover: -->
+                      <div id="myPopoverContent<%=dskill.id%>" style="display:none">
+                        <div class="skill-info">
+                          <h2><%= dskill.skill.name %></h2>
+                          <p><%= dskill.skill.description %></p>
+                        </div>
+                      </div>
+
                     <div class="overlay">
                     </div>
                   </div>

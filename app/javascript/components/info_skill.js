@@ -1,15 +1,10 @@
 
 const skillInfoToggle = () => {
   $(".section").hover(function(){
+      console.log('helllo')
      $(this).find(".popover-skill").toggle();
   });
 };
-
-
-// $(function () {
-//   $('[data-toggle="popover"]').popover({ trigger: "hover" })
-// })
-
 
 $('.popover-skill').popover({
          html : true,

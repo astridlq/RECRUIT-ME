@@ -5,6 +5,7 @@ import { toggleGroup, skillActive, clearSkills, selectJob, preSelect } from '../
 import { conversation, activateConversation, autoExpand } from '../components/conversation';
 import { skillInfoToggle } from '../components/info_skill';
 
+skillInfoToggle();
 initToggleForm();
 autoExpand();
 activateConversation();
@@ -14,5 +15,4 @@ clearSkills();
 skillActive();
 toggleGroup();
 selectJob();
-skillInfoToggle();
 infoModal();
