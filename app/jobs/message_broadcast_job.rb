@@ -15,7 +15,12 @@ class MessageBroadcastJob < ApplicationJob
     ActionCable.server.broadcast(
       "conversations-#{user.id}",
       message: render_message(message, user),
-      conversation_id: message.conversation_id
+      conversation_id: message.conversation_id,
+      user_id: message.user_id,
+      sender_name: "#{message.user.first_name} #{message.user.last_name}",
+      sender_photo: message.user.photo.url,
+      is_new: message.conversation.messages.length == 1,
+      sent_at: message.created_at.to_time.strftime("%k:%M")
     )
   end
 
@@ -23,7 +28,12 @@ class MessageBroadcastJob < ApplicationJob
     ActionCable.server.broadcast(
       "conversations-#{user.id}",
       message: render_message(message, user),
-      conversation_id: message.conversation_id
+      conversation_id: message.conversation_id,
+      user_id: message.user_id,
+      sender_name: "#{message.user.first_name} #{message.user.last_name}",
+      sender_photo: message.user.photo.url,
+      is_new: message.conversation.messages.length == 1,
+      sent_at: message.created_at.to_time.strftime("%k:%M")
     )
   end
 

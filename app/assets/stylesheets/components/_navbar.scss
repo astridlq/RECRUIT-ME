@@ -27,6 +27,11 @@
   }
 }
 
+#diff-logo {
+  color: $our-grey;
+  opacity: 0.17;
+}
+
 .company-detail {
   display: flex;
   align-items: center;
@@ -42,4 +47,22 @@
 
 .navbar-light .navbar-brand {
     margin-left: 0;
+}
+
+.fa-envelope {
+  color: $our-grey;
+  opacity: 0.5;
+  line-height: 36px;
+  margin: 0 10px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.mail-active {
+  color: rgb(255, 104, 104);
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
 }

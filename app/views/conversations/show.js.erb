@@ -1,5 +1,12 @@
 var displayArea = document.querySelector('.conversation-display');
 
+// code to set messages to read when oping conversartion
+
+<% @conversation.messages.where(user_id: @conversation.opposed_user(current_user).id).each do |message| %>
+<% message.read = true %>
+<% message.save %>
+<% end %>
+
 displayArea.innerHTML = '<%= j render "conversations/conversation", conversation: @conversation %>'
 displayArea.insertAdjacentHTML('beforeEnd', '<%= j render "conversations/submit", conversation: @conversation %>')
 
@@ -14,5 +21,3 @@ function submitOnEnter(event){
 }
 
 document.querySelector(".typing-area").addEventListener("keypress", submitOnEnter);
-
-console.log(document.querySelector(".typing-area"))

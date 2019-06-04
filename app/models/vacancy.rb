@@ -4,7 +4,7 @@ class Vacancy < ApplicationRecord
   has_many :vacancy_skills
   has_many :preferred_skills
   has_many :skills, through: :vacancy_skills
-  has_many :conversations
+  # has_many :conversations
 
   mount_uploader :photo, PhotoUploader
 
