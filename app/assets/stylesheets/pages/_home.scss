@@ -72,3 +72,10 @@ transition: all 200ms ease;
   color: white;
 
 }
+
+.home-looking-for {
+  width: 560px;
+  .typed-cursor {
+      opacity: 0;
+    }
+}
