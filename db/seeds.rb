@@ -2282,18 +2282,15 @@ conversation_hash = [
 {
   sender: users[1],
   recipient: users[10],
-  accepted: true,
-  vacancy: vacancies[1]
+  accepted: true
 },{
   sender: users[2],
   recipient: users[10],
-  accepted: true,
-  vacancy: vacancies[2]
+  accepted: true
 },{
   sender: users[3],
   recipient: users[10],
-  accepted: true,
-  vacancy: vacancies[3]
+  accepted: true
 }
 ]
 

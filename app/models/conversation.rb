@@ -1,5 +1,5 @@
 class Conversation < ApplicationRecord
-  belongs_to :vacancy
+  # belongs_to :vacancy
   has_many :messages, dependent: :destroy
   belongs_to :sender, foreign_key: :sender_id, class_name: 'User'
   belongs_to :recipient, foreign_key: :recipient_id, class_name: 'User'
@@ -16,7 +16,7 @@ class Conversation < ApplicationRecord
     conversation = between(sender_id, recipient_id).first
     return conversation if conversation.present?
 
-    create(sender_id: sender_id, recipient_id: recipient_id)
+    new(sender_id: sender_id, recipient_id: recipient_id)
   end
 
   def opposed_user(user)

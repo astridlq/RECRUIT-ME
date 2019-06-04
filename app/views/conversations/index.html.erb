@@ -3,7 +3,14 @@
    <div class="conversation-bar">
     <% @conversations.each do |conversation| %>
       <%= link_to conversation_path(conversation), remote: true do %>
-        <div class="conversation-box">
+      <% rMessages = conversation.messages.where(user_id: conversation.opposed_user(current_user).id) %>
+      <% cClasses = "conversation-box" %>
+            <% if rMessages.count > 0 %>
+              <% if rMessages.last.read == false %>
+                <% cClasses = "conversation-box conversation-box-new" %>
+              <% end %>
+            <% end %>
+        <div class="<%= cClasses %>">
             <%= cl_image_tag conversation.opposed_user(current_user).photo, height: 70, width: 70, crop: :fill, class: "avatar" %>
           <div class="conv-box">
             <div class="conv-box-top">

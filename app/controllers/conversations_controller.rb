@@ -8,8 +8,15 @@ class ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.get(current_user.id, params[:user_id])
-    add_to_conversations unless conversated?
+    @is_new_conversation = @conversation.id.nil?
+    @conversation.save!
+    message = Message.new(body: params[:conversation][:content])
+    message.conversation = @conversation
+    message.user = current_user
+    message.save!
+    # MessageBroadcastJob.new.perform(message)
     respond_to do |format|
+      format.html { redirect_to profile_path(params[:user_id]) }
       format.js
     end
   end

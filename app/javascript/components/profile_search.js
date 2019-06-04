@@ -97,7 +97,6 @@ const addToSelection = () => {
   jobNameContainer.innerHTML = `<div id="selection-collection"></div>`
   jobNameArray.forEach((name) => {
     document.getElementById('selection-collection').insertAdjacentHTML('afterend', `<p class='skill-selection'>${name}<p>`)
-    console.log(name)
   })
 }
 
@@ -184,6 +183,7 @@ const selectJob = () => {
           arr[i] = arr[i].value;
         }
         arr.forEach((n) => {
+          console.log(n)
           const skill = document.getElementById(`skill-item-${n}`)
           skill.nextSibling.nextSibling.classList.add("active-skill")
           skill.checked = true

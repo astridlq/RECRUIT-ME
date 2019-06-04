@@ -5,6 +5,13 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.jpg", class: "company-logo"%>
     <% end %>
+    <% if current_page?(conversations_path) %>
+      <%= link_to root_path do %>
+        <span>RECRUIT.me</span><span id="diff-logo">ssenger</span>
+      <% end %>
+    <% else %>
+      <%= link_to "RECRUIT.me", root_path %>
+    <% end %>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,6 +25,31 @@
         </li>
         <li class="nav-item">
           <%= link_to "CANDIDATES", profile_search_path, class: "nav-link  #{'active' if params[:controller] == "profiles"}" if current_user.is_manager? %>
+        </li>
+        <li>
+
+        <!-- logic to find new mail -->
+        <% mail_classes = 'fa fa-envelope' %>
+
+        <% if !current_page?(conversations_path) %>
+          <% my_conversations = Conversation.where(recipient: current_user).or(Conversation.where(sender: current_user)) %>
+          <% if my_conversations.length > 0 %>
+            <% my_conversations.each do |conversation| %>
+            <% r_Messages = conversation.messages.where.not(user: current_user) %>
+              <% if r_Messages.count > 0 %>
+                <% r_Messages.each do |message| %>
+                  <% if message.read == false %>
+                    <% mail_classes = 'fa fa-envelope mail-active' %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+          <%= link_to conversations_path do %>
+            <i class="<%= mail_classes %>" aria-hidden="true"></i>
+          <% end %>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.present? %>
