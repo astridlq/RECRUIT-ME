@@ -5,12 +5,24 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def update?
+    true
+  end
+
   def search?
     @user.is_manager
   end
 
   def index?
     @user.is_manager
+  end
+
+  def edit_user_skills?
+    true
+  end
+
+  def update_user_skills?
+    true
   end
 
   def myprofile?

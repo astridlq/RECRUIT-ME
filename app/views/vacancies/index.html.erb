@@ -1,64 +1,67 @@
-<div class="vac-container">
-  <div class="vac-selection">
-    <h4>Your Selection</h4>
-  </div>
-  <div class="vac-skills-container">
-    <p class="skill-selection">good skill</p>
-    <p class="skill-selection">better skill</p>
-    <p class="skill-selection">best skill</p>
-    <p class="skill-selection">crazy skill</p>
-  </div>
-  <div class="vac-matches-button">PERFECT MATCHES</div>
-  <div class="vac-grid">
-    <% @vacancies.each do |vacancy| %>
-    <div class="job-info">
-     <div>
-      <h1>
-        <%= vacancy.title %>
+<div class="container">
 
-      </h1>
+  <h1 class="search-result-h1">LOOKING FOR A JOB</h1>
 
+
+  <h3 class="search-result-title-h3">Your Selection</h3>
+  <div class="selected-skills-result">
+    <% @skills_to_match.each do |selected_skill| %>
+    <p class="skill-selection"><%= Skill.find(selected_skill).name %></p>
+    <% end %>
+    <%= link_to "+", vacancy_search_path, class: "edit-plus" %>
+  </div>
+
+  <h2 class="search-result-title-h2">Matching vacancies</h2>
+
+
+  <% @matches.reverse.first(7).each do |vacancy| %>
+  <%= link_to vacancy_path(vacancy.id) do %>
+  <div class="container-custom">
+    <div class="row">
+      <div class="col-12 col-sm-4">
+        <div class="employee-detail-all">
+          <div class="employee-detail">
+            <img src="<%= image_path vacancy.photo %>" class="avatar-big" alt="">
+            <div class="employee-contact">
+              <h2><%= vacancy.title.capitalize %></h2>
+              <h3><%= vacancy.department %></h3>
+              <p><%= vacancy.location %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4">
+        <div class="employee-have-skills-all">
+          <div class="employee-have-skills">
+            <h3>Required skills</h3>
+            <div class="employee-skills">
+              <% vacancy.vacancy_skills.select {|vacancy_skill| @skills_to_match.include?(vacancy_skill.skill_id) }.each do |vacancy_skill| %>
+              <p class="skill-selection"><%= vacancy_skill.skill.name %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="employee-wish-skills-all">
+          <div class="employee-wish-skills">
+            <h3>Preferred skills</h3>
+            <% if vacancy.preferred_skills.select {|preferred_skill| @skills_to_match.include?(preferred_skill.skill_id) }.empty? %>
+              <p id="others">Other skills than selected...</p>
+            <% else %>
+              <div class="employee-skills">
+                <% vacancy.preferred_skills.select {|preferred_skill| @skills_to_match.include?(preferred_skill.skill_id) }.each do |preferred_skill| %>
+                  <p class="skill-selection"><%= preferred_skill.skill.name %></p>
+                <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <hr>
-    <div class="job-text">
-      <div class="fad">
-       <%= vacancy.description %>
-     </div>
-   </div>
-   <div class="btn-con">
-    <a class="btn btn-primary btn-sm" href="#">Read More</a>
-  </div>
-  <div class="job-img">
-    <img src="<%= cl_image_path vacancy.photo  %>" alt="">
-  </div>
-</div>
-<% end %>
-</div>
-<div class="vac-matches-button">MORE JOBS</div>
-</div>
-  <div class="vac-grid">
-    <% @vacancies.each do |vacancy| %>
-    <div class="job-info">
-     <div>
-      <h1>
-        <%= vacancy.title %>
 
-      </h1>
-
-    </div>
-    <hr>
-    <div class="job-text">
-      <div class="fad">
-       <%= vacancy.description %>
-     </div>
-   </div>
-   <div class="btn-con">
-    <a class="btn btn-primary btn-sm" href="#">Read More</a>
   </div>
-  <div class="job-img">
-    <img src="<%= cl_image_path vacancy.photo  %>" alt="">
-  </div>
+  <% end %>
+  <% end %>
 </div>
-<% end %>
-</div>
-

@@ -25,7 +25,9 @@ padding: 100px;
 }
 
 .home-btn-job {
+padding: 30px;
 background-color: white;
+text-align: center;
 color: $our-blue;
 border-radius: 2px;
 height: 183px;
@@ -47,6 +49,7 @@ align-items: center;
 
 .home-btn-candidate {
 background-color: $our-blue;
+text-align: center;
 color: white;
 border-radius: 2px;
 height: 183px;
@@ -68,4 +71,11 @@ transition: all 200ms ease;
   text-decoration: none;
   color: white;
 
+}
+
+.home-looking-for {
+  width: 560px;
+  .typed-cursor {
+      opacity: 0;
+    }
 }

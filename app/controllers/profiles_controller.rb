@@ -20,7 +20,6 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @existing_skills = @user.user_skills
     @develop_skills = @user.develop_skills
   end
@@ -28,9 +27,41 @@ class ProfilesController < ApplicationController
   def myprofile
     @user = current_user
     authorize @user
-    @hard_skills = @user.skills.where(skill_type: 'hard')
-    @soft_skills = @user.skills.where(skill_type: 'soft')
-    @experience = @user.skills.where(skill_type: 'experience')
+    @existing_skills = @user.user_skills
+    @develop_skills = @user.develop_skills
+  end
+
+  def update
+    @user = current_user
+    authorize @user
+    @user.update(user_params)
+    redirect_to myprofile_path
+  end
+
+  def edit_user_skills
+    @user = current_user
+    authorize @user
+    @pre_selected = params[:skills_ids].map if params[:skills_ids]
+    @all_skills = Skill.all
+    @hard_skills = Skill.where(skill_type: 'hard')
+    @soft_skills = Skill.where(skill_type: 'soft')
+    @key_experience = Skill.where(skill_type: 'experience')
+  end
+
+    def update_user_skills
+    @user = current_user
+    authorize @user
+    # @pre_selected = params[:skills_ids].map if params[:skills_ids]
+    # @all_skills = Skill.all
+    # @hard_skills = Skill.where(skill_type: 'hard')
+    # @soft_skills = Skill.where(skill_type: 'soft')
+    # @key_experience = Skill.where(skill_type: 'experience')
+    # @user.user_skills.update(@pre_selected)
+    @user.user_skills.destroy_all
+    params[:skill_ids].each do |skill_id|
+      @user.user_skills << UserSkill.create(user: @user, skill: Skill.find(skill_id))
+    end
+    redirect_to myprofile_path
   end
 
   private
@@ -63,5 +94,11 @@ class ProfilesController < ApplicationController
     authorize @user
   end
 
+  def user_params
+    params.require(:user).permit(:description)
+  end
 
+  def edit_user_skills_params
+    params.require(:skill_ids).permit(:user_skill_ids)
+  end
 end

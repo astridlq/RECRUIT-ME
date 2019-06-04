@@ -6,10 +6,14 @@ class VacancyPolicy < ApplicationPolicy
   end
 
   def search?
-    @user.is_manager
+    true
   end
 
   def index?
-    @user.is_manager
+    true
+  end
+
+  def show?
+    true
   end
 end

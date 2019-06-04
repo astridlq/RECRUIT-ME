@@ -2041,12 +2041,15 @@ vacancies_hash =
 [
 {
 title: "Brand Manager",
-description:"Develop and execute seasonal and category marketing programs,
-Engage with the consumer by category to ensure targeted programs are driving brand strategies with the consumer. Adopt, enrich and creatively execute and/or support global category strategy within local markets,
-Partner across internal teams (sports marketing, event marketing, retail brand marketing, etc.) to ensure programs are executed per category brand direction,
-Lead category marketing programs to achieve defined Go to Market goals
-Track and evaluate the Marketing impact,
-Manage timelines and budget.",
+description:"<ul>
+  <li>Develop and execute seasonal and category marketing programs,</li>
+  <li>Engage with the consumer by category to ensure targeted programs are driving brand strategies with the consumer. Adopt, enrich and creatively execute and/or support global category strategy within local markets,</li>
+  <li>Partner across internal teams (sports marketing, event marketing, retail brand marketing, etc.) to ensure programs are executed per category brand direction,</li>
+  <li>Lead category marketing programs to achieve defined Go to Market goals</li>
+  <li>Track and evaluate the Marketing impact,</li>
+  <li>Manage timelines and budget.</li>
+</ul>
+",
 department: "Marketing",
 start_date: Date.parse("01/07/2019"),
 location: "Tokyo",
@@ -2055,13 +2058,15 @@ photo: File.open(Rails.root.join("db/fixtures/jobs/brand_manager.jpg"))
 },
 {
 title: "Data Analyst",
-description:"Interpret data, analyze results using statistical techniques and provide ongoing reports
-Develop and implement databases, data collection systems, data analytics and other strategies that optimize statistical efficiency and quality
-Acquire data from primary or secondary data sources and maintain databases/data systems
-Identify, analyze, and interpret trends or patterns in complex data sets
-Filter and “clean” data by reviewing computer reports, printouts, and performance indicators to locate and correct code problems
-Work with management to prioritize business and information needs
-Locate and define new process improvement opportunities",
+description:"<ul>
+  <li>Interpret data, analyze results using statistical techniques and provide ongoing reports,</li>
+  <li>Develop and implement databases, data collection systems, data analytics and other strategies that optimize statistical efficiency and quality,</li>
+  <li>Acquire data from primary or secondary data sources and maintain databases/data systems,</li>
+  <li>Identify, analyze, and interpret trends or patterns in complex data sets,</li>
+  <li>Filter and “clean” data by reviewing computer reports, printouts, and performance indicators to locate and correct code problems,</li>
+  <li>Work with management to prioritize business and information needs,</li>
+  <li>Locate and define new process improvement opportunities.</li>
+</ul>",
 department: "IT",
 start_date: Date.parse("29/07/2019"),
 location: "Brisbane",
@@ -2070,17 +2075,19 @@ photo: File.open(Rails.root.join("db/fixtures/jobs/data_analyst.jpg"))
 },
 {
 title: "Front-end Developer",
-description:"Use markup languages like HTML to create user-friendly web pages
-Maintain and improve website
-Optimize applications for maximum speed
-Design mobile-based features
-Collaborate with back-end developers and web designers to improve usability
-Get feedback from, and build solutions for, users and customers
-Write functional requirement documents and guides
-Create quality mockups and prototypes
-Help back-end developers with coding and troubleshooting
-Ensure high quality graphic standards and brand consistency
-Stay up-to-date on emerging technologies",
+description:"<ul>
+  <li>Use markup languages like HTML to create user-friendly web pages,</li>
+  <li>Maintain and improve website,</li>
+  <li>Optimize applications for maximum speed,</li>
+  <li>Design mobile-based features,</li>
+  <li>Collaborate with back-end developers and web designers to improve usability,</li>
+  <li>Get feedback from, and build solutions for, users and customers,</li>
+  <li>Write functional requirement documents and guides,</li>
+  <li>Create quality mockups and prototypes,</li>
+  <li>Help back-end developers with coding and troubleshooting,</li>
+  <li>Ensure high quality graphic standards and brand consistency,</li>
+  <li>Stay up-to-date on emerging technologies.</li>
+</ul>",
 department: "IT",
 start_date: Date.parse("17/06/2019"),
 location: "Amsterdam",
@@ -2089,16 +2096,18 @@ photo: File.open(Rails.root.join("db/fixtures/jobs/front_end_developer.jpg"))
 },
 {
 title: "UX Designer",
-description:"Gather and evaluate user requirements in collaboration with product managers and engineers
-Illustrate design ideas using storyboards, process flows and sitemaps
-Design graphic user interface elements, like menus, tabs and widgets
-Build page navigation buttons and search fields
-Develop UI mockups and prototypes that clearly illustrate how sites function and look like
-Create original graphic designs (e.g. images, sketches and tables)
-Prepare and present rough drafts to internal teams and key stakeholders
-Identify and troubleshoot UX problems (e.g. responsiveness)
-Conduct layout adjustments based on user feedback
-Adhere to style standards on fonts, colors and images",
+description:"<ul>
+  <li>Gather and evaluate user requirements in collaboration with product managers and engineers,</li>
+  <li>Illustrate design ideas using storyboards, process flows and sitemaps,</li>
+  <li>Design graphic user interface elements, like menus, tabs and widgets,</li>
+  <li>Build page navigation buttons and search fields,</li>
+  <li>Develop UI mockups and prototypes that clearly illustrate how sites function and look like,</li>
+  <li>Create original graphic designs (e.g. images, sketches and tables),</li>
+  <li>Prepare and present rough drafts to internal teams and key stakeholders,</li>
+  <li>Identify and troubleshoot UX problems (e.g. responsiveness),</li>
+  <li>Conduct layout adjustments based on user feedback,</li>
+  <li>Adhere to style standards on fonts, colors and images.</li>
+</ul>",
 department: "IT",
 start_date: Date.parse("19/08/2019"),
 location: "Barcelona",
@@ -2118,18 +2127,6 @@ skill: skills[14]
 {
 vacancy: vacancies[0],
 skill: skills[15]
-},
-{
-vacancy: vacancies[0],
-skill: skills[16]
-},
-{
-vacancy: vacancies[0],
-skill: skills[17]
-},
-{
-vacancy: vacancies[0],
-skill: skills[26]
 },
 {
 vacancy: vacancies[0],
@@ -2169,13 +2166,6 @@ vacancy: vacancies[1],
 skill: skills[16]
 },{
 vacancy: vacancies[1],
-skill: skills[25]
-},
-{
-vacancy: vacancies[1],
-skill: skills[26]
-},{
-vacancy: vacancies[1],
 skill: skills[30]
 },{
 vacancy: vacancies[2],
@@ -2189,12 +2179,6 @@ skill: skills[7]
 },{
 vacancy: vacancies[2],
 skill: skills[17]
-},{
-vacancy: vacancies[2],
-skill: skills[24]
-},{
-vacancy: vacancies[2],
-skill: skills[25]
 },{
 vacancy: vacancies[2],
 skill: skills[27]
@@ -2218,24 +2202,6 @@ vacancy: vacancies[3],
 skill: skills[6]
 },{
 vacancy: vacancies[3],
-skill: skills[7]
-},{
-vacancy: vacancies[3],
-skill: skills[14]
-},{
-vacancy: vacancies[3],
-skill: skills[17]
-},{
-vacancy: vacancies[3],
-skill: skills[26]
-},{
-vacancy: vacancies[3],
-skill: skills[27]
-},{
-vacancy: vacancies[3],
-skill: skills[31]
-},{
-vacancy: vacancies[3],
 skill: skills[33]
 },{
 vacancy: vacancies[3],
@@ -2248,9 +2214,67 @@ skill: skills[35]
 vacancy: vacancies[3],
 skill: skills[37]
 },
+{
+vacancy: vacancies[3],
+skill: skills[26]
+},{
+vacancy: vacancies[3],
+skill: skills[27]
+}
 ]
 
 vacancy_skills = VacancySkill.create(vacancy_skills_hash)
+
+vacancy_preferred_skills_hash = [
+
+{
+vacancy: vacancies[0],
+skill: skills[16]
+},
+{
+vacancy: vacancies[0],
+skill: skills[17]
+},
+{
+vacancy: vacancies[0],
+skill: skills[26]
+},
+
+{
+vacancy: vacancies[1],
+skill: skills[25]
+},
+{
+vacancy: vacancies[1],
+skill: skills[26]
+},
+{
+vacancy: vacancies[2],
+skill: skills[24]
+},{
+vacancy: vacancies[2],
+skill: skills[25]
+},
+{
+vacancy: vacancies[3],
+skill: skills[7]
+},{
+vacancy: vacancies[3],
+skill: skills[14]
+},{
+vacancy: vacancies[3],
+skill: skills[17]
+}, {
+vacancy: vacancies[3],
+skill: skills[31]
+}
+
+
+
+
+]
+
+vacancy_preferred_skills = PreferredSkill.create(vacancy_preferred_skills_hash)
 
 puts "creating conversations..."
 

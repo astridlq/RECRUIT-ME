@@ -139,12 +139,6 @@
   }
 }
 
-.conversation-box-active {
-  background-color: $blue-hover;
-  &:hover {
-    background-color: $blue-hover;
-  }
-}
 
 .conversation-box-new {
   background-color: rgba(255, 104, 104, 0.6);
@@ -192,6 +186,16 @@
   font-style: italic;
   font-size: 12px;
   margin-bottom: 12px;
+}
+
+.conversation-box-active {
+  background-color: $blue-hover;
+  &:hover {
+    background-color: $blue-hover;
+  }
+  p {
+    color: white;
+  }
 }
 
 .message-sent {
