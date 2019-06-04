@@ -25,9 +25,9 @@
       <div class="vacancy-info-container">
         <div class="vacancy-info-card">
           <div class="d-flex justify-content-between">
-            <h2>Responabilities</h2>
+            <h2>Responsibilities</h2>
           </div>
-          <div>
+          <div class="job-description">
             <p><%= @vacancy.description.html_safe %></p>
           </div>
         </div>
@@ -39,7 +39,7 @@
     <div class="job-additional-info">
       <h2>Open Positions</h2>
       <div class="openings-info" >
-        <p>No current openings for this job</p>
+        <p>No current opening for this job</p>
         <div>
           <%= render 'shared/modal-job-alerts' %>
         </div>
@@ -141,3 +141,4 @@
 
 
 </div>
+
