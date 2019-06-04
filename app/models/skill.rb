@@ -2,7 +2,7 @@ class Skill < ApplicationRecord
   has_many :user_skills
   has_many :users, through: :user_skills
   has_many :vacancy_skills
-  has_many :preferred_skills
+  has_many :preferred_skills, dependent: :destroy
   has_many :vacancies, through: :vacancy_skills
   has_many :develop_skills
   has_many :users, through: :develop_skills

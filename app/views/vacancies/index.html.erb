@@ -51,7 +51,7 @@
               <p id="others">Other skills than selected...</p>
             <% else %>
               <div class="employee-skills">
-                <% vacancy.preferred_skills.select {|preferred_skill| @skills_to_match.include?(vacancy_skill.skill_id) }.each do |preferred_skill| %>
+                <% vacancy.preferred_skills.select {|preferred_skill| @skills_to_match.include?(preferred_skill.skill_id) }.each do |preferred_skill| %>
                   <p class="skill-selection"><%= preferred_skill.skill.name %></p>
                 <% end %>
             </div>

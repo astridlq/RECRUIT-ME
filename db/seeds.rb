@@ -2130,18 +2130,6 @@ skill: skills[15]
 },
 {
 vacancy: vacancies[0],
-skill: skills[16]
-},
-{
-vacancy: vacancies[0],
-skill: skills[17]
-},
-{
-vacancy: vacancies[0],
-skill: skills[26]
-},
-{
-vacancy: vacancies[0],
 skill: skills[31]
 },
 {
@@ -2178,13 +2166,6 @@ vacancy: vacancies[1],
 skill: skills[16]
 },{
 vacancy: vacancies[1],
-skill: skills[25]
-},
-{
-vacancy: vacancies[1],
-skill: skills[26]
-},{
-vacancy: vacancies[1],
 skill: skills[30]
 },{
 vacancy: vacancies[2],
@@ -2198,12 +2179,6 @@ skill: skills[7]
 },{
 vacancy: vacancies[2],
 skill: skills[17]
-},{
-vacancy: vacancies[2],
-skill: skills[24]
-},{
-vacancy: vacancies[2],
-skill: skills[25]
 },{
 vacancy: vacancies[2],
 skill: skills[27]
@@ -2227,24 +2202,6 @@ vacancy: vacancies[3],
 skill: skills[6]
 },{
 vacancy: vacancies[3],
-skill: skills[7]
-},{
-vacancy: vacancies[3],
-skill: skills[14]
-},{
-vacancy: vacancies[3],
-skill: skills[17]
-},{
-vacancy: vacancies[3],
-skill: skills[26]
-},{
-vacancy: vacancies[3],
-skill: skills[27]
-},{
-vacancy: vacancies[3],
-skill: skills[31]
-},{
-vacancy: vacancies[3],
 skill: skills[33]
 },{
 vacancy: vacancies[3],
@@ -2257,9 +2214,67 @@ skill: skills[35]
 vacancy: vacancies[3],
 skill: skills[37]
 },
+{
+vacancy: vacancies[3],
+skill: skills[26]
+},{
+vacancy: vacancies[3],
+skill: skills[27]
+}
 ]
 
 vacancy_skills = VacancySkill.create(vacancy_skills_hash)
+
+vacancy_preferred_skills_hash = [
+
+{
+vacancy: vacancies[0],
+skill: skills[16]
+},
+{
+vacancy: vacancies[0],
+skill: skills[17]
+},
+{
+vacancy: vacancies[0],
+skill: skills[26]
+},
+
+{
+vacancy: vacancies[1],
+skill: skills[25]
+},
+{
+vacancy: vacancies[1],
+skill: skills[26]
+},
+{
+vacancy: vacancies[2],
+skill: skills[24]
+},{
+vacancy: vacancies[2],
+skill: skills[25]
+},
+{
+vacancy: vacancies[3],
+skill: skills[7]
+},{
+vacancy: vacancies[3],
+skill: skills[14]
+},{
+vacancy: vacancies[3],
+skill: skills[17]
+}, {
+vacancy: vacancies[3],
+skill: skills[31]
+}
+
+
+
+
+]
+
+vacancy_preferred_skills = PreferredSkill.create(vacancy_preferred_skills_hash)
 
 puts "creating conversations..."
 
