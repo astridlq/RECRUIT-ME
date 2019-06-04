@@ -17,7 +17,7 @@
            <%= link_to "JOBS", vacancy_search_path, class: "nav-link #{'active' if params[:controller] == "vacancies"}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "CANDIDATES", profile_search_path, class: "nav-link  #{'active' if params[:controller] == "profiles"}" %>
+          <%= link_to "CANDIDATES", profile_search_path, class: "nav-link  #{'active' if params[:controller] == "profiles"}" if current_user.is_manager? %>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.present? %>
