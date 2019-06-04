@@ -1,0 +1,64 @@
+
+<div class="vac-container">
+  <div class="vac-selection">
+    <h4>Your Selection</h4>
+  </div>
+  <div class="vac-skills-container">
+    <p class="skill-selection">good skill</p>
+    <p class="skill-selection">better skill</p>
+    <p class="skill-selection">best skill</p>
+    <p class="skill-selection">crazy skill</p>
+  </div>
+  <div class="vac-matches-button">PERFECT MATCHES</div>
+  <div class="vac-grid">
+    <% @vacancies.each do |vacancy| %>
+    <div class="job-info">
+     <div>
+      <h1>
+        <%= vacancy.title %>
+
+      </h1>
+
+    </div>
+    <hr>
+    <div class="job-text">
+      <div class="fad">
+       <%= vacancy.description %>
+     </div>
+   </div>
+   <div class="btn-con">
+    <a class="btn btn-primary btn-sm" href="#">Read More</a>
+  </div>
+  <div class="job-img">
+    <img src="<%= cl_image_path vacancy.photo  %>" alt="">
+  </div>
+</div>
+<% end %>
+</div>
+<div class="vac-matches-button">MORE JOBS</div>
+</div>
+  <div class="vac-grid">
+    <% @vacancies.each do |vacancy| %>
+    <div class="job-info">
+     <div>
+      <h1>
+        <%= vacancy.title %>
+
+      </h1>
+
+    </div>
+    <hr>
+    <div class="job-text">
+      <div class="fad">
+       <%= vacancy.description %>
+     </div>
+   </div>
+   <div class="btn-con">
+    <a class="btn btn-primary btn-sm" href="#">Read More</a>
+  </div>
+  <div class="job-img">
+    <img src="<%= cl_image_path vacancy.photo  %>" alt="">
+  </div>
+</div>
+<% end %>
+</div>
