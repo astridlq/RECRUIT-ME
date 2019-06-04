@@ -1,13 +1,12 @@
 <% if current_user.present? && current_user.is_manager? %>
 <div class="home-container">
   <div class="home-looking-for">
-    <h1>YOUR CAREER
-    <br> YOUR SKILLS
-    <br> YOUR MOVE</h1>
+    <h1>YOU ARE
+    <br>LOOKING FOR A</h1>
   </div>
   <div class="home-btns">
-    <%= link_to "FIND A CAREER", vacancy_search_path, class: "home-btn-job" %>
-    <%= link_to "FIND A CANDIDATE", profile_search_path, class: "home-btn-candidate" %>
+    <%= link_to "JOB", vacancy_search_path, class: "home-btn-job" %>
+    <%= link_to "CANDIDATE", profile_search_path, class: "home-btn-candidate" %>
   </div>
 </div>
 <% elsif current_user.present? %>
