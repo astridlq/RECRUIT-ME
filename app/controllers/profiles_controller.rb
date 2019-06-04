@@ -27,9 +27,15 @@ class ProfilesController < ApplicationController
   def myprofile
     @user = current_user
     authorize @user
-    @hard_skills = @user.skills.where(skill_type: 'hard')
-    @soft_skills = @user.skills.where(skill_type: 'soft')
-    @experience = @user.skills.where(skill_type: 'experience')
+    @existing_skills = @user.user_skills
+    @develop_skills = @user.develop_skills
+  end
+
+  def update
+    @user = current_user
+    authorize @user
+    @user.update(user_params)
+    redirect_to myprofile_path
   end
 
   private
@@ -62,5 +68,7 @@ class ProfilesController < ApplicationController
     authorize @user
   end
 
-
+  def user_params
+    params.require(:user).permit(:description)
+  end
 end

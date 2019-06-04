@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'presearch', to: 'profiles#presearch', as: :presearch
   get 'profiles/search', to: 'profiles#search', as: :profile_search
+  patch 'myprofile', to: 'profiles#update', as: :myprofile_update
   get 'myprofile', to: 'profiles#myprofile', as: :myprofile
   get 'profile/develop_hard', to: 'profiles#develop_hard', as: :develop_hard
   get 'profile/develop_soft', to: 'profiles#develop_soft', as: :develop_soft
