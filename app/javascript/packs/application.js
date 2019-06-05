@@ -28,6 +28,12 @@ switch (location.pathname) {
     skillActive();
     toggleGroup();
     selectJob();
+  case '/myprofile/edit_user_skills':
+    preSelect();
+    clearSkills();
+    skillActive();
+    toggleGroup();
+    selectJob();
   default:
     break;
 }
