@@ -20,7 +20,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-           <%= link_to "JOBS", vacancy_search_path, class: "nav-link #{'active' if params[:controller] == "vacancies"}" %>
+           <%= link_to "POSITIONS", vacancy_search_path, class: "nav-link #{'active' if params[:controller] == "vacancies"}" %>
         </li>
         <li class="nav-item">
           <%= link_to "CANDIDATES", profile_search_path, class: "nav-link  #{'active' if params[:controller] == "profiles"}" if current_user.is_manager? %>

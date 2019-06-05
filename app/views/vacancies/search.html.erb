@@ -1,19 +1,11 @@
 <!-- top skills categories bar -->
 
 <div class="container">
-  <div class="search-result-title-h22">
-    <h3>LOOKING FOR A JOB</h3>
-    <p>search by skills you have or want to develop</p>
+  <div class="search-result-h1">
+    <h1>LOOKING FOR A NEW POSITION</h1>
+    <p>Your skills, your move... <br>Select the skills you have or want to develop</p>
   </div>
-  <div class="skill-cat-container">
-    <div id="skill-cat-header">
-      <h4>Skill Categories</h4>
-    </div>
-    <button class="cat-btn cat-btn-active" data-value="all">All</button>
-    <button class="cat-btn" data-value="hard">HARD SKILLS</button>
-    <button class="cat-btn" data-value="soft">SOFT SKILLS</button>
-    <button class="cat-btn" data-value="key">KEY EXPERIENCE</button>
-  </div>
+
 
   <!-- Main body -->
 
@@ -22,6 +14,12 @@
     <!-- left side -->
 
     <div class="skill-container">
+      <div class="skill-cat-container">
+        <button class="cat-btn cat-btn-active" data-value="all">All</button>
+        <button class="cat-btn" data-value="hard">HARD SKILLS</button>
+        <button class="cat-btn" data-value="soft">SOFT SKILLS</button>
+        <button class="cat-btn" data-value="key">KEY EXPERIENCE</button>
+      </div>
 
       <!-- main form start-->
 
@@ -124,7 +122,7 @@
   </div>
     <div class="job-select-container">
       <div class="vacancies-container">
-        <h4>Your Skills</h4>
+        <h4>YOUR SKILLS</h4>
           <div class="job-container">
             <p><%= 'Your existing skills' %></p>
             <label class="radio-container">
@@ -158,7 +156,7 @@
           <div id="selection-collection"></div>
         </div>
         <!-- <div class="d-flex justify-content-center"> -->
-          <%= submit_tag "Search", class: 'search-btn' %>
+          <%= submit_tag "SEARCH", class: 'search-btn' %>
           <% end %>
         <!-- </div> -->
         <!-- main form end -->
