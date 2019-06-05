@@ -41,7 +41,21 @@
       <div class="openings-info" >
         <p>No current opening for this job</p>
         <div>
-          <%= render 'shared/modal-job-alerts' %>
+          <div class="button btn-message" id="alert-Btn">Alert me</div>
+          <!-- Message modal -->
+          <div id="AlertModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content-alert">
+              <div>
+                <p>Get notified when a new <strong><%= @vacancy.title %></strong> position opens.</p>
+                <br>
+              </div>
+              <div class="d-flex justify-content-around">
+                <div class="modal-alert-submit">yes please!</div>
+                <div class="modal-alert-cancel">no thanks</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -51,18 +65,33 @@
   <div class="job-additional-info">
     <h2><%= @vacancy.title %>(s)</h2>
       <% @users.each do |user| %>
-      <% unless user == current_user %>
-      <div class="employee-contact-chat">
-        <div class="employee-contact-info" >
-        <%= cl_image_tag user.photo, class: 'avatar' %>
-        <div>
-          <h3><%= user.first_name %> <%= user.last_name %></h3>
-          <h4><%= user.location %></h4>
+        <% unless user == current_user %>
+        <div class="employee-contact-chat">
+          <div class="employee-contact-info" >
+          <%= cl_image_tag user.photo, height: 40, width: 40, crop: :fill, class: 'avatar' %>
+          <div>
+            <h3><%= user.first_name %> <%= user.last_name %></h3>
+            <h4><%= user.location %></h4>
+          </div>
+          </div>
+          <div class="button btn-message" id="sendBtn">Send message</div>
+          <!-- Message modal -->
+          <div id="sendMessageModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <p><em><%= "Send #{user.first_name} a message..." %></em></p>
+              <%= simple_form_for :conversation, url: conversations_path(user_id: user.id), remote: true, method: :post, html: { class: "new_message"} do |form| %>
+                <%= form.input :content, label: false %>
+                <% form.hidden_field :user_id, value: user %>
+                <div class="d-flex">
+                  <%= form.button :submit, value: 'send', class: 'modal-submit' %>
+                <% end %>
+                <div class="modal-cancel">cancel</div>
+                </div>
+            </div>
+          </div>
         </div>
-        </div>
-        <%= link_to "CHAT", conversations_path, class: "button"  %>
-      </div>
-    <% end %>
+      <% end %>
     <% end %>
 
   </div>

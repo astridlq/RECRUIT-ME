@@ -52,7 +52,7 @@
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.present? %>
-            <img class="avatar avatar-navbar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path current_user.photo, height: 100, width: 100, crop: :fill %>" />
+            <img class="avatar avatar-navbar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path current_user.photo, height: 40, width: 40, crop: :fill %>" />
           <% else %>
             <img class="avatar avatar-navbar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= image_path 'avatar-blank.jpg' %>" />
           <% end %>

@@ -21,7 +21,7 @@
       <div class="col-12 col-sm-4">
         <div class="employee-detail-all">
           <div class="employee-detail">
-            <img src="<%= image_path vacancy.photo %>" class="avatar-big" alt="">
+            <%= cl_image_tag vacancy.photo , height: 100, width: 100, crop: :fill %>
             <div class="employee-contact">
               <h2><%= vacancy.title.capitalize %></h2>
               <h3><%= vacancy.department %></h3>

@@ -7,6 +7,7 @@ import { initToggleForm } from '../components/edit_description';
 import { skillInfoToggle } from '../components/info_skill';
 
 const profileRegEx = /^\/profiles\/\d+$/;
+const vacancyRegEx = /^\/vacancies\/\d+$/;
 
 // conversation();
 
@@ -51,7 +52,7 @@ skillInfoToggle();
 initToggleForm();
 
 
-if (location.pathname.match(profileRegEx)) {
+if (location.pathname.match(profileRegEx) || location.pathname.match(vacancyRegEx)) {
   modalOpen();
 }
 

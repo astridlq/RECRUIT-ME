@@ -23,6 +23,15 @@
   border: 1px solid #888;
 }
 
+.modal-content-alert {
+  width: 400px;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid #888;
+}
+
 /* The Close Button */
 .close {
   color: #aaa;
@@ -38,7 +47,7 @@
   cursor: pointer;
 }
 
-.modal-submit {
+.modal-submit, .modal-alert-submit {
   width: 100px;
   color: $our-blue;
   font-weight: bold;
@@ -55,7 +64,7 @@
   }
 }
 
-.modal-cancel {
+.modal-cancel, .modal-alert-cancel {
   width: 100px;
   color: rgba(234, 9, 9, 0.8);
   font-weight: bold;
