@@ -1,10 +1,16 @@
 <div class="container">
-  <div class="search-result-h1">
-    <h1>EDIT YOUR SKILLS</h1>
-    <p>Select your existing skills or your key experiences</p>
+  <div class="search-result-title-h22">
+    <h3>Which skills do you want to develop?</h3>
+    <p>Let managers know your interests</p>
   </div>
-
-
+  <div class="skill-cat-container">
+    <div id="skill-cat-header">
+      <h4>Skill Categories</h4>
+    </div>
+    <button class="cat-btn cat-btn-active" data-value="all">All</button>
+    <button class="cat-btn" data-value="hard">HARD SKILLS</button>
+    <button class="cat-btn" data-value="soft">SOFT SKILLS</button>
+  </div>
 
   <!-- Main body -->
 
@@ -13,16 +19,10 @@
     <!-- left side -->
 
     <div class="skill-container">
-      <div class="skill-cat-container">
-        <button class="cat-btn cat-btn-active" data-value="all">All</button>
-        <button class="cat-btn" data-value="hard">HARD SKILLS</button>
-        <button class="cat-btn" data-value="soft">SOFT SKILLS</button>
-        <button class="cat-btn" data-value="key">KEY EXPERIENCE</button>
-      </div>
 
       <!-- main form start-->
 
-    <%= form_tag("/myprofile/update_user_skills", method: "patch") do  %>
+    <%= form_tag("/myprofile/update_develop_skills", method: "patch") do  %>
 
       <!-- hard skills -->
 
@@ -94,39 +94,18 @@
 
 
 
-      <!-- key experiences -->
 
-      <div class="skill-card" id="key">
-        <div class="d-flex justify-content-between">
-          <h3>KEY EXPERIENCE</h3>
-          <i class="fas fa-eraser" id="clear-key"></i>
-        </div>
-        <div class="skills-grid">
-
-          <% @key_experience.each do |skill| %>
-              <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
-              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
-                <div class="section">
-                  <p class="show-profile"><%= skill.name %></p>
-                  <div class="overlay">
-                  </div>
-                </div>
-              </label>
-          <% end %>
-        </div>
-      </div>
 
     <!-- right side -->
   </div>
     <div class="job-select-container">
       <div class="vacancies-container">
-        <h4>YOUR SKILLS</h4>
+        <h4>Your Skills</h4>
           <div class="job-container">
             <p><%= 'Your existing skills' %></p>
             <label class="radio-container">
               <input type="checkbox" name="radio" class="check-box" data-id="<%= current_user.id %>">
-              <% current_user.user_skills.each do |skill| %>
+              <% current_user.develop_skills.each do |skill| %>
                 <input type="hidden" class="<%= "job-skills" %> " value="<%= skill.skill_id %>">
               <% end %>
               <span class="checkmark"></span>
@@ -146,7 +125,7 @@
           <div id="selection-collection"></div>
         </div>
         <!-- <div class="d-flex justify-content-center"> -->
-          <%= submit_tag "UPDATE SKILLS", class: 'search-btn' %>
+          <%= submit_tag "UPDATE  DEVELOP SKILLS", class: 'search-btn' %>
           <% end %>
         <!-- </div> -->
         <!-- main form end -->

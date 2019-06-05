@@ -145,17 +145,19 @@ const clearSkills = () => {
     inject();
     toggleButton();
   });
-  clear_key.addEventListener("click", () => {
-    document.querySelectorAll('.key').forEach((element) => {
-      if (element.classList.contains("active-skill")) {
-        objArr[element.previousElementSibling.value] = 0;
-      }
-      element.classList.remove("active-skill");
-      element.previousElementSibling.checked = false;
-    })
-    inject();
-    toggleButton();
-  });
+  if (clear_key != undefined) {
+    clear_key.addEventListener("click", () => {
+      document.querySelectorAll('.key').forEach((element) => {
+        if (element.classList.contains("active-skill")) {
+          objArr[element.previousElementSibling.value] = 0;
+        }
+        element.classList.remove("active-skill");
+        element.previousElementSibling.checked = false;
+      })
+      inject();
+      toggleButton();
+    });
+  }
   clear_all.addEventListener("click", () => {
     skills.forEach((element) => {
       if (element.classList.contains("active-skill")) {

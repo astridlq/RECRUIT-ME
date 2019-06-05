@@ -25,6 +25,13 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def edit_develop_skills?
+    true
+  end
+
+  def update_develop_skills?
+    true
+  end
   def myprofile?
     true
   end

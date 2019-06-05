@@ -64,6 +64,31 @@ class ProfilesController < ApplicationController
     redirect_to myprofile_path
   end
 
+  def edit_develop_skills
+    @user = current_user
+    authorize @user
+    @pre_selected = params[:skills_ids].map if params[:skills_ids]
+    @all_skills = Skill.all
+    @hard_skills = Skill.where(skill_type: 'hard')
+    @soft_skills = Skill.where(skill_type: 'soft')
+  end
+
+  def update_develop_skills
+    @user = current_user
+    authorize @user
+    # @pre_selected = params[:skills_ids].map if params[:skills_ids]
+    # @all_skills = Skill.all
+    # @hard_skills = Skill.where(skill_type: 'hard')
+    # @soft_skills = Skill.where(skill_type: 'soft')
+    # @key_experience = Skill.where(skill_type: 'experience')
+    # @user.user_skills.update(@pre_selected)
+    @user.develop_skills.destroy_all
+    params[:skill_ids].each do |skill_id|
+      @user.develop_skills << DevelopSkill.create(user: @user, skill: Skill.find(skill_id))
+    end
+    redirect_to myprofile_path
+  end
+
   private
 
   def set_matches
