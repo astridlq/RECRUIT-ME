@@ -1,7 +1,7 @@
 import "bootstrap";
 import { toggleGroup, skillActive, clearSkills, selectJob, preSelect } from '../components/profile_search';
 import { conversation, activateConversation, autoExpand } from '../components/conversation';
-import { modalOpen } from '../components/modal';
+import { multiModal, singleModal, alertModal } from '../components/modal';
 import { loadDynamicBannerText } from '../components/hp_title.js';
 import { initToggleForm } from '../components/edit_description';
 import { skillInfoToggle } from '../components/info_skill';
@@ -51,11 +51,16 @@ conversation();
 skillInfoToggle();
 initToggleForm();
 
+if (location.pathname.match(vacancyRegEx)) {
+  multiModal('.modal-container');
+  alertModal();
+}
 
-if (location.pathname.match(profileRegEx) || location.pathname.match(vacancyRegEx)) {
-  modalOpen();
+if (location.pathname.match(profileRegEx)) {
+  singleModal('.modal');
 }
 
 if (document.querySelector('.banner-typed-text')) {
   loadDynamicBannerText();
 };
+

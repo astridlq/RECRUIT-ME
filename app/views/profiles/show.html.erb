@@ -12,25 +12,24 @@
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       </div>
     </div>
-    <div class="button btn-message" id="sendBtn">Send message</div>
+      <div class="button btn-message" id="sendBtn<%= @user.id %>">Send message</div>
   </div>
 
-<!-- Message modal -->
-<div id="sendMessageModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <p><em><%= "Send #{@user.first_name} a message..." %></em></p>
-
-    <%= simple_form_for :conversation, url: conversations_path(user_id: @user.id), remote: true, method: :post, html: { class: "new_message"} do |form| %>
-      <%= form.input :content, label: false %>
-      <% form.hidden_field :user_id, value: @user %>
-      <div class="d-flex">
-        <%= form.button :submit, value: 'send', class: 'modal-submit' %>
-      <% end %>
-      <div class="modal-cancel">cancel</div>
-      </div>
+  <!-- Message modal -->
+  <div id="sendMessageModal<%= @user.id %>" class="modal" data-id="<%= @user.id %>">
+    <!-- Modal content -->
+    <div class="modal-content<%= @user.id %> modal-content">
+      <p><em><%= "Send #{@user.first_name} a message..." %></em></p>
+      <%= simple_form_for :conversation, url: conversations_path(user_id: @user.id), remote: true, method: :post, html: { class: "new_message"} do |form| %>
+        <%= form.input :content, label: false %>
+        <% form.hidden_field :user_id, value: @user %>
+        <div class="d-flex">
+          <%= form.button :submit, value: 'send', class: "modal-submit-#{@user.id} modal-submit" %>
+        <% end %>
+        <div class="modal-cancel-<%= @user.id %> modal-cancel">cancel</div>
+        </div>
+    </div>
   </div>
-</div>
 
 
 

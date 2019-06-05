@@ -1,39 +1,56 @@
-var sendModal = document.getElementById("sendMessageModal");
-var sendBtn = document.getElementById("sendBtn");
-var sendCancel = document.querySelector(".modal-cancel");
-var sendSubmit = document.querySelector(".modal-submit");
-var messageField = document.getElementById("conversation_content");
+const getQueryAll = (str) => {
+  return document.querySelectorAll(str);
+}
 
-var alertModal = document.getElementById("AlertModal");
-var alertBtn = document.getElementById("alert-Btn");
-var alertCancel = document.querySelector(".modal-alert-cancel");
-var alertSubmit = document.querySelector(".modal-alert-submit");
+const getQuery = (str) => {
+  return document.querySelector(str);
+}
 
-const modalOpen = () => {
-  sendBtn.onclick = function() {
+const getElem = (str) => {
+  return document.getElementById(str);
+}
+
+var messageField = getElem('conversation_content');
+
+console.log()
+
+const messageModal = (id) => {
+  getElem(`sendBtn${id}`).onclick = function() {
     messageField.value = ""
-    sendModal.style.display = "block";
+    getElem(`sendMessageModal${id}`).style.display = "block";
   }
-  sendCancel.onclick = function() {
-    sendModal.style.display = "none";
+  getQuery(`.modal-cancel-${id}`).onclick = function() {
+    getElem(`sendMessageModal${id}`).style.display = "none";
   }
-  sendSubmit.onclick = function() {
-    sendModal.style.display = "none";
-  }
-
-  alertBtn.onclick = function() {
-    messageField.value = ""
-    alertModal.style.display = "block";
-  }
-  alertCancel.onclick = function() {
-    alertModal.style.display = "none";
-  }
-  alertSubmit.onclick = function() {
-    alertModal.style.display = "none";
+  getQuery(`.modal-submit-${id}`).onclick = function() {
+    getElem(`sendMessageModal${id}`).style.display = "none";
   }
 }
 
+const multiModal = (str) => {
+  getQueryAll(str).forEach((modal) => {
+    var id = modal.firstElementChild.dataset.id
+    messageModal(id);
+  })
+}
 
-export { modalOpen }
+const singleModal = (str) => {
+    var id = getQuery(str).dataset.id
+    messageModal(id);
+}
+
+const alertModal = () => {
+  getElem('alert-Btn').onclick = function() {
+    getElem('AlertModal').style.display = "block";
+  }
+  getQuery('.modal-alert-cancel').onclick = function() {
+    getElem('AlertModal').style.display = "none";
+  }
+  getQuery('.modal-alert-submit').onclick = function() {
+    getElem('AlertModal').style.display = "none";
+  }
+}
+
+export { multiModal, singleModal, alertModal }
 
 

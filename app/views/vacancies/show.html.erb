@@ -66,30 +66,20 @@
     <h2><%= @vacancy.title %>(s)</h2>
       <% @users.each do |user| %>
         <% unless user == current_user %>
-        <div class="employee-contact-chat">
-          <div class="employee-contact-info" >
-          <%= cl_image_tag user.photo, height: 40, width: 40, crop: :fill, class: 'avatar' %>
-          <div>
-            <h3><%= user.first_name %> <%= user.last_name %></h3>
-            <h4><%= user.location %></h4>
-          </div>
-          </div>
-          <div class="button btn-message" id="sendBtn">Send message</div>
-          <!-- Message modal -->
-          <div id="sendMessageModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-              <p><em><%= "Send #{user.first_name} a message..." %></em></p>
-              <%= simple_form_for :conversation, url: conversations_path(user_id: user.id), remote: true, method: :post, html: { class: "new_message"} do |form| %>
-                <%= form.input :content, label: false %>
-                <% form.hidden_field :user_id, value: user %>
-                <div class="d-flex">
-                  <%= form.button :submit, value: 'send', class: 'modal-submit' %>
-                <% end %>
-                <div class="modal-cancel">cancel</div>
-                </div>
+          <div class="employee-contact-chat">
+        <%= link_to profile_path(user) do %>
+            <div class="employee-contact-info" >
+              <%= cl_image_tag user.photo, height: 40, width: 40, crop: :fill, class: 'avatar' %>
+              <div>
+                <h3><%= user.first_name %> <%= user.last_name %></h3>
+                <h4><%= user.location %></h4>
+              </div>
             </div>
-          </div>
+          <% end %>
+            <div class="modal-container">
+              <%= render 'shared/employee-modal', user: user %>
+            </div>
+            </div>
         </div>
       <% end %>
     <% end %>
