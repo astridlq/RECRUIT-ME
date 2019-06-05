@@ -7,7 +7,7 @@
   <h3 class="search-result-title-h3">Your Selection</h3>
   <div class="selected-skills-result">
     <% @skills_to_match.each do |selected_skill| %>
-    <p class="skill-selection"><%= Skill.find(selected_skill).name %></p>
+      <p class="skill-selection"><%= Skill.find(selected_skill).name %></p>
     <% end %>
     <%= link_to "+", vacancy_search_path, class: "edit-plus" %>
   </div>
@@ -22,7 +22,7 @@
       <div class="col-12 col-sm-4">
         <div class="employee-detail-all">
           <div class="employee-detail">
-            <%= cl_image_tag vacancy.photo , height: 100, width: 100, crop: :fill %>
+            <%= cl_image_tag vacancy.photo, class: "avatar-big" , height: 100, width: 100, crop: :fill %>
             <div class="employee-contact">
               <h2><%= vacancy.title.capitalize %></h2>
               <h3><%= vacancy.department %></h3>
@@ -36,11 +36,15 @@
         <div class="employee-have-skills-all">
           <div class="employee-have-skills">
             <h3>Required skills</h3>
+              <% if vacancy.vacancy_skills.select {|vacancy_skill| @skills_to_match.include?(vacancy_skill.skill_id) }.empty? %>
+                <p id="others">Other skills than selected...</p>
+              <% else %>
             <div class="employee-skills">
               <% vacancy.vacancy_skills.select {|vacancy_skill| @skills_to_match.include?(vacancy_skill.skill_id) }.each do |vacancy_skill| %>
               <p class="skill-selection"><%= vacancy_skill.skill.name %></p>
               <% end %>
             </div>
+            <% end %>
           </div>
         </div>
       </div>

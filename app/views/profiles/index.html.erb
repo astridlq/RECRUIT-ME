@@ -38,9 +38,14 @@
           <div class="employee-have-skills">
             <h3>Existing skills</h3>
             <div class="employee-skills">
+              <% if user.user_skills.select {|user_skill| @skills_to_match.include?(user_skill.skill_id) }.empty? %>
+                  <p id="others">Other skills than selected...</p>
+                <% else %>
               <% user.user_skills.select {|user_skill| @skills_to_match.include?(user_skill.skill_id) }.each do |user_skill| %>
               <p class="skill-selection"><%= user_skill.skill.name %></p>
               <% end %>
+              <% end %>
+
             </div>
           </div>
         </div>

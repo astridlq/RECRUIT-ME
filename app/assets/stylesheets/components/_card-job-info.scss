@@ -1,99 +1,99 @@
- .job-info {
-  margin: 15px auto;
-  background: white;
-  border-radius: 2px;
-  text-align: center;
-  width: 323px;
-  height: 491px;
-  position: relative;
+//  .job-info {
+//   margin: 15px auto;
+//   background: white;
+//   border-radius: 2px;
+//   text-align: center;
+//   width: 323px;
+//   height: 491px;
+//   position: relative;
 
-  h1 {
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    color: $our-blue;
-    font-weight: bold;
-    font-size: 25px;
-    font-family: $headers-font;
-  }
-  p {
-    margin: 20px 20px 20px 20px;
-    color: $our-grey;
-    font-family: $body-font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 25px;
-    color: #5E5D5D;
-  }
+//   h1 {
+//     padding-top: 20px;
+//     padding-left: 10px;
+//     padding-right: 10px;
+//     padding-bottom: 0px;
+//     color: $our-blue;
+//     font-weight: bold;
+//     font-size: 25px;
+//     font-family: $headers-font;
+//   }
+//   p {
+//     margin: 20px 20px 20px 20px;
+//     color: $our-grey;
+//     font-family: $body-font;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 12px;
+//     line-height: 25px;
+//     color: #5E5D5D;
+//   }
 
-  hr {
-    display: block;
-    background-color: #42A2D6;
-    width: 270px;
-    margin-before: 0.5em;
-    margin-after: 0.5em;
-    margin-start: auto;
-    margin-end: auto;
-    overflow: hidden;
-    border-width: 1px;
-}
+//   hr {
+//     display: block;
+//     background-color: #42A2D6;
+//     width: 270px;
+//     margin-before: 0.5em;
+//     margin-after: 0.5em;
+//     margin-start: auto;
+//     margin-end: auto;
+//     overflow: hidden;
+//     border-width: 1px;
+// }
 
-  // OPTIONAL: for pop-up only
-  p.close {
-    position: absolute;
-    color: $our-blue;
-    font-size: 18px;
-    font-weight: bold;
-    top: 10px;
-    right: 0px;
-    opacity: 1;
-    &:hover{
-      cursor: pointer;
-    }
-  }
-}
+//   // OPTIONAL: for pop-up only
+//   p.close {
+//     position: absolute;
+//     color: $our-blue;
+//     font-size: 18px;
+//     font-weight: bold;
+//     top: 10px;
+//     right: 0px;
+//     opacity: 1;
+//     &:hover{
+//       cursor: pointer;
+//     }
+//   }
+// }
 
-.job-img {
-  display: flex;
-  align-items: flex-end;
-  img {
-    width: 323px;
-    height: 100%;
-  }
-}
+// .job-img {
+//   display: flex;
+//   align-items: flex-end;
+//   img {
+//     width: 323px;
+//     height: 100%;
+//   }
+// }
 
-.job-text {
-height: 78px;
-overflow: hidden;
-font-size: 13px;
-padding: 0px 28px;
-text-align: left;
-}
+// .job-text {
+// height: 78px;
+// overflow: hidden;
+// font-size: 13px;
+// padding: 0px 28px;
+// text-align: left;
+// }
 
-.fad {
-  position: relative;
-  height: 78px; /* exactly three lines */
-}
-.fad:after {
-  content: "";
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 70%;
-  height: 22px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 85%);
-}
+// .fad {
+//   position: relative;
+//   height: 78px; /* exactly three lines */
+// }
+// .fad:after {
+//   content: "";
+//   text-align: right;
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   width: 70%;
+//   height: 22px;
+//   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 85%);
+// }
 
-.btn-con {
-    width: 323px;
-    display:flex;
-    justify-content: flex-end;
-    padding-right: 26px;
-    padding-bottom: 20px;
-    margin-top: 10px;
-  }
+// .btn-con {
+//     width: 323px;
+//     display:flex;
+//     justify-content: flex-end;
+//     padding-right: 26px;
+//     padding-bottom: 20px;
+//     margin-top: 10px;
+//   }
 
 
