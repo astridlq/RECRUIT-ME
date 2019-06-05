@@ -25,7 +25,6 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
-
   def edit_develop_skills?
     true
   end
