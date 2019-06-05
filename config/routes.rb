@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'vacancies/search', to: 'vacancies#search', as: :vacancy_search
   get 'myprofile/edit_user_skills', to: 'profiles#edit_user_skills', as: :edit_user_skills
   patch 'myprofile/update_user_skills', to: 'profiles#update_user_skills', as: :update_user_skills
+  post 'message/update', to: 'messages#update_message'
 
   resources :profiles, only: [:index, :show, :edit, :update]
 
