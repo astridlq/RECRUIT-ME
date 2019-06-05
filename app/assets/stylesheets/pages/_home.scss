@@ -75,6 +75,9 @@ transition: all 200ms ease;
 
 .home-looking-for {
   width: 600px;
+  h1 {
+    padding: 35px
+  }
   .typed-cursor {
       opacity: 0;
     }
