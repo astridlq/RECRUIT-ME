@@ -2,12 +2,10 @@
   color: $our-blue;
   height: 140px;
   width: 100%;
-  // min-width: 930px;
   padding: 0px 15px;
-  margin-top: 60px;
+  margin-top: 90px;
   margin-bottom: 20px;
   border-radius: 3px;
-  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,8 +16,13 @@
   h1 {
     padding: 0;
     margin: 0 0 0 30px;
-    color: $our-blue;
+    color: white;
     font-size: 34px;
+  }
+
+  a {
+    font-style: $body-font;
+    color: white;
   }
 
   img {
@@ -31,8 +34,10 @@
 
   .link_absolute {
     position: absolute;
-    top: -50px;
-    left: -40px;
+    top: -20px;
+    left: 0;
+    font-size: 16px;
+    text-decoration: underline;
   }
 
   .myprofile-name {
@@ -52,6 +57,7 @@ h1, h2 {
   }
 
 .myprofile-info-container {
+  box-shadow: 0px -10px 15px rgba(1,1,1,0.1);
   width: 100%;
 }
 
@@ -68,7 +74,7 @@ h1, h2 {
   }
   p {
     line-height: 1.8;
-    text-align: justify;
+    width: 600px;
   }
 }
 
@@ -86,12 +92,18 @@ h1, h2 {
     }
   }
 
+.box-profile {
+  width:100%;
+}
+
 .myprofile-skill-card {
   color: $our-blue;
   background-color: white;
   border-radius: 3px;
   padding: 40px;
   min-width: 430px;
+  padding-top: 0;
+
   h3 {
     font-size: 20px;
     font-weight: 500em;
@@ -102,21 +114,6 @@ h1, h2 {
     font-size: 14px;
   }
 }
-
-.left {
-  width:50%;
-}
-
-.right {
-  width:50%;
-  margin-left: 15px;
-}
-
-// #description-form {
-//   height: 100%;
-//   width: 100%;
-//   display: none;
-// }
 
 .form-description {
 height: 100%;
@@ -150,6 +147,7 @@ height: 100%;
 
 .fa-edit {
   cursor: pointer;
+  opacity: 0.3;
 }
 
 
