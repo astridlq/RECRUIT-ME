@@ -70,7 +70,7 @@
             <% @existing_skills.each do |eskill| %>
             <% if eskill.skill.skill_type == "experience" %>
                 <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-             url('<%= cl_image_path eskill.skill.photo, height: 120, width: 120 crop: :fill %>')">
+             url('<%= cl_image_path eskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
 
                   <div class="section">
                     <p class="show-profile"><%= eskill.skill.name %></p>
