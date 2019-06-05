@@ -1,21 +1,38 @@
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var cancel = document.querySelector(".modal-cancel");
-var submit = document.querySelector(".modal-submit");
+var sendModal = document.getElementById("sendMessageModal");
+var sendBtn = document.getElementById("sendBtn");
+var sendCancel = document.querySelector(".modal-cancel");
+var sendSubmit = document.querySelector(".modal-submit");
 var messageField = document.getElementById("conversation_content");
 
+var alertModal = document.getElementById("AlertModal");
+var alertBtn = document.getElementById("alert-Btn");
+var alertCancel = document.querySelector(".modal-alert-cancel");
+var alertSubmit = document.querySelector(".modal-alert-submit");
+
 const modalOpen = () => {
-  btn.onclick = function() {
+  sendBtn.onclick = function() {
     messageField.value = ""
-    modal.style.display = "block";
+    sendModal.style.display = "block";
   }
-  cancel.onclick = function() {
-    modal.style.display = "none";
+  sendCancel.onclick = function() {
+    sendModal.style.display = "none";
   }
-  submit.onclick = function() {
-    modal.style.display = "none";
+  sendSubmit.onclick = function() {
+    sendModal.style.display = "none";
+  }
+
+  alertBtn.onclick = function() {
+    messageField.value = ""
+    alertModal.style.display = "block";
+  }
+  alertCancel.onclick = function() {
+    alertModal.style.display = "none";
+  }
+  alertSubmit.onclick = function() {
+    alertModal.style.display = "none";
   }
 }
+
 
 export { modalOpen }
 

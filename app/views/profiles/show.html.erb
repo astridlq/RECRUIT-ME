@@ -6,17 +6,17 @@
     <% end %>
     <div class="d-flex align-items-center">
       <div class="myprofile-image">
-        <%= cl_image_tag @user.photo, height: 200, width: 200, crop: :fill %>
+        <%= cl_image_tag @user.photo, height: 100, width: 100, crop: :fill %>
       </div>
       <div class="myprofile-name">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       </div>
     </div>
-    <div class="button btn-message" id="myBtn">Send message</div>
+    <div class="button btn-message" id="sendBtn">Send message</div>
   </div>
 
 <!-- Message modal -->
-<div id="myModal" class="modal">
+<div id="sendMessageModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
     <p><em><%= "Send #{@user.first_name} a message..." %></em></p>
