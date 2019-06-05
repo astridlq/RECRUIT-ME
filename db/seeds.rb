@@ -2357,6 +2357,7 @@ message_hash = [
 },{
   body: "Hi Tecia, nah not really.",
   user: users[3],
+  conversation: conversations[2],
   read: true
 },
 ]
