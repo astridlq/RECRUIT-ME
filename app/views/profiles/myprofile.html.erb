@@ -52,8 +52,8 @@
             <h3>KEY EXPERIENCES</h3>
             <% param_skills = @existing_skills.map {|s| s.skill_id} %>
             <%= link_to edit_user_skills_path(skills_ids: param_skills) do %>
-              <i class="fas fa-pen-nib"></i>
-              <% end %>
+              <i class="fas fa-edit"></i>
+            <% end %>
           </div>
           <div class="skills-grid-1">
 
@@ -82,8 +82,8 @@
           <div class="d-flex justify-content-between">
             <h3>EXISTING SKILLS</h3>
             <%= link_to edit_user_skills_path(skills_ids: param_skills) do %>
-              <i class="fas fa-pen-nib"></i>
-              <% end %>
+              <i class="fas fa-edit"></i>
+            <% end %>
           </div>
           <div class="skills-grid-1">
             <% @existing_skills.each do |uskill| %>
@@ -118,10 +118,10 @@
         <div class="myprofile-skill-card" id="hard">
           <div class="d-flex justify-content-between">
             <h3>SKILLS TO DEVELOP</h3>
-             <% dev_skills = @develop_skills.map {|s| s.skill_id} %>
+            <% dev_skills = @develop_skills.map {|s| s.skill_id} %>
             <%= link_to edit_develop_skills_path(skills_ids: dev_skills) do  %>
-              <i class="fas fa-pen-nib"></i>
-              <% end %>
+              <i class="fas fa-edit"></i>
+            <% end %>
           </div>
           <div class="skills-grid-1">
             <% @develop_skills.each do |dskill| %>
