@@ -6,14 +6,33 @@
     <% end %>
     <div class="d-flex align-items-center">
       <div class="myprofile-image">
-        <%= cl_image_tag @user.photo %>
+        <%= cl_image_tag @user.photo, height: 200, width: 200, crop: :fill %>
       </div>
       <div class="myprofile-name">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       </div>
     </div>
-    <%= link_to "SEND MESSAGE", conversations_path, class: "button btn-message" %>
+    <div class="button btn-message" id="myBtn">Send message</div>
   </div>
+
+<!-- Message modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p><em><%= "Send #{@user.first_name} a message..." %></em></p>
+
+    <%= simple_form_for :conversation, url: conversations_path(user_id: @user.id), remote: true, method: :post, html: { class: "new_message"} do |form| %>
+      <%= form.input :content, label: false %>
+      <% form.hidden_field :user_id, value: @user %>
+      <div class="d-flex">
+        <%= form.button :submit, value: 'send', class: 'modal-submit' %>
+      <% end %>
+      <div class="modal-cancel">cancel</div>
+      </div>
+  </div>
+</div>
+
+
 
 <div class="d-flex">
   <div class="left">
@@ -51,7 +70,7 @@
             <% @existing_skills.each do |eskill| %>
             <% if eskill.skill.skill_type == "experience" %>
                 <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-             url('<%= cl_image_path eskill.skill.photo, height: 120, width: 120 %>')">
+             url('<%= cl_image_path eskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
 
                   <div class="section">
                     <p class="show-profile"><%= eskill.skill.name %></p>

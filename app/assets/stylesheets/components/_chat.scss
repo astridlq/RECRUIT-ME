@@ -34,15 +34,33 @@
 
 .conversation-topper {
   display:flex;
-  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 55px;
   width: 100%;
+  line-height: 50px;
   position: sticky;
   top: 0px;
   background-color: white;
   z-index: 10;
-  p {
-    margin: 0px;
-    line-height: 40px;
+  line-height: 40px;
+  font-weight: bolder;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+  img {
+    margin: 0 16px;
+  }
+}
+
+.convo-top-info {
+  margin-right: 16px;
+}
+
+.dropdown-toggle {
+  &:hover {
+    cursor: pointer;
+  }
+  &:after {
+    display:none;
   }
 }
 
@@ -109,6 +127,7 @@
 
 
 .conversation-box {
+  min-width: 195px;
   display: flex;
   height: 70px;
   transition: 0.3s ease;
@@ -121,10 +140,17 @@
   }
 }
 
-.conversation-box-active {
-  background-color: $blue-hover;
+
+.conversation-box-new {
+  background-color: rgba(234, 9, 9, 0.7);
   &:hover {
-    background-color: $blue-hover;
+    background-color: rgba(234, 9, 9, 0.8);
+  }
+}
+
+@media (max-width: 992px) {
+  .conversation-box {
+    height: 110px;
   }
 }
 
@@ -164,6 +190,16 @@
   font-style: italic;
   font-size: 12px;
   margin-bottom: 12px;
+}
+
+.conversation-box-active {
+  background-color: $blue-hover;
+  &:hover {
+    background-color: $blue-hover;
+  }
+  p {
+    color: white;
+  }
 }
 
 .message-sent {

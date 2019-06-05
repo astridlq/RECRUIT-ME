@@ -1,8 +1,7 @@
-
 <% if user == message.user %>
-  <div class="comment bubble-right">
+  <div class="comment bubble-right" data-message-id="<%= message.id %>">
 <% else %>
-  <div class="comment bubble-left">
+  <div class="comment bubble-left" data-message-id="<%= message.id %>">
 <% end %>
     <p><%= message.body %></p>
   </div>

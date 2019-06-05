@@ -4,9 +4,59 @@ const conversation = () => {
     disconnected: function() {},
     received: function(data) {
 
-      var submit = document.querySelector('.new-message-container');
-      submit.insertAdjacentHTML('beforebegin', data['message'])
-      displayArea.scrollTop = displayArea.scrollHeight;
+    // make envelope red for notification
+    var userId = document.getElementById('conv-user-id').dataset.userId
+    if (userId != data.user_id && location.pathname !== '/conversations') {
+      document.querySelector('.fa-envelope').classList.add('mail-active')
+    }else if (location.pathname === '/conversations' && data.is_new) {
+      document.querySelector('.fa-envelope').classList.add('mail-active')
+    }
+
+    // get raw text for preview
+    var rawText = data['message'].split('<p>')[1].split('</p>')[0];
+    if (rawText.length > 30) {
+      rawText = `${rawText.substring(0, 27)}...`;
+    }
+
+
+    // add new convo box if new convo
+    var conId = data['conversation_id'].toString()
+
+    if (data.is_new && location.pathname === '/conversations') {
+      document.querySelector('.conversation-bar').insertAdjacentHTML('afterbegin', `
+        <a data-remote="true" href="/conversations/${conId}">
+          <div class="conversation-box conversation-box-new">
+              <img height="70" width="70" class="avatar" src="${data.sender_photo}">
+            <div class="conv-box">
+              <div class="conv-box-top">
+                <p class="conv-user-name">${data.sender_name}</p>
+                <p class="conv-time">${data.sent_at}</p>
+              </div>
+              <p class="conv-preview conv-preview-4">
+              ${rawText}
+              </p>
+            </div>
+          </div>
+        </a>`)
+      // run this func again to pick up newly entered convo box
+      activateConversation();
+    } else if (location.pathname === '/conversations') {
+        // code for adding to message preview
+        document.querySelector(`.conv-preview-${conId}`).innerText = rawText
+
+      // add content to conversation if it's open
+      if (document.querySelector('.new-message-container') && document.querySelector('.conversation-box-active').querySelector(`.conv-preview-${conId}`)) {
+        var submit = document.querySelector('.new-message-container');
+        submit.insertAdjacentHTML('beforebegin', data['message'])
+        displayArea.scrollTop = displayArea.scrollHeight;
+      } else {
+         // if convo is not already open make envelope red
+         document.querySelector(`.conv-preview-${conId}`).parentElement.parentElement.classList.add('conversation-box-new')
+           if (userId != data.user_id) {
+              document.querySelector('.fa-envelope').classList.add('mail-active')
+            }
+          }
+        }
     },
     speak: function(message) {
       return this.perform('speak', {
@@ -15,6 +65,8 @@ const conversation = () => {
     }
   });
 
+  // add to preveiw text in convo box as it's being populated
+  // and reset text in textfield
   $(document).on('submit', '.new_message', function(e) {
     e.preventDefault();
     var values = $(this).serializeArray();
@@ -30,19 +82,28 @@ const conversation = () => {
 
 const activateConversation = () => {
   const convos = document.querySelectorAll('.conversation-box')
-  console.log(convos)
+  if (document.querySelector('.conversation-box-new') == null) {
+        document.querySelector('.fa-envelope').classList.remove('mail-active')
+      } else {
+        document.querySelector('.fa-envelope').classList.add('mail-active')
+      }
   convos.forEach((convo) => {
     convo.addEventListener('click', () => {
       convos.forEach((c) => {
         c.classList.remove('conversation-box-active')
       })
       convo.classList.add('conversation-box-active')
+      convo.classList.remove('conversation-box-new')
+      if (document.querySelector('.conversation-box-new') == null) {
+        document.querySelector('.fa-envelope').classList.remove('mail-active')
+      } else {
+        document.querySelector('.fa-envelope').classList.add('mail-active')
+      }
     })
   })
 }
 
 const autoExpand = () => {
-  console.log('dsfdsdfgdfgddfdfgdf')
   $(document)
       .one('focus.autoExpand', 'textarea.autoExpand', function(){
           var savedValue = this.value;

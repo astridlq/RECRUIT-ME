@@ -1,9 +1,26 @@
 var displayArea = document.querySelector('.conversation-display');
 
+// code to set messages to read when oping conversartion
+
+<% @conversation.messages.where(user_id: @conversation.opposed_user(current_user).id).each do |message| %>
+<% message.read = true %>
+<% message.save %>
+<% end %>
+
 displayArea.innerHTML = '<%= j render "conversations/conversation", conversation: @conversation %>'
 displayArea.insertAdjacentHTML('beforeEnd', '<%= j render "conversations/submit", conversation: @conversation %>')
 
 displayArea.scrollTop = displayArea.scrollHeight;
+
+document.addEventListener('click', (event) => {
+  var receivedMessages = document.querySelectorAll('.bubble-left')
+  var message_id = {
+  id: receivedMessages[receivedMessages.length-1].dataset.messageId
+}
+
+// Post data via ajax to a rails controller
+$.post('/message/update', message_id);
+})
 
 function submitOnEnter(event){
     if(event.which === 13 && !event.shiftKey){
@@ -14,5 +31,3 @@ function submitOnEnter(event){
 }
 
 document.querySelector(".typing-area").addEventListener("keypress", submitOnEnter);
-
-console.log(document.querySelector(".typing-area"))
