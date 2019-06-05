@@ -32,14 +32,24 @@
        </div>
        <div class="conv-display-container">
          <div class="conversation-display">
-            <h1>Select a conversation to start chatting</h1>
+            <h1>Your career. <br>Your skills. <br>Your move...</h1>
          </div>
      </div>
     <% else %>
       <% if current_user.is_manager %>
-        <h1>No conversations here yet... Find the perfect candidate and send a message to get started! <%= link_to 'search here', profile_search_path %></h1>
+        <div class="display-no-message">
+          <div>
+            <h1>No conversations here yet...</h1>
+            <h3>Find the perfect candidate and send a message to get started!</h3>
+          </div>
+        </div>
+          <div class="home-btns">
+            <%= link_to 'CANDIDATES', profile_search_path, class: "home-btn-candidate" %>
+          </div>
       <% else %>
-        <h1>No conversations here yet...</h1>
+        <div class="display-no-message">
+          <h1>No conversations here yet...</h1>
+        </div>
       <% end %>
     <% end %>
   </div>
