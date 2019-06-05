@@ -246,17 +246,17 @@ skills = Skill.create!(skill_hash)
 user_hash =
 [
 {
-first_name:"test",
-last_name:"user",
-email: "example@big.com",
+first_name:"Astrid",
+last_name:"Le Quéré",
+email: "astrid@manager.com",
 password: "password",
 password_confirmation: "password",
-job_title:"Key Account Manager",
-description:"I'm a test",
-department:"Sales",
-is_manager: false,
+job_title:"Product owner",
+description: "I'm a product owner now!",
+department:"IT",
+is_manager: true,
 location:"Amsterdam",
-photo: File.open(Rails.root.join("db/fixtures/skills/backend.jpg"))
+photo: File.open(Rails.root.join("db/fixtures/users/astrid.jpg"))
 },
 {
 first_name:"Axel",
@@ -265,7 +265,7 @@ email: "axel@big.com",
 password: "password",
 password_confirmation: "password",
 job_title:"Software Engineer",
-description:"Front-end, back-end, middle-end, hi-end, low-end, you name it, I fix it! No problem.",
+description:"Front-end, back-end, middle-end, hi-end, low-end, you name it, I fix it! No problem. I've also developed a very deep and meaningful love/hate relationship with JavaScript!",
 department:"IT",
 is_manager: false,
 location:"Amsterdam",
@@ -306,9 +306,9 @@ password_confirmation: "password",
 job_title:"UX Designer",
 description:"I got a Master's degree in Digital Marketing in France, also spending some time in Canada, in the Netherlands and Hong-Kong.
 After a 8-month solo road-trip in Asia, I started working in Digital Sales.
-But my passion is in design. I thus decided to join Le Wagon to get better tech knowledge and eventually change career in Front-end / UX",
+But my passion is in design. I thus decided to join Samsung to get better tech knowledge and eventually change career in Front-end / UX",
 department:"IT",
-is_manager: true,
+is_manager: false,
 location:"Amsterdam",
 photo: File.open(Rails.root.join("db/fixtures/users/astrid.jpg"))
 },
@@ -516,7 +516,7 @@ email: "maxt@big.com",
 password: "password",
 password_confirmation: "password",
 job_title:"UX Designer",
-description:"I'm a Tech enthousiast, passionate to become a tech entrepreneur. I used to study entrepreneurship at Team Academy in Amsterdam, currently I'm joining Le Wagon to learn how to code and become a developer to execute my ideas.",
+description:"I'm a Tech enthousiast, passionate to become a developer. I used to study entrepreneurship at Team Academy in Amsterdam, and currently I'm at Samsung working with UX-Design and learning some coding aswell!",
 department:"IT",
 is_manager: false,
 location:"London",
@@ -581,6 +581,50 @@ users = User.create!(user_hash)
 
 user_skills_hash =
 [
+{
+user: users[0],
+skill: skills[23]
+},
+{
+user: users[0],
+skill: skills[13]
+},
+{
+user: users[0],
+skill: skills[37]
+},
+{
+user: users[0],
+skill: skills[30]
+},
+{
+user: users[0],
+skill: skills[24]
+},
+{
+user: users[0],
+skill: skills[14]
+},
+{
+user: users[0],
+skill: skills[26]
+},
+{
+user: users[0],
+skill: skills[31]
+},
+{
+user: users[0],
+skill: skills[27]
+},
+{
+user: users[0],
+skill: skills[33]
+},
+{
+user: users[0],
+skill: skills[36]
+},
 {
 user: users[1],
 skill: skills[0]
@@ -731,10 +775,6 @@ skill: skills[10]
 },
 {
 user: users[4],
-skill: skills[14]
-},
-{
-user: users[4],
 skill: skills[15]
 },
 {
@@ -743,19 +783,7 @@ skill: skills[24]
 },
 {
 user: users[4],
-skill: skills[25]
-},
-{
-user: users[4],
 skill: skills[27]
-},
-{
-user: users[4],
-skill: skills[33]
-},
-{
-user: users[4],
-skill: skills[34]
 },
 {
 user: users[4],
@@ -1665,6 +1693,14 @@ user_skills = UserSkill.create(user_skills_hash)
 develop_skills_hash =
 [
 {
+user: users[0],
+skill: skills[18]
+},
+{
+user: users[0],
+skill: skills[19]
+},
+{
 user: users[1],
 skill: skills[1]
 },
@@ -1702,27 +1738,19 @@ skill: skills[31]
 },
 {
 user: users[4],
-skill: skills[2]
-},
-{
-user: users[4],
-skill: skills[6]
-},
-{
-user: users[4],
-skill: skills[16]
-},
-{
-user: users[4],
-skill: skills[17]
-},
-{
-user: users[4],
 skill: skills[26]
 },
 {
 user: users[4],
+skill: skills[14]
+},
+{
+user: users[4],
 skill: skills[31]
+},
+{
+user: users[4],
+skill: skills[13]
 },
 {
 user: users[5],
@@ -2113,6 +2141,26 @@ start_date: Date.parse("19/08/2019"),
 location: "Barcelona",
 user: users[5],
 photo: File.open(Rails.root.join("db/fixtures/jobs/ux_designer_1.jpg"))
+},
+{
+title: "Product Owner",
+description:"<ul>
+  <li>Take lead of scrum teams as the Product Owner,</li>
+  <li>Providing vision and direction to the Agile development team and stakeholders throughout the project and create requirements,</li>
+  <li>Ensure that the team always has an adequate amount of prior prepared tasks to work on,</li>
+  <li>Plan and prioritize product feature backlog and development for the product,</li>
+  <li>Define product vision, road-map and growth opportunities,</li>
+  <li>Provide backlog management, iteration planning, and elaboration of the user stories,</li>
+  <li>Work closely with Product Management to create and maintain a product backlog according to business value or ROI,</li>
+  <li>Lead the planning product release plans and set expectation for delivery of new functionalities,</li>
+  <li>Provide an active role in mitigating impediments impacting successful team completion of Release/Sprint Goals,</li>
+  <li>Research and analyze market, the users, and the roadmap for the product.</li>
+</ul>",
+department: "IT",
+start_date: Date.parse("19/08/2019"),
+location: "Amsterdam",
+user: users[9],
+photo: File.open(Rails.root.join("db/fixtures/jobs/product_owner.jpg"))
 }
 ]
 puts "Creating Jobs..."
@@ -2220,7 +2268,29 @@ skill: skills[26]
 },{
 vacancy: vacancies[3],
 skill: skills[27]
+},
+{
+vacancy: vacancies[4],
+skill: skills[23]
+},
+{
+vacancy: vacancies[4],
+skill: skills[13]
+},
+{
+vacancy: vacancies[4],
+skill: skills[37]
+},
+{
+vacancy: vacancies[4],
+skill: skills[30]
+},
+{
+vacancy: vacancies[4],
+skill: skills[24]
 }
+
+
 ]
 
 vacancy_skills = VacancySkill.create(vacancy_skills_hash)
@@ -2267,9 +2337,31 @@ skill: skills[17]
 }, {
 vacancy: vacancies[3],
 skill: skills[31]
-}
-
-
+},
+{
+vacancy: vacancies[4],
+skill: skills[35]
+},
+{
+vacancy: vacancies[4],
+skill: skills[14]
+},
+{
+vacancy: vacancies[4],
+skill: skills[26]
+},
+{
+vacancy: vacancies[4],
+skill: skills[31]
+},
+{
+vacancy: vacancies[4],
+skill: skills[27]
+},
+{
+vacancy: vacancies[4],
+skill: skills[33]
+},
 
 
 ]
