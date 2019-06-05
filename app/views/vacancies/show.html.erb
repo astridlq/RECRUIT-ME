@@ -83,6 +83,19 @@
         url('<%= cl_image_path rskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
         <div class="section">
           <p class="show-profile"><%= rskill.skill.name %></p>
+
+          <!-- Popover -->
+            <a class="popover-skill" data-toggle="popover" data-placement="right" title="" data-trigger="hover" data-html="true"
+            data-popover-content="#myPopoverContent<%=rskill.id%>"><i class="fas fa-info-circle"></i></a>
+
+            <!-- Content for Popover: -->
+            <div id="myPopoverContent<%=rskill.id%>" style="display:none">
+              <div class="skill-info">
+                <h2><%= rskill.skill.name %></h2>
+                <p><%= rskill.skill.description %></p>
+              </div>
+            </div>
+
           <div class="overlay">
           </div>
         </div>
@@ -103,6 +116,19 @@
         url('<%= cl_image_path pskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
         <div class="section">
           <p class="show-profile"><%= pskill.skill.name %></p>
+
+            <!-- Popover -->
+              <a class="popover-skill" data-toggle="popover" data-placement="right" title="" data-trigger="hover" data-html="true"
+              data-popover-content="#myPopoverContent<%=pskill.id%>"><i class="fas fa-info-circle"></i></a>
+
+              <!-- Content for Popover: -->
+              <div id="myPopoverContent<%=pskill.id%>" style="display:none">
+                <div class="skill-info">
+                  <h2><%= pskill.skill.name %></h2>
+                  <p><%= pskill.skill.description %></p>
+                </div>
+              </div>
+
         <div class="overlay"></div>
         </div>
         </label>
