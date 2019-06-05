@@ -23,6 +23,8 @@ class VacanciesController < ApplicationController
     authorize @vacancies
   end
 
+  private
+
   def set_matches
     @matches = []
     # Have
@@ -32,9 +34,19 @@ class VacanciesController < ApplicationController
       is_match = (@skills_to_match & skills).any?
       @matches << vacancy if is_match
     end
+
+    vacancies.each do |vacancy|
+      skills = vacancy.preferred_skills.pluck(:skill_id)
+      is_match = (@skills_to_match & skills).any?
+      @matches << vacancy if is_match
+    end
+
+    @matches = @matches.uniq
+    @matches.sort_by! do |match|
+      match.vacancy_skills.select {|vacancy_skill| @skills_to_match.include?(vacancy_skill.skill_id) }.length
+    end
   end
 
-  private
 
   def set_vacancies
     @vacancy = Vacancy.find(params[:id])
