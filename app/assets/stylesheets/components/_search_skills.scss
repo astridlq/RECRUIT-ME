@@ -16,6 +16,22 @@
   font-weight: bolder;
 }
 
+.skill-cat-container-to-develop {
+  color: $our-blue;
+  height: 100px;
+  min-width: 430px;
+  padding: 0px 30px;
+  margin-top: 20px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: bolder;
+}
+
 .cat-btn {
   display: flex;
   height: 40px;
@@ -221,4 +237,12 @@
 
 .hidden-skill {
   display: none;
+}
+
+#clear-all {
+  opacity: 0.3;
+}
+
+#clear-hard {
+  opacity: 0.3;
 }

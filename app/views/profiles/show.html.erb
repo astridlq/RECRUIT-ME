@@ -1,8 +1,10 @@
+<div class="blue-banner"></div>
+
 <div class="container">
 <!-- title box -->
   <div class="myprofile-container">
     <%= link_to :back, class: 'link_absolute' do %>
-      <i class="fas fa-chevron-left"></i>
+      <i class="fas fa-chevron-left"></i>Back
     <% end %>
     <div class="d-flex align-items-center">
       <div class="myprofile-image">
@@ -12,7 +14,6 @@
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       </div>
     </div>
-    <div class="button btn-message" id="sendBtn">Send message</div>
   </div>
 
 <!-- Message modal -->
@@ -35,9 +36,7 @@
 
 
 <div class="d-flex">
-  <div class="left">
-
-  <!-- left side -->
+  <div class="box-profile">
 
       <!-- description box -->
 
@@ -45,6 +44,7 @@
           <div class="myprofile-info-card">
             <div class="d-flex justify-content-between">
               <h2><%= @user.job_title %></h2>
+              <div class="button btn-message" id="sendBtn">Send message</div>
             </div>
             <div class="info-employee">
               <ul class="info-employee-label">
@@ -69,7 +69,7 @@
 
             <% @existing_skills.each do |eskill| %>
             <% if eskill.skill.skill_type == "experience" %>
-                <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
              url('<%= cl_image_path eskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
 
                   <div class="section">
@@ -82,12 +82,9 @@
             <% end %>
           </div>
         </div>
-  </div>
-  <div class="right">
 
-        <!-- right side  -->
+  <!-- Hard Skills -->
 
-      <!-- Hard Skills -->
         <div class="myprofile-skill-card" id="hard">
           <div class="d-flex justify-content-between">
             <h3>Existing skills</h3>
@@ -96,7 +93,7 @@
           <div class="skills-grid-1">
             <% @existing_skills.each do |uskill| %>
             <% unless uskill.skill.skill_type == "experience" %>
-                <label for="<%= "skill-item-#{uskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                <label for="<%= "skill-item-#{uskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
              url('<%= cl_image_path uskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
                   <div class="section">
                     <p class="show-profile"><%= uskill.skill.name %></p>
@@ -122,14 +119,15 @@
           </div>
         </div>
 
-        <!-- soft Skills -->
+  <!-- soft Skills -->
+
         <div class="myprofile-skill-card" id="hard">
           <div class="d-flex justify-content-between">
             <h3>Wish to develop</h3>
           </div>
           <div class="skills-grid-1">
             <% @develop_skills.each do |dskill| %>
-                <label for="<%= "skill-item-#{dskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                <label for="<%= "skill-item-#{dskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
              url('<%= cl_image_path dskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
                   <div class="section">
                     <p class="show-profile"><%= dskill.skill.name %></p>
@@ -155,6 +153,5 @@
         </div>
   </div>
 </div>
-
-
+</div>
 </div>
