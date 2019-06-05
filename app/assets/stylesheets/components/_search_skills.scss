@@ -158,6 +158,25 @@
   }
 }
 
+.skills-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .skills-grid-2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .skills-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 .skill-grid-item {
   height: 100px;
   display: flex;

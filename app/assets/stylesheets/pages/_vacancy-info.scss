@@ -37,7 +37,10 @@
   .link_absolute {
     position: absolute;
     top: -50px;
-    left: -40px;
+    left: 0;
+    font-size: 16px;
+    text-decoration: underline;
+    opacity: 0.7;
   }
 }
 
@@ -59,7 +62,7 @@
     font-weight: 400;
   }
   .job-description {
-    text-align: justify;
+    margin-right: 25px;
   }
 }
 
