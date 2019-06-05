@@ -14,7 +14,6 @@ switch (location.pathname) {
   case '/conversations':
     autoExpand();
     activateConversation();
-    conversation();
     break;
   case '/profiles/search':
     preSelect();
@@ -23,11 +22,17 @@ switch (location.pathname) {
     toggleGroup();
     selectJob();
     break;
+  case '/vacancies/search':
+    preSelect();
+    clearSkills();
+    skillActive();
+    toggleGroup();
+    selectJob();
   default:
-    conversation();
-
+    break;
 }
 
+conversation();
 skillInfoToggle();
 initToggleForm();
 
