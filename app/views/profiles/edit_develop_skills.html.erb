@@ -96,22 +96,6 @@
     <!-- right side -->
   </div>
     <div class="job-select-container">
-      <div class="vacancies-container">
-        <h4>YOUR SKILLS</h4>
-          <div class="job-container">
-            <p><%= 'To develop' %></p>
-            <label class="radio-container">
-              <input type="checkbox" name="radio" class="check-box" data-id="<%= current_user.id %>">
-              <% current_user.develop_skills.each do |skill| %>
-                <input type="hidden" class="<%= "job-skills" %> " value="<%= skill.skill_id %>">
-              <% end %>
-              <span class="checkmark"></span>
-            </label>
-          </div>
-
-      </div>
-
-
 
       <div class="selection-container">
         <div class="d-flex justify-content-between">
