@@ -252,7 +252,7 @@ email: "astrid@manager.com",
 password: "password",
 password_confirmation: "password",
 job_title:"Product owner",
-description: "I'm a product owner now!",
+description: "I'm not real!",
 department:"IT",
 is_manager: true,
 location:"Amsterdam",
@@ -303,12 +303,14 @@ last_name:"Le Quéré",
 email: "astrid@big.com",
 password: "password",
 password_confirmation: "password",
-job_title:"UX Designer",
-description:"I got a Master's degree in Digital Marketing in France, also spending some time in Canada, in the Netherlands and Hong-Kong.
-After a 8-month solo road-trip in Asia, I started working in Digital Sales.
-But my passion is in design. I thus decided to join Samsung to get better tech knowledge and eventually change career in Front-end / UX",
+job_title:"Product Owner ",
+description:"Frenchie who loves travelling. I lived in Canada, in the Netherlands and Hong-Kong.
+Passionate about new technologies and design, I am a UX designer.
+My previous positions also gave me a strong understanding of the digital ecosystem: strategic initiatives (VR, elaboration of a new customer experience.)
+and operational initiatives (launch of a new website, CRM, management of a mobile app)
+Used to work in team and within international environments, I like to combine my analytical skills with my creativity as well as my social personality to achieve objectives.",
 department:"IT",
-is_manager: false,
+is_manager: true,
 location:"Amsterdam",
 photo: File.open(Rails.root.join("db/fixtures/users/astrid.jpg"))
 },
@@ -359,7 +361,7 @@ last_name:"Shahini",
 email: "dion@big.com",
 password: "password",
 password_confirmation: "password",
-job_title:"Architect Engineer",
+job_title:"Product Owner",
 description:"Graduated from business school, did hotel management for 10 years, learned chinese medicine for 7 years, went to China to go on internship in chinese medicine hospitals, stayed there.",
 department:"IT",
 is_manager: false,
@@ -2095,7 +2097,7 @@ description:"<ul>
   <li>Work with management to prioritize business and information needs,</li>
   <li>Locate and define new process improvement opportunities.</li>
 </ul>",
-department: "IT",
+department: "IT ",
 start_date: Date.parse("29/07/2019"),
 location: "Brisbane",
 user: users[2],
@@ -2156,7 +2158,7 @@ description:"<ul>
   <li>Provide an active role in mitigating impediments impacting successful team completion of Release/Sprint Goals,</li>
   <li>Research and analyze market, the users, and the roadmap for the product.</li>
 </ul>",
-department: "IT",
+department: "IT ",
 start_date: Date.parse("19/08/2019"),
 location: "Amsterdam",
 user: users[9],
@@ -2288,6 +2290,10 @@ skill: skills[30]
 {
 vacancy: vacancies[4],
 skill: skills[24]
+},
+{
+vacancy: vacancies[4],
+skill: skills[33]
 }
 
 
@@ -2358,10 +2364,7 @@ skill: skills[31]
 vacancy: vacancies[4],
 skill: skills[27]
 },
-{
-vacancy: vacancies[4],
-skill: skills[33]
-},
+
 
 
 ]
