@@ -153,6 +153,7 @@
   transition: .3s ease;
   background-color: $our-blue;
   color: $our-light-grey;
+
   &:hover {
     background-color: $our-light-grey;
     color: $our-blue;
@@ -167,4 +168,16 @@
     }
   }
 }
+
+  .cancel-btn {
+      background-color: $our-light-grey;
+      color: rgba(234, 9, 9, 0.7);
+    border-color: rgba(234, 9, 9, 0.7);
+     &:hover {
+      color: white;
+      background-color: rgba(234, 9, 9, 0.7);
+      transform: scale(1);
+      cursor: pointer;
+    }
+  }
 
