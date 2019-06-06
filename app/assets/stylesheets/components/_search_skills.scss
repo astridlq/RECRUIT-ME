@@ -44,7 +44,7 @@
   flex-wrap: wrap;
   font-size: 14px;
   font-weight: bold;
-  background-color: #FFFBFF;
+  background-color: white;
   transition: .3s ease;
 }
 
@@ -231,6 +231,7 @@
 
 .show-profile {
   color: white;
+  font-weight: bold;
   z-index: 2;
   position: absolute;
   top: 50%;
