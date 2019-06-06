@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="container-conversation">
+  <div class="container-conversation" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= image_path "background-hp.jpg" %>');">
     <% if @conversations.length > 0 %>
      <div class="conversation-bar">
         <% @conversations.each do |conversation| %>
@@ -31,7 +32,7 @@
         <% end %>
        </div>
        <div class="conv-display-container">
-         <div class="conversation-display">
+         <div class="conversation-display" >
             <h1>Your career. <br>Your skills. <br>Your move...</h1>
          </div>
      </div>

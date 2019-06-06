@@ -23,7 +23,7 @@
       <div class="col-12 col-sm-4">
         <div class="employee-detail-all">
           <div class="employee-detail">
-            <%= cl_image_tag user.photo, height: 100, width: 100, crop: :fill, class: "avatar-big" %>
+            <%= cl_image_tag user.photo, height: 300, width: 300, crop: :fill, class: "avatar-big" %>
             <div class="employee-contact">
               <h2><%= user.first_name.capitalize %> <%= user.last_name.upcase %></h2>
               <h3><%= user.job_title %></h3>

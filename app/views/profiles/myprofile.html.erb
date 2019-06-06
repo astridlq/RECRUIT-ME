@@ -8,7 +8,7 @@
     <% end %>
     <div class="d-flex align-items-center">
       <div class="myprofile-image">
-        <%= cl_image_tag @user.photo, height: 200, width: 200, crop: :fill %>
+        <%= cl_image_tag @user.photo, height: 300, width: 300, crop: :fill %>
       </div>
       <div class="myprofile-name">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
@@ -59,8 +59,8 @@
           <div class="skills-grid-1">
             <% @existing_skills.each do |eskill| %>
             <% if eskill.skill.skill_type == "experience" %>
-                <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-             url('<%= cl_image_path eskill.skill.photo, height: 200, width: 200, crop: :fill %>')">
+                <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+             url('<%= cl_image_path eskill.skill.photo, height: 300, width: 300, crop: :fill %>')">
 
                   <div class="section">
                     <p class="show-profile"><%= eskill.skill.name %></p>
@@ -85,8 +85,8 @@
           <div class="skills-grid-1">
             <% @existing_skills.each do |uskill| %>
             <% unless uskill.skill.skill_type == "experience" %>
-                <label for="<%= "skill-item-#{uskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-             url('<%= cl_image_path uskill.skill.photo, height: 200, width: 200, crop: :fill %>')">
+                <label for="<%= "skill-item-#{uskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+             url('<%= cl_image_path uskill.skill.photo, height: 300, width: 300, crop: :fill %>')">
                   <div class="section">
                     <p class="show-profile"><%= uskill.skill.name %></p>
 
@@ -122,8 +122,8 @@
             </div>
             <div class="skills-grid-1">
               <% @develop_skills.each do |dskill| %>
-                  <label for="<%= "skill-item-#{dskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-               url('<%= cl_image_path dskill.skill.photo, height: 200, width: 200, crop: :fill %>')">
+                  <label for="<%= "skill-item-#{dskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+               url('<%= cl_image_path dskill.skill.photo, height: 300, width: 300, crop: :fill %>')">
                     <div class="section">
                       <p class="show-profile"><%= dskill.skill.name %></p>
 
