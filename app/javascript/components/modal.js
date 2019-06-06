@@ -10,14 +10,13 @@ const getElem = (str) => {
   return document.getElementById(str);
 }
 
-var messageField = getElem('conversation_content');
-
-console.log()
 
 const messageModal = (id) => {
+  var messageField = getElem(`message-field-${id}`);
   getElem(`sendBtn${id}`).onclick = function() {
     messageField.value = ""
     getElem(`sendMessageModal${id}`).style.display = "block";
+    messageField.focus();
   }
   getQuery(`.modal-cancel-${id}`).onclick = function() {
     getElem(`sendMessageModal${id}`).style.display = "none";
@@ -30,12 +29,14 @@ const messageModal = (id) => {
 const multiModal = (str) => {
   getQueryAll(str).forEach((modal) => {
     var id = modal.firstElementChild.dataset.id
+    var messageField = getElem(`message-field-${id}`);
     messageModal(id);
   })
 }
 
 const singleModal = (str) => {
     var id = getQuery(str).dataset.id
+    var messageField = getElem(`message-field-${id}`);
     messageModal(id);
 }
 
