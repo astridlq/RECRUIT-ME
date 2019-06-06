@@ -1,5 +1,5 @@
 meta_product_name: "Recruit.me"
 meta_title: "Recruit.me - Your Skills, Your Move"
 meta_description: "Recruit.me is an application to help managers find talent easily within their organisation and to help employees discover new job opportunities."
-meta_image: "RecruitmeOGimage.jpeg" # should exist in `app/assets/images/`
+meta_image: "recruitme-og-image.jpg" # should exist in `app/assets/images/`
 twitter_account: "@Recruit.me"   # required for Twitter Cards
