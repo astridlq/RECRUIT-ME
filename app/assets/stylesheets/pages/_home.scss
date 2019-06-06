@@ -1,11 +1,10 @@
 // Specific CSS for your home-page
 .home-container {
   min-height: 100vh;
-  background-image: url("background-hp.jpg");
-  background-size: cover;
   display:flex;
   justify-content:center;
   align-items:center;
+  background-size: cover;
 }
 
 h1 {

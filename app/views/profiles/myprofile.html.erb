@@ -1,8 +1,10 @@
+<div class="blue-banner"></div>
+
 <div class="container">
 <!-- title box -->
   <div class="myprofile-container">
     <%= link_to :back, class: 'link_absolute' do %>
-      <i class="fas fa-chevron-left"></i>
+      <i class="fas fa-chevron-left"></i>Back
     <% end %>
     <div class="d-flex align-items-center">
       <div class="myprofile-image">
@@ -15,9 +17,7 @@
   </div>
 
 <div class="d-flex">
-  <div class="left">
-
-  <!-- left side -->
+  <div class="box-profile">
 
       <!-- description box -->
 
@@ -45,7 +45,7 @@
         </div>
       </div>
 
-  <!-- key experiences -->
+      <!-- key experiences -->
 
         <div class="myprofile-skill-card" id="key">
           <div class="d-flex justify-content-between">
@@ -55,12 +55,12 @@
               <i class="fas fa-edit"></i>
             <% end %>
           </div>
-          <div class="skills-grid-1">
 
+          <div class="skills-grid-1">
             <% @existing_skills.each do |eskill| %>
             <% if eskill.skill.skill_type == "experience" %>
-                <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-             url('<%= cl_image_path eskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
+                <label for="<%= "skill-item-#{eskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+             url('<%= cl_image_path eskill.skill.photo, height: 200, width: 200, crop: :fill %>')">
 
                   <div class="section">
                     <p class="show-profile"><%= eskill.skill.name %></p>
@@ -72,12 +72,9 @@
             <% end %>
           </div>
         </div>
-  </div>
-  <div class="right">
-
-        <!-- right side  -->
 
       <!-- Hard Skills -->
+
         <div class="myprofile-skill-card" id="hard">
           <div class="d-flex justify-content-between">
             <h3>EXISTING SKILLS</h3>
@@ -88,8 +85,8 @@
           <div class="skills-grid-1">
             <% @existing_skills.each do |uskill| %>
             <% unless uskill.skill.skill_type == "experience" %>
-                <label for="<%= "skill-item-#{uskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-             url('<%= cl_image_path uskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
+                <label for="<%= "skill-item-#{uskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+             url('<%= cl_image_path uskill.skill.photo, height: 200, width: 200, crop: :fill %>')">
                   <div class="section">
                     <p class="show-profile"><%= uskill.skill.name %></p>
 
@@ -115,42 +112,43 @@
         </div>
 
         <!-- soft Skills -->
-        <div class="myprofile-skill-card" id="hard">
-          <div class="d-flex justify-content-between">
-            <h3>SKILLS TO DEVELOP</h3>
-            <% dev_skills = @develop_skills.map {|s| s.skill_id} %>
-            <%= link_to edit_develop_skills_path(skills_ids: dev_skills) do  %>
-              <i class="fas fa-edit"></i>
-            <% end %>
-          </div>
-          <div class="skills-grid-1">
-            <% @develop_skills.each do |dskill| %>
-                <label for="<%= "skill-item-#{dskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-             url('<%= cl_image_path dskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
-                  <div class="section">
-                    <p class="show-profile"><%= dskill.skill.name %></p>
+          <div class="myprofile-skill-card" id="hard">
+            <div class="d-flex justify-content-between">
+              <h3>SKILLS TO DEVELOP</h3>
+              <% dev_skills = @develop_skills.map {|s| s.skill_id} %>
+              <%= link_to edit_develop_skills_path(skills_ids: dev_skills) do  %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+            </div>
+            <div class="skills-grid-1">
+              <% @develop_skills.each do |dskill| %>
+                  <label for="<%= "skill-item-#{dskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+               url('<%= cl_image_path dskill.skill.photo, height: 200, width: 200, crop: :fill %>')">
+                    <div class="section">
+                      <p class="show-profile"><%= dskill.skill.name %></p>
 
-                    <!-- Popover -->
-                      <a class="popover-skill" data-toggle="popover" data-placement="right" title="" data-trigger="hover" data-html="true"
-                      data-popover-content="#myPopoverContent<%=dskill.id%>"><i class="fas fa-info-circle"></i></a>
+                      <!-- Popover -->
+                        <a class="popover-skill" data-toggle="popover" data-placement="right" title="" data-trigger="hover" data-html="true"
+                        data-popover-content="#myPopoverContent<%=dskill.id%>"><i class="fas fa-info-circle"></i></a>
 
-                      <!-- Content for Popover: -->
-                      <div id="myPopoverContent<%=dskill.id%>" style="display:none">
-                        <div class="skill-info">
-                          <h2><%= dskill.skill.name %></h2>
-                          <p><%= dskill.skill.description %></p>
+                        <!-- Content for Popover: -->
+                        <div id="myPopoverContent<%=dskill.id%>" style="display:none">
+                          <div class="skill-info">
+                            <h2><%= dskill.skill.name %></h2>
+                            <p><%= dskill.skill.description %></p>
+                          </div>
                         </div>
+
+                      <div class="overlay">
                       </div>
-
-                    <div class="overlay">
                     </div>
-                  </div>
-                </label>
-            <% end %>
+                  </label>
+              <% end %>
+            </div>
           </div>
-        </div>
-  </div>
-</div>
 
+  </div>
+
+</div>
 
 </div>

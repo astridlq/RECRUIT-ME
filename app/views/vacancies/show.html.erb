@@ -2,7 +2,7 @@
   <!-- title box -->
   <div class="vacancy-container">
     <%= link_to :back, class: 'link_absolute' do %>
-    <i class="fas fa-chevron-left"></i>
+    <i class="fas fa-chevron-left"></i>Back
     <% end %>
     <div class="d-flex align-items-center">
       <div class="vacancy-image">
@@ -37,7 +37,7 @@
     <!-- Open positions -->
 
     <div class="job-additional-info">
-      <h2>Open Positions</h2>
+      <h2>Open Position(s)</h2>
       <div class="openings-info" >
         <p>No current opening for this job</p>
         <div>
@@ -50,7 +50,7 @@
                 <p>Get notified when a new <strong><%= @vacancy.title %></strong> position opens.</p>
                 <br>
               </div>
-              <div class="d-flex justify-content-around">
+              <div class="d-flex justify-content-center">
                 <div class="modal-alert-submit">yes please!</div>
                 <div class="modal-alert-cancel">no thanks</div>
               </div>
@@ -95,11 +95,11 @@
       <div class="d-flex justify-content-between">
         <h3>Required skills</h3>
       </div>
-      <div class="skills-grid-1">
+      <div class="skills-grid-2">
         <% @vacancy_skills.each do |rskill| %>
         <% unless rskill.skill.skill_type == "experience" %>
-        <label for="<%= "skill-item-#{rskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-        url('<%= cl_image_path rskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
+        <label for="<%= "skill-item-#{rskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('<%= cl_image_path rskill.skill.photo, height: 300, width: 300, crop: :fill %>')">
         <div class="section">
           <p class="show-profile"><%= rskill.skill.name %></p>
 
@@ -129,10 +129,10 @@
     <div class="d-flex justify-content-between">
       <h3>Preferred skills</h3>
     </div>
-    <div class="skills-grid-1">
+    <div class="skills-grid-2">
       <% @preferred_skills.each do |pskill| %>
-        <label for="<%= "skill-item-#{pskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-        url('<%= cl_image_path pskill.skill.photo, height: 120, width: 120, crop: :fill %>')">
+        <label for="<%= "skill-item-#{pskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('<%= cl_image_path pskill.skill.photo, height: 300, width: 300, crop: :fill %>')">
         <div class="section">
           <p class="show-profile"><%= pskill.skill.name %></p>
 
@@ -160,12 +160,12 @@
         <div class="d-flex justify-content-between">
           <h3>Preferred Key Experiences</h3>
         </div>
-        <div class="skills-grid-1">
+        <div class="skills-grid-2">
 
           <% @vacancy_skills.each do |vskill| %>
           <% if vskill.skill.skill_type == "experience" %>
-          <label for="<%= "skill-item-#{vskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-          url('<%= cl_image_path vskill.skill.photo, height: 120, width: 120 %>')">
+          <label for="<%= "skill-item-#{vskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+          url('<%= cl_image_path vskill.skill.photo, height: 300, width: 300 %>')">
 
           <div class="section">
             <p class="show-profile"><%= vskill.skill.name %></p>
