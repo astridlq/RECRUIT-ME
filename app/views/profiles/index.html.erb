@@ -16,7 +16,7 @@
 
 
   <% @matches.reverse.first(7).each do |user| %>
-  <% unless user == current_user %>
+  <% unless user == current_user || user.first_name == "Astrid" %>
   <%= link_to profile_path(user.id) do %>
   <div class="container-custom">
     <div class="row">
