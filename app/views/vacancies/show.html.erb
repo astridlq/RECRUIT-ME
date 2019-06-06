@@ -69,7 +69,7 @@
           <div class="employee-contact-chat">
         <%= link_to profile_path(user) do %>
             <div class="employee-contact-info" >
-              <%= cl_image_tag user.photo, height: 40, width: 40, crop: :fill, class: 'avatar' %>
+              <%= cl_image_tag user.photo, height: 100, width: 100, crop: :fill, class: 'avatar' %>
               <div>
                 <h3><%= user.first_name %> <%= user.last_name %></h3>
                 <h4><%= user.location %></h4>
@@ -98,7 +98,7 @@
       <div class="skills-grid-2">
         <% @vacancy_skills.each do |rskill| %>
         <% unless rskill.skill.skill_type == "experience" %>
-        <label for="<%= "skill-item-#{rskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        <label for="<%= "skill-item-#{rskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url('<%= cl_image_path rskill.skill.photo, height: 300, width: 300, crop: :fill %>')">
         <div class="section">
           <p class="show-profile"><%= rskill.skill.name %></p>
@@ -131,7 +131,7 @@
     </div>
     <div class="skills-grid-2">
       <% @preferred_skills.each do |pskill| %>
-        <label for="<%= "skill-item-#{pskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        <label for="<%= "skill-item-#{pskill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url('<%= cl_image_path pskill.skill.photo, height: 300, width: 300, crop: :fill %>')">
         <div class="section">
           <p class="show-profile"><%= pskill.skill.name %></p>
@@ -164,7 +164,7 @@
 
           <% @vacancy_skills.each do |vskill| %>
           <% if vskill.skill.skill_type == "experience" %>
-          <label for="<%= "skill-item-#{vskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+          <label for="<%= "skill-item-#{vskill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
           url('<%= cl_image_path vskill.skill.photo, height: 300, width: 300 %>')">
 
           <div class="section">

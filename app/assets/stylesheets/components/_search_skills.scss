@@ -226,7 +226,7 @@
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: $our-light-grey;
+  background-color: black;
 }
 
 .show-profile {
@@ -239,7 +239,7 @@
 }
 
 .section:hover .overlay {
-  opacity: 0.35;
+  opacity: 0.60;
   transform: scale(1.02);
 }
 
@@ -265,3 +265,12 @@
 #clear-hard {
   opacity: 0.3;
 }
+
+#clear-soft {
+  opacity: 0.3;
+}
+
+#clear-key {
+  opacity: 0.3;
+}
+

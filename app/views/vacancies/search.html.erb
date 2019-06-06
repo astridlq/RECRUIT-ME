@@ -35,8 +35,8 @@
         <div class="skills-grid">
           <% @hard_skills.each do |skill| %>
               <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
-              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>');">
+              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox hard" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+           url('<%= cl_image_path skill.photo, height: 300, width: 300, crop: :fill %>');">
                 <div class="section">
                   <p class="show-profile"><%= skill.name %></p>
                   <!-- Popover -->
@@ -70,8 +70,8 @@
 
           <% @soft_skills.each do |skill| %>
               <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
-              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox soft" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
+              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox soft" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+           url('<%= cl_image_path skill.photo, height: 300, width: 300, crop: :fill %>')">
                 <div class="section">
                   <p class="show-profile"><%= skill.name %></p>
                   <!-- Popover -->
@@ -106,8 +106,8 @@
 
           <% @key_experience.each do |skill| %>
               <%= check_box_tag "skill_ids[]", skill.id, nil, id: "skill-item-#{skill.id}", class: 'hidden'%>
-              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-           url('<%= cl_image_path skill.photo, height: 120, width: 120, crop: :fill %>')">
+              <label for="<%= "skill-item-#{skill.id}" %>" class="skill-grid-item checkbox key" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+           url('<%= cl_image_path skill.photo, height: 300, width: 300, crop: :fill %>')">
                 <div class="section">
                   <p class="show-profile"><%= skill.name %></p>
                   <div class="overlay">
