@@ -2376,14 +2376,14 @@ puts "creating conversations..."
 conversation_hash = [
 {
   sender: users[1],
-  recipient: users[0],
+  recipient: users[4],
   accepted: true
 },{
   sender: users[2],
-  recipient: users[0],
+  recipient: users[4],
   accepted: true
 },{
-  sender: users[0],
+  sender: users[4],
   recipient: users[3],
   accepted: true
 }
@@ -2401,7 +2401,7 @@ message_hash = [
   read: true
 },{
   body: "Hi Axel, thanks for getting in touch. I'd be interested to find out more.",
-  user: users[0],
+  user: users[4],
   conversation: conversations[0],
   read: true
 },{
@@ -2411,7 +2411,7 @@ message_hash = [
   read: true
 },{
   body: "Sounds perfect!",
-  user: users[0],
+  user: users[4],
   conversation: conversations[0],
   read: true
 },{
@@ -2421,7 +2421,7 @@ message_hash = [
   read: true
 },{
   body: "Alex! Yes has been way to long, good to here from you! I'm good thanks. Ok that sounds interesting...",
-  user: users[0],
+  user: users[4],
   conversation: conversations[1],
   read: true
 },{
@@ -2431,7 +2431,7 @@ message_hash = [
   read: true
 },{
   body: "I'm gonna have to think it over for a while as I'm not sure if I want to move departments at this time.",
-  user: users[0],
+  user: users[4],
   conversation: conversations[1],
   read: true
 },{
@@ -2441,12 +2441,12 @@ message_hash = [
   read: true
 },{
   body: "Will do, Alex. All the best.",
-  user: users[0],
+  user: users[4],
   conversation: conversations[1],
   read: true
 },{
   body: "Hi Edward, are you interested in having a chat regarding this role?",
-  user: users[0],
+  user: users[4],
   conversation: conversations[2],
   read: true
 },{
