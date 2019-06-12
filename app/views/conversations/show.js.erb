@@ -13,13 +13,17 @@ displayArea.insertAdjacentHTML('beforeEnd', '<%= j render "conversations/submit"
 displayArea.scrollTop = displayArea.scrollHeight;
 
 document.addEventListener('click', (event) => {
-  var receivedMessages = document.querySelectorAll('.bubble-left')
-  var message_id = {
-  id: receivedMessages[receivedMessages.length-1].dataset.messageId
+  var receivedMessages = [];
+  document.querySelectorAll('.bubble-left').forEach((message) => {
+    receivedMessages.push(message.dataset.messageId)
+  })
+  console.log(receivedMessages)
+  var message_array = {
+  ids: receivedMessages
 }
 
-// Post data via ajax to a rails controller
-$.post('/message/update', message_id);
+// Post data via ajax to rails controller
+$.post('/message/update', message_array);
 })
 
 function submitOnEnter(event){

@@ -1,3 +1,11 @@
+const selectors = {
+  envelope:  document.querySelector('.fa-envelope'),
+  conversationBar: document.querySelector('.conversation-bar'),
+  newMessContain: document.querySelector('.new-message-container'),
+  convActive: document.querySelector('.conversation-box-active'),
+  convBoxNew: document.querySelector('.conversation-box-new')
+}
+
 const conversation = () => {
   App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     connected: function() {},
@@ -103,20 +111,4 @@ const activateConversation = () => {
   })
 }
 
-const autoExpand = () => {
-  $(document)
-      .one('focus.autoExpand', 'textarea.autoExpand', function(){
-          var savedValue = this.value;
-          this.value = '';
-          this.baseScrollHeight = this.scrollHeight;
-          this.value = savedValue;
-      })
-      .on('input.autoExpand', 'textarea.autoExpand', function(){
-          var minRows = this.getAttribute('data-min-rows')|0, rows;
-          this.rows = minRows;
-          rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
-          this.rows = minRows + rows;
-      });
-}
-
-export { conversation, activateConversation, autoExpand }
+export { conversation, activateConversation }
