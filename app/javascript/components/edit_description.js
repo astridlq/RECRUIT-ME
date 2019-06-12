@@ -5,11 +5,11 @@ const change = (event) => {
   description.classList.toggle("display-block");
   edit.classList.toggle("display-block");
 }
+
 const initToggleForm = () => {
   const edit = document.getElementById('edit-description');
   if (edit === null) return;
   edit.addEventListener("click", change);
 }
-
 
 export {initToggleForm};

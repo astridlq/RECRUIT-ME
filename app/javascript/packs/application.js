@@ -1,6 +1,6 @@
 import "bootstrap";
 import { toggleGroup, skillActive, clearSkills, selectJob, preSelect } from '../components/profile_search';
-import { conversation, activateConversation, autoExpand } from '../components/conversation';
+import { conversation, activateConversation } from '../components/conversation';
 import { multiModal, singleModal, alertModal } from '../components/modal';
 import { loadDynamicBannerText } from '../components/hp_title.js';
 import { initToggleForm } from '../components/edit_description';
@@ -12,8 +12,10 @@ const vacancyRegEx = /^\/vacancies\/\d+$/;
 // conversation();
 
 switch (location.pathname) {
+  case '/':
+    loadDynamicBannerText();
+    break;
   case '/conversations':
-    autoExpand();
     activateConversation();
     break;
   case '/profiles/search':
@@ -22,6 +24,7 @@ switch (location.pathname) {
     skillActive();
     toggleGroup();
     selectJob();
+    skillInfoToggle();
     break;
   case '/vacancies/search':
     preSelect();
@@ -29,6 +32,10 @@ switch (location.pathname) {
     skillActive();
     toggleGroup();
     selectJob();
+    skillInfoToggle();
+    break;
+  case '/myprofile':
+    initToggleForm();
     break;
   case '/myprofile/edit_user_skills':
     preSelect();
@@ -36,6 +43,7 @@ switch (location.pathname) {
     skillActive();
     toggleGroup();
     selectJob();
+    skillInfoToggle();
     break;
   case '/myprofile/edit_develop_skills':
     preSelect();
@@ -43,24 +51,20 @@ switch (location.pathname) {
     skillActive();
     toggleGroup();
     selectJob();
+    skillInfoToggle();
     break;
   default:
 }
 
 conversation();
-skillInfoToggle();
-initToggleForm();
 
 if (location.pathname.match(vacancyRegEx)) {
+  skillInfoToggle();
   multiModal('.modal-container');
   alertModal();
 }
 
 if (location.pathname.match(profileRegEx)) {
+  skillInfoToggle();
   singleModal('.modal');
 }
-
-if (document.querySelector('.banner-typed-text')) {
-  loadDynamicBannerText();
-};
-
