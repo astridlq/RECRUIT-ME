@@ -12,9 +12,6 @@ const vacancyRegEx = /^\/vacancies\/\d+$/;
 // conversation();
 
 switch (location.pathname) {
-  case '/':
-    loadDynamicBannerText();
-    break;
   case '/conversations':
     activateConversation();
     break;
@@ -57,6 +54,11 @@ switch (location.pathname) {
 }
 
 conversation();
+
+
+if (document.querySelector('.banner-typed-text')) {
+  loadDynamicBannerText();
+}
 
 if (location.pathname.match(vacancyRegEx)) {
   skillInfoToggle();

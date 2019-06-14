@@ -12,10 +12,7 @@ class MessagesController < ApplicationController
   end
 
   def update_message
-    puts params
-    params[:ids].each do |id|
-      Message.find(id).update(read: true)
-    end
+    Message.find(params[:id]).update(read: true)
   end
 
   private
