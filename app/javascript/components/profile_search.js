@@ -185,7 +185,6 @@ const selectJob = () => {
           arr[i] = arr[i].value;
         }
         arr.forEach((n) => {
-          console.log(n)
           const skill = document.getElementById(`skill-item-${n}`)
           skill.nextSibling.nextSibling.classList.add("active-skill")
           skill.checked = true
